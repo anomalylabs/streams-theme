@@ -1,10 +1,33 @@
 @import "../bootstrap/mixins/opacity";
+@import "../bootstrap/mixins/vendor-prefixes";
 
-#toggle-navigation {
+#navigation {
     position: fixed;
     top: 0;
+    width: 100%;
+    z-index: @zindex-navbar + 1;
+    background-color: @gray-darker;
+    overflow: visible;
+
+    &.closed {
+        height: 0;
+
+        .container-fluid {
+            display: none;
+        }
+    }
+
+    &:not(.closed) {
+        padding: 15px 0;
+    }
+}
+
+#toggle-navigation {
+    position: absolute;
+    bottom: 0;
     left: 50%;
     margin-left: -25px;
+    margin-bottom: -17px;
     color: #ffffff;
     background: #272e3c;
     .opacity(0.5);
