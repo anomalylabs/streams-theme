@@ -54,8 +54,14 @@
                         background-color: lighten(@gray-darker, 3%);
 
                         &:hover {
-                            color: #ffffff;
+                            color: lighten(#aab0b7, 7%);
                             background-color: lighten(@gray-darker, 5%);
+                        }
+
+                        &.logout {
+                            color: #ffffff;
+                            text-align: center;
+                            background-color: @brand-danger;
                         }
                     }
                 }
