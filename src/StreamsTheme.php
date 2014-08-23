@@ -1,4 +1,4 @@
-<?php namespace StreamsAddon\Theme\Streams;
+<?php namespace Streams\Addon\Theme\Streams;
 
 use Streams\Core\Addon\ThemeAbstract;
 
