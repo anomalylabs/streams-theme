@@ -21,6 +21,7 @@
                 padding: 5px;
                 margin-top: -5px;
                 margin-bottom: -5px;
+                margin-right: -5px;
 
                 > a {
                     padding: 0;
@@ -29,6 +30,10 @@
                         width: 36px;
                         height: 36px;
                         border-radius: @border-radius-base;
+                    }
+
+                    span {
+                        margin-left: 10px;
                     }
                 }
             }
@@ -43,7 +48,7 @@
                 padding: 8px 10px;
                 display: inline-block;
                 background-color: transparent;
-                color: @navbar-default-color;
+                color: @navbar-default-link-color;
             }
 
             ul {
@@ -91,13 +96,46 @@
         }
     }
 
-    .navbar-brand {
+    /*.navbar-brand {
         width: 23px;
         height: 36px;
         margin-right: 40px;
+        margin-left: 0;
         background-image: url("http://streams.app/assets/develop/png/4250f56277960c69bfd9e72c7cde5608.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: auto 100%;
+        display: inline-block;
+    }*/
+
+    .navbar-brand {
+        width: 135px;
+        height: 36px;
+        margin-right: 40px;
+        margin-left: 0;
+        background-image: url("http://streams.app/assets/develop/png/0d092f42e6c5238670de235e6c4b8a0f.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        display: inline-block;
+    }
+
+    .navbar-toggle {
+        border: none;
+        margin-top: 3px;
+        margin-bottom: 0;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        .icon-bar {
+            background-color: #ffffff;
+        }
+    }
+
+    .navbar-collapse {
+        box-shadow: none;
     }
 }
