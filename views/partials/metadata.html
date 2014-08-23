@@ -20,17 +20,12 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico">
 <link rel="apple-touch-icon" href="../../../favicon.ico"/>
 
-{{ asset.add "theme.css" "theme::less/bootstrap.less" }}
-{{ asset.add "theme.css" "theme::less/fonts.less" }}
-{{ asset.add "theme.css" "theme::less/app.less" }}
+{{ asset.add "theme.css" "theme::less/bootstrap/bootstrap.less" }}
+{{ asset.add "theme.css" "theme::less/animate/animate.less" }}
 
-{{ asset.add "animate.css" "theme::css/animate/animate.css" "min" }}
-
-{{ asset.add "theme.js" "theme::js/modernizr-2.6.2.min.js" }}
-{{ asset.add "theme.js" "theme::js/jquery-1.11.0.min.js" }}
-{{ asset.add "theme.js" "theme::js/bootstrap.min.js" }}
-{{ asset.add "theme.js" "theme::js/app.min.js" }}
+{{ asset.add "theme.js" "theme::js/vendor/jquery-1.11.1.js" }}
+{{ asset.add "theme.js" "theme::js/bootstrap/*" }}
+{{ asset.add "theme.js" "theme::js/theme/main.js" }}
 
 {{ asset.style "theme.css" }}
-{{ asset.style "animate.css" }}
 {{ asset.script "theme.js" }}
