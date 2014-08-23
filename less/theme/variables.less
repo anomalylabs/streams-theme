@@ -7,8 +7,8 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-darker:            lighten(#000, 13.5%); // #222
-@gray-dark:              lighten(#000, 20%);   // #333
+@gray-darker:            #27303b;
+@gray-dark:              #333c4e;
 @gray:                   lighten(#000, 33.5%); // #555
 @gray-light:             lighten(#000, 46.7%); // #777
 @gray-lighter:           lighten(#000, 93.5%); // #eee
@@ -25,7 +25,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #f9f9fb;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -39,7 +39,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Open Sans", sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -300,7 +300,7 @@
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-@grid-columns:              12;
+@grid-columns:              24;
 //** Padding between columns. Gets divided in half for the left and right.
 @grid-gutter-width:         30px;
 // Navbar collapse
@@ -337,21 +337,21 @@
 // Basics of a navbar
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
-@navbar-border-radius:             @border-radius-base;
+@navbar-border-radius:             0;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
-@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-color:             #7e8993;
+@navbar-default-bg:                @gray-dark;
+@navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                #777;
-@navbar-default-link-hover-color:          #333;
+@navbar-default-link-color:                #e8ecf4;
+@navbar-default-link-hover-color:          #ffffff;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         #ffffff;
+@navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 

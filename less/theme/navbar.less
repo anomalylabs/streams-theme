@@ -1,0 +1,75 @@
+#navbar {
+    border: none;
+    padding: 15px 0;
+    margin-bottom: 0;
+
+    ul {
+        > li {
+            margin-right: 20px;
+            border-radius: @border-radius-base @border-radius-base 0 0;
+
+            &.open {
+                background-color: @gray-darker;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.avatar {
+                padding: 5px;
+                margin-top: -5px;
+                margin-bottom: -5px;
+
+                > a {
+                    padding: 0;
+
+                    img {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: @border-radius-base;
+                    }
+                }
+            }
+
+            > a {
+                padding: 8px 10px;
+            }
+
+            ul {
+                padding: 5px;
+                background-color: @gray-darker;
+
+                li {
+                    padding-top: 5px;
+                    margin-right: 0;
+
+                    &:first-child {
+                        padding-top: 0 !important;
+                    }
+
+                    a {
+                        color: #aab0b7;
+                        border-radius: @border-radius-base;
+                        background-color: lighten(@gray-darker, 3%);
+
+                        &:hover {
+                            color: #ffffff;
+                            background-color: lighten(@gray-darker, 5%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-brand {
+        width: 23px;
+        height: 36px;
+        margin-right: 40px;
+        background-image: url("http://streams.app/assets/develop/png/4250f56277960c69bfd9e72c7cde5608.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+    }
+}
