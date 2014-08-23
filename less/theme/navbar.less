@@ -5,6 +5,7 @@
 
     ul {
         > li {
+            font-weight: 700;
             margin-right: 20px;
             border-radius: @border-radius-base @border-radius-base 0 0;
 
@@ -33,7 +34,16 @@
             }
 
             > a {
+                font-weight: 700;
                 padding: 8px 10px;
+            }
+
+            > span {
+                font-weight: 700;
+                padding: 8px 10px;
+                display: inline-block;
+                background-color: transparent;
+                color: @navbar-default-color;
             }
 
             ul {
@@ -63,6 +73,18 @@
                             text-align: center;
                             background-color: @brand-danger;
                         }
+                    }
+                }
+            }
+        }
+
+        &.navbar-right {
+            > li {
+                > a {
+                    color: #7e8993;
+
+                    &:hover {
+                        color: lighten(#7e8993, 10%);
                     }
                 }
             }

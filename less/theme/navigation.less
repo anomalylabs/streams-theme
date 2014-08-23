@@ -1,0 +1,21 @@
+@import "../bootstrap/mixins/opacity";
+
+#toggle-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    background: #272e3c;
+    .opacity(0.5);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1px 8px 1px 6px;
+    border-radius: 0 0 3px 0;
+    z-index: @zindex-navbar + 1;
+    text-decoration: none;
+
+    &:hover {
+        .opacity(0.9);
+    }
+}
