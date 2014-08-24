@@ -1,7 +1,7 @@
 <header id="header">
     <div class="container-fluid wrapper">
-        <div class="row">
 
+        <div class="row" id="information">
             <div class="col-lg-12">
                 <h2 id="title">Dashboard</h2>
 
@@ -12,10 +12,26 @@
                 <div class="clearfix"></div>
             </div>
 
-            <div id="sections" class="col-lg-12 text-right">
-                <a href="#" class="btn btn-success">Create new contact</a>
+            <div id="play" class="col-lg-12 text-right">
+                <!--<a href="#" class="btn btn-success">Create new contact</a>-->
+            </div>
+        </div>
+
+        <div class="row" id="controls">
+            <div id="sections" class="col-lg-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="{{ url.base }}admin/profile">Profile</a></li>
+                    <li><a href="#messages">Messages</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#home1">Home</a></li>
+                </ul>
             </div>
 
+            <div id="actions" class="col-lg-12 text-right">
+                <a href="#" class="btn btn-success">Create new contact</a>
+            </div>
         </div>
+
     </div>
 </header>

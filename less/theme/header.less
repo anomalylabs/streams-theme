@@ -1,5 +1,5 @@
 #header {
-    padding: 25px 0;
+    padding: 25px 0 15px;
     background-color: #ffffff;
     border-bottom: 1px solid #eaecf1;
 
@@ -21,6 +21,46 @@
             border: none;
             padding: 5px 0;
             outline: none;
+        }
+    }
+
+    #controls {
+        margin-top: 20px;
+    }
+
+    #sections {
+        ul {
+            border-bottom: none;
+            display: inline-block;
+
+            li {
+                a {
+                    color: @gray-light;
+                    text-transform: uppercase;
+                    margin-bottom: -25px;
+                    padding-bottom: @padding-base-vertical + 13;
+                    font-weight: 600;
+                    border-radius: 0;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+
+                    &:hover {
+                        background: none;
+                        color: darken(@gray-light, 10%);
+                        border-color: transparent;
+                        border-bottom: 3px solid transparent;
+                    }
+                }
+
+                &.active {
+                    a {
+                        background: none;
+                        border-color: transparent;
+                        border-bottom: 3px solid @brand-primary;
+                    }
+                }
+            }
         }
     }
 }

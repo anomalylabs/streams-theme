@@ -1,0 +1,50 @@
+{{ if messages.success }}
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+
+    {{ messages.success }}
+    {{ message }}
+    {{ /messages.success }}
+</div>
+{{ endif }}
+
+
+{{ if messages.info }}
+<div class="alert alert-info alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+
+    {{ messages.info }}
+    {{ string }}
+    {{ /messages.info }}
+</div>
+{{ endif }}
+
+
+{{ if messages.warning }}
+<div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+
+    {{ messages.warning }}
+    {{ string }}
+    {{ /messages.warning }}
+</div>
+{{ endif }}
+
+
+{{ if messages.error }}
+<div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+
+    {{ messages.error }}
+        {{ message }}
+    {{ /messages.error }}
+</div>
+{{ endif }}

@@ -20,9 +20,10 @@
 {{ include "theme::partials/navigation" }}
 {{ include "theme::partials/navbar" }}
 {{ include "theme::partials/header" }}
+{{ include "theme::partials/messages" }}
 
 <section id="content">
-    <div class="container">
+    <div class="container-fluid wrapper">
         <div class="row">
             <div class="col-lg-24">
                 {{ yield "content" }}
