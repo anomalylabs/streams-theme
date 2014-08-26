@@ -19,6 +19,7 @@
                         {{ modules.enabled }}
                         <li><a href="{{ url }}" class="badge-info">{{ name }}</a></li>
                         {{ /modules.enabled }}
+                        <li class="edit"><a href="#"><i class="glyphicon glyphicon-pencil"></i></a></li>
                         <!--<li class="active"><a href="#">Link</a></li>
                         <li><a href="#">Link</a></li>
                         <li class="dropdown">
@@ -33,6 +34,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="glyphicon glyphicon-th-list"></i></a></li>
                         <li class="dropdown avatar">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="{{ user.avatar }}">
@@ -45,7 +47,6 @@
                                 <li><a href="{{ url.base }}/admin/logout" class="logout">Logout</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="glyphicon glyphicon-th-list"></i></a></li>
                     </ul>
 
                 </div>
