@@ -1,0 +1,16 @@
+{
+    "name": "anomalylabs/streams-theme",
+    "type": "theme",
+    "description": "Streams theme for Streams Platform",
+    "authors": [
+        {
+            "name": "AnomalyLabs",
+            "email": "projects@aiwebsystems.com"
+        }
+    ],
+    "source" : {
+        "type" : "vcs",
+        "url" : "git@github.com:anomalylabs/streams-theme.git",
+        "reference" : "master"
+    }
+}
