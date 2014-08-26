@@ -3,7 +3,7 @@
     padding: 15px 0;
     margin-bottom: 0;
 
-    ul {
+    ul.nav {
         > li {
             font-weight: 700;
             margin-right: 20px;
@@ -40,7 +40,27 @@
 
             > a {
                 font-weight: 700;
-                padding: 8px 10px;
+                padding: 8px 10px 0;
+
+                &.badge-info:after,
+                &.badge-danger:after {
+                    width: 8px;
+                    height: 8px;
+                    display: block;
+                    position: relative;
+                    right: -105%;
+                    top: -1.5em;
+                    content: "";
+                    border-radius: 50%;
+                }
+
+                &.badge-info:after {
+                    background: @brand-info;
+                }
+
+                &.badge-danger:after {
+                    background: @brand-danger;
+                }
             }
 
             > span {
@@ -65,6 +85,7 @@
 
                     a {
                         color: #aab0b7;
+                        padding: 8px 10px;
                         border-radius: @border-radius-base;
                         background-color: lighten(@gray-darker, 3%);
 
