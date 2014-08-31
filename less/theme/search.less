@@ -1,7 +1,7 @@
 @import "../bootstrap/mixins/opacity";
 @import "../bootstrap/mixins/vendor-prefixes";
 
-#navigation {
+#search {
     position: fixed;
     top: 0;
     width: 100%;
@@ -19,15 +19,16 @@
 
     &:not(.closed) {
         padding: 15px 0;
+        min-height: 90%;
 
-        #toggle-navigation {
+        #toggle-search {
             margin-left: -40px;
             background-color: @gray-darker;
             .opacity(1);
         }
     }
 
-    #toggle-navigation {
+    #toggle-search {
         position: absolute;
         bottom: 0;
         left: 50%;
