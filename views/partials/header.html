@@ -2,35 +2,22 @@
     <div class="container-fluid wrapper">
 
         <div class="row" id="information">
-            <div class="col-lg-12">
-                <h2 id="title">
-                    {{ modules.active.name }}&nbsp;&nbsp;
-                    <small>{{ modules.active.description }}</small>
-                </h2>
-            </div>
-
-            <div id="actions" class="col-lg-12 text-right">
-                <a href="#" class="btn btn-success">Create new contact</a>
-            </div>
-        </div>
-
-        {{ if theme.sections }}
-        <div class="row" id="controls">
+            {{ if theme.sections }}
             <div id="sections" class="col-lg-12">
                 <ul class="nav nav-tabs">
                     {{ theme.sections }}
                     <li {{ if path contains request.path }}class="active"{{ endif }}>
-                        <a href="{{ url.to "{path}" }}">{{ title }}</a>
+                    <a href="{{ url.to "{path}" }}">{{ title }}</a>
                     </li>
                     {{ /theme.sections }}
                 </ul>
             </div>
+            {{ endif }}
 
-            <div id="play" class="col-lg-12 text-right">
-                <!--<a href="#" class="btn btn-success">Create new contact</a>-->
+            <div id="actions" class="col-lg-12 text-right">
+                <a href="{{ url.to "admin/addons/modules/create" }}" class="btn btn-success">Create new contact</a>
             </div>
         </div>
-        {{ endif }}
 
     </div>
 </header>

@@ -10,9 +10,11 @@
 
             <div class="col-lg-12 text-right">
                 <small id="meta-information">
-                    Showing results 25 - 50 of 2031
+                    {{ if pagination }}
+                    Showing results {{ pagination.from }} - {{ pagination.to }} of {{ pagination.total }}
                     <br>
-                    Loaded in #s using #.# MB
+                    {{ endif }}
+                    Loaded in {{ helper.request_time }} using {{ helper.memory_get_usage }}
                 </small>
             </div>
 

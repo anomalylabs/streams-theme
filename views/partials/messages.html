@@ -9,7 +9,7 @@
                 </button>
 
                 {{ messages.success }}
-                {{ message }}
+                {{ success.message }}
                 {{ /messages.success }}
             </div>
             {{ endif }}
@@ -22,7 +22,7 @@
                 </button>
 
                 {{ messages.info }}
-                {{ string }}
+                {{ info.message }}
                 {{ /messages.info }}
             </div>
             {{ endif }}
@@ -34,8 +34,8 @@
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
 
-                {{ messages.warning }}
-                {{ string }}
+                {{ messages.warning as warning }}
+                {{ warning.message }}
                 {{ /messages.warning }}
             </div>
             {{ endif }}
@@ -47,8 +47,8 @@
                     <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                 </button>
 
-                {{ messages.error }}
-                {{ message }}
+                {{ messages.error as error }}
+                {{ error.message }}
                 {{ /messages.error }}
             </div>
             {{ endif }}
