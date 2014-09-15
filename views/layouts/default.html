@@ -15,24 +15,15 @@
     {{ include "theme::partials/metadata" }}
 </head>
 
-<body data-spy="scroll" data-target=".spybar">
+<body>
 
-{{ include "theme::partials/search" }}
-{{ include "theme::partials/navbar" }}
 {{ include "theme::partials/header" }}
+{{ include "theme::partials/menu" }}
 {{ include "theme::partials/messages" }}
 
-<section id="content">
-    <div class="container-fluid wrapper">
-        <div class="row">
-            <div class="col-lg-24">
-                {{ yield "content" }}
-            </div>
-        </div>
-    </div>
+<section id="main" class="container-fluid">
+    {{ yield "content" }}
 </section>
-
-{{ include "theme::partials/footer" }}
 
 </body>
 </html>

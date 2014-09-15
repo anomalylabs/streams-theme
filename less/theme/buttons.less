@@ -1,3 +1,11 @@
 .btn {
-    outline: none;
+    border: none;
+
+    &,
+    &:active,
+    &.active {
+        &:focus {
+            outline: none;
+        }
+    }
 }
