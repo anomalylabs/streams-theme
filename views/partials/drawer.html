@@ -1,0 +1,21 @@
+<section class="drawer container-fluid">
+
+    {{ if ui.sections }}
+    <ul class="sections nav nav-pills">
+        {{ ui.sections }}
+        <li class="{{ class }}">
+            <a href="{{ url.to "{path}" }}">{{ title }}</a>
+        </li>
+        {{ /ui.sections }}
+    </ul>
+    {{ endif }}
+
+    {{ if ui.actions }}
+    <div class="actions">
+        {{ ui.actions }}
+        <a href="{{ url.to "{path}" }}" class="btn btn-success">{{ title }}</a>
+        {{ /ui.actions }}
+    </div>
+    {{ endif }}
+
+</section>

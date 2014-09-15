@@ -1,0 +1,43 @@
+header.menu {
+    background-color: @gray-darker;
+
+    .navbar {
+        margin: 0;
+        border: none;
+        background: none;
+
+        .navbar-brand {
+            color: #ffffff;
+            padding-left: 0;
+            margin-top: -5px;
+            font-family: @headings-font-family;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        .nav {
+            li {
+                &.active {
+                    a {
+                        color: #ffffff;
+                        background: none;
+
+                        &:hover {
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                a {
+                    color: @gray-dark;
+
+                    &:hover {
+                        color: @gray;
+                    }
+                }
+            }
+        }
+    }
+}
