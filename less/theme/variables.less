@@ -141,29 +141,29 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #ffffff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @text-color;
+@btn-default-bg:                 transparent;
+@btn-default-border:             @btn-default-color;
 
 @btn-primary-color:              #ffffff;
 @btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-border:             @btn-primary-bg;
 
 @btn-success-color:              #ffffff;
 @btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
+@btn-success-border:             @btn-success-bg;
 
 @btn-info-color:                 #ffffff;
 @btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
+@btn-info-border:                @btn-info-bg;
 
 @btn-warning-color:              #ffffff;
 @btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
+@btn-warning-border:             @btn-warning-bg;
 
 @btn-danger-color:               #ffffff;
 @btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+@btn-danger-border:              @btn-danger-bg;
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -428,11 +428,11 @@
 //##
 
 @pagination-color:                     @text-color;
-@pagination-bg:                        darken(@body-bg, 3%);
+@pagination-bg:                        darken(@body-bg, 2%);
 @pagination-border:                    @pagination-bg;
 
 @pagination-hover-color:               @pagination-color;
-@pagination-hover-bg:                  darken(@body-bg, 10%);
+@pagination-hover-bg:                  darken(@body-bg, 5%);
 @pagination-hover-border:              @pagination-hover-bg;
 
 @pagination-active-color:              #fff;
