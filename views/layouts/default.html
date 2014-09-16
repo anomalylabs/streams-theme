@@ -17,13 +17,15 @@
 
 <body>
 
-{{ include "theme::partials/navigation" }}
+{{ include "theme::partials/header" }}
 {{ include "theme::partials/toolbar" }}
 {{ include "theme::partials/messages" }}
 
 <section id="main" class="container-fluid">
     {{ yield "content" }}
 </section>
+
+{{ include "theme::partials/footer" }}
 
 </body>
 </html>

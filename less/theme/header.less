@@ -1,4 +1,4 @@
-header#navigation {
+header.app {
     background-color: @gray-darker;
 
     .navbar {
@@ -45,7 +45,15 @@ header#navigation {
 
                     &:hover {
                         color: @gray;
+
+                        .fa-sign-out {
+                            color: @brand-danger;
+                        }
                     }
+                }
+
+                .fa-sign-out {
+                    margin-left: 10px;
                 }
             }
         }
