@@ -4,8 +4,49 @@ section.app-toolbar {
     padding-bottom: @padding-base-vertical;
     margin-bottom: @grid-gutter-width / 2;
 
-    .sections {
+    .title {
         float: left;
+        padding: 10px 0 10px 10px;
+        color: @gray-dark;
+        font-size: @font-size-large;
+        line-height: @line-height-computed;
+        text-decoration: none;
+
+        i {
+            margin-left: 10px;
+            color: lighten(@gray-lighter, 20%);
+        }
+    }
+
+    .sections.nav {
+        float: left;
+        padding-left: 0;
+
+        li {
+            a {
+                color: @gray-lighter;
+            }
+
+            &.active {
+                a {
+                    background: none;
+                    color: @brand-primary;
+                }
+
+                &:hover {
+                    a {
+                        color: @brand-primary;
+                    }
+                }
+            }
+
+            &:hover {
+                a {
+                    background: none;
+                    color: darken(@gray-lighter, 10%);
+                }
+            }
+        }
     }
 
     .actions {
