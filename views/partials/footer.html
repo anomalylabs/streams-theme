@@ -1,11 +1,15 @@
 <footer class="app container-fluid">
 
-    <span>
-        &copy; {{ datetime.now "Y" }} - AI Web Systems, Inc.
+    <span class="pull-left">
+        {{ lang.translate "theme::admin.copyright" }}
+        <br>
+        <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
     </span>
 
     <span class="pull-right text-right">
-        {{ ui.meta }}
+        {{ lang.translate "theme::admin.results" "from=1|to=5|total=127" }}
+        <br>
+        {{ lang.translate "theme::admin.meta" }}
     </span>
 
 </footer>

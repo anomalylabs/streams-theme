@@ -427,21 +427,21 @@
 //
 //##
 
-@pagination-color:                     @link-color;
-@pagination-bg:                        #ffffff;
-@pagination-border:                    #ddd;
+@pagination-color:                     @text-color;
+@pagination-bg:                        darken(@body-bg, 3%);
+@pagination-border:                    @pagination-bg;
 
-@pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-hover-color:               @pagination-color;
+@pagination-hover-bg:                  darken(@body-bg, 10%);
+@pagination-hover-border:              @pagination-hover-bg;
 
-@pagination-active-color:              #ffffff;
+@pagination-active-color:              #fff;
 @pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
+@pagination-active-border:             @pagination-active-bg;
 
-@pagination-disabled-color:            @gray-light;
-@pagination-disabled-bg:               #ffffff;
-@pagination-disabled-border:           #ddd;
+@pagination-disabled-color:            lighten(@gray-light, 20%);
+@pagination-disabled-bg:               @body-bg;
+@pagination-disabled-border:           @pagination-disabled-bg;
 
 
 //== Pager
