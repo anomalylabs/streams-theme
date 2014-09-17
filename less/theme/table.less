@@ -27,10 +27,21 @@
     }
 }
 
-.table-filter-toggle {
+a.table-filter-toggle {
+    color: @gray-lighter !important;
+    text-decoration: none !important;
+
+    &:hover {
+        color: darken(@gray-lighter, 10%) !important;
+    }
+
     &.open {
-        color: @gray-darker;
-        
+        color: @gray-darker !important;
+
+        &:hover {
+            color: @gray-darker !important;
+        }
+
         i {
             color: @brand-info;
         }
@@ -39,8 +50,8 @@
 
 .table-filters {
     padding: 10px;
-    margin: 0 -1px 20px -1px;
-    background-color: darken(@body-bg, 3%);
+    margin: 0 10px 20px;
+    background-color: darken(@body-bg, 1%);
 
     form {
         margin: 0;
