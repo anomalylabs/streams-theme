@@ -1,0 +1,52 @@
+.table-views {
+    padding-left: 0;
+    list-style: none;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        margin-right: @padding-large-horizontal;
+
+        a {
+            color: @gray-lighter;
+            text-decoration: none;
+            position: relative;
+        }
+
+        &.active {
+            a {
+                color: @gray-dark;
+            }
+        }
+
+        &:not(.active):hover {
+            a {
+                color: darken(@gray-lighter, 20%);
+            }
+        }
+    }
+}
+
+.table-filter-toggle {
+    &.open {
+        color: @gray-darker;
+        
+        i {
+            color: @brand-info;
+        }
+    }
+}
+
+.table-filters {
+    padding: 10px;
+    margin: 0 -1px 20px -1px;
+    background-color: darken(@body-bg, 3%);
+
+    form {
+        margin: 0;
+    }
+}
+
+.no-results {
+    padding: 0 15px 15px;
+}
