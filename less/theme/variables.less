@@ -178,13 +178,13 @@
 @input-bg-disabled:              @gray-lighter;
 
 //** Text color for `<input>`s
-@input-color:                    @gray;
+@input-color:                    @gray-dark;
 //** `<input>` border color
-@input-border:                   #ccc;
+@input-border:                   lighten(@gray-lighter, 15%);
 //** `<input>` border radius
 @input-border-radius:            @border-radius-base;
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             @input-border;
 
 //** Placeholder text color
 @input-color-placeholder:        @gray-light;

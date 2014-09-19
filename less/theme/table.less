@@ -35,7 +35,7 @@ a.table-filter-toggle {
         color: darken(@gray-lighter, 10%) !important;
     }
 
-    &.open {
+    &.active {
         color: @gray-darker !important;
 
         &:hover {
@@ -49,9 +49,14 @@ a.table-filter-toggle {
 }
 
 .table-filters {
+    display: none;
     padding: 10px;
-    margin: 0 10px 20px;
-    background-color: darken(@body-bg, 1%);
+    margin: 0 0 30px;
+    /*background-color: darken(@body-bg, 1%);*/
+
+    &.active {
+        display: block;
+    }
 
     form {
         margin: 0;
