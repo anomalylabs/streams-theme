@@ -1,5 +1,5 @@
 header.app {
-    background-color: @gray-darker;
+    background-color: lighten(@gray-darker, 10%);
 
     .navbar {
         margin: 0;
@@ -14,6 +14,7 @@ header.app {
 
             img {
                 width: 30px;
+                margin-right: 5px;
             }
         }
 
@@ -33,6 +34,7 @@ header.app {
                     a {
                         color: #ffffff;
                         background: none;
+                        font-weight: bold;
 
                         &:hover {
                             color: #ffffff;
@@ -46,13 +48,18 @@ header.app {
                     &:hover {
                         color: @gray;
 
+                        .fa-language {
+                            color: @brand-info;
+                        }
+
                         .fa-sign-out {
                             color: @brand-danger;
                         }
                     }
                 }
 
-                .fa-sign-out {
+                .fa-sign-out,
+                .fa-language {
                     margin-left: 10px;
                 }
             }

@@ -1,6 +1,6 @@
 <?php namespace Streams\Addon\Theme\Streams;
 
-use Streams\Core\Addon\ThemeAbstract;
+use Streams\Platform\Addon\ThemeAbstract;
 
 class StreamsTheme extends ThemeAbstract
 {

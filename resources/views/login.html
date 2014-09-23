@@ -32,4 +32,12 @@
 
 </section>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').on('submit', function () {
+            $(this).closest('section').removeClass('fadeInUp').addClass('fadeOutUp');
+        });
+    });
+</script>
+
 {{ stop }}

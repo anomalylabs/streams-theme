@@ -1,3 +1,5 @@
+@import "../theme/variables";
+
 /*!
  * Animate-library.less
  * Cross-browser animation library
@@ -11,10 +13,10 @@
  */
 
 .animated {
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: @animation-speed;
+    -moz-animation-duration: @animation-speed;
+    -o-animation-duration: @animation-speed;
+    animation-duration: @animation-speed;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     -o-animation-fill-mode: both;

@@ -2,22 +2,34 @@
 // Variables
 // --------------------------------------------------
 
+//== Animation
+//
+//## Speeds n such
+@animation-speed:       .5s;
+
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-darker:            #181818;
-@gray-dark:              lighten(@gray-darker, 20%);
-@gray:                   lighten(@gray-darker, 40%);
-@gray-light:             lighten(@gray-darker, 50%);
-@gray-lighter:           lighten(@gray-darker, 60%);
+@brand:                 #31bdd7;
+@red:                   #e15258;
+@orange:                #f9845b;
+@blue:                  #39add1;
+@blue-dark:             #3079ab;
+@green:                 #51b46d;
 
-@brand-primary:         #31bdd7;
-@brand-success:         #7db701;
-@brand-info:            #31bdd7;
-@brand-warning:         #ff8a00;
-@brand-danger:          #f6333f;
+@gray-darker:           #181818;
+@gray-dark:             lighten(@gray-darker, 20%);
+@gray:                  lighten(@gray-darker, 40%);
+@gray-light:            lighten(@gray-darker, 50%);
+@gray-lighter:          lighten(@gray-darker, 60%);
+
+@brand-primary:         @brand;
+@brand-success:         @green;
+@brand-info:            @blue;
+@brand-warning:         @orange;
+@brand-danger:          @red;
 
 
 //== Scaffolding
@@ -25,7 +37,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #f9f9f9;
+@body-bg:               #f7f7f7;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -128,7 +140,7 @@
 //** Background color used for `.table-striped`.
 @table-bg-accent:               darken(@body-bg, 2%);
 //** Background color used for `.table-hover`.
-@table-bg-hover:                @body-bg;
+@table-bg-hover:                lighten(@body-bg, 1%);
 @table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
@@ -141,7 +153,7 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              @text-color;
+@btn-default-color:              @gray-light;
 @btn-default-bg:                 transparent;
 @btn-default-border:             @btn-default-color;
 
@@ -475,21 +487,21 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
-@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+@state-success-text:             #ffffff;
+@state-success-bg:               @brand-success;
+@state-success-border:           @state-success-bg;
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
-@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+@state-info-text:                #ffffff;
+@state-info-bg:                  @brand-info;
+@state-info-border:              @state-info-bg;
 
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
-@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+@state-warning-text:             #ffffff;
+@state-warning-bg:               @brand-warning;
+@state-warning-border:           @state-warning-bg;
 
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
-@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+@state-danger-text:              #ffffff;
+@state-danger-bg:                @brand-danger;
+@state-danger-border:            @state-danger-bg;
 
 
 //== Tooltips
