@@ -1,15 +1,20 @@
 <footer class="app container-fluid">
 
-    <span class="pull-left">
-        {{ lang.translate "theme::admin.copyright" }}
-        <br>
-        <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
-    </span>
+    <div class="row-fluid">
+        <div class="col-lg-12">
+            {{ lang.translate "theme::admin.copyright" }}
+            <br>
+            <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
+            <br>
+            <br>
+            Streams Platform Version {{ config.get "constants.version" }}
+        </div>
 
-    <span class="pull-right text-right">
-        {{ lang.translate "theme::admin.results" "from=1|to=5|total=127" }}
-        <br>
-        {{ lang.translate "theme::admin.meta" }}
-    </span>
+        <div class="col-lg-12 text-right">
+            {{ lang.translate "theme::admin.results" "from=1|to=5|total=127" }}
+            <br>
+            {{ lang.translate "theme::admin.meta" }}
+        </div>
+    </div>
 
 </footer>
