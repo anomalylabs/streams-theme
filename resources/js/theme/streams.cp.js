@@ -9,6 +9,8 @@ Streams.Cp.boot = function () {
     //Bind Cp behaviors.
     this.bindTooltips();
     this.bindModalShown();
+    this.bindLogoutAnimation();
+    this.bindMessageDismissal();
     this.bindChooseLanguage();
 
     // Keyboard shortcuts.
@@ -31,6 +33,34 @@ Streams.Cp.bindTooltips = function () {
 Streams.Cp.bindModalShown = function () {
     $('.modal').on('shown.bs.modal', function () {
         $(this).find('input').first().focus();
+    });
+}
+
+
+/**
+ * When a message is dismissed, animate it.
+ */
+Streams.Cp.bindMessageDismissal = function () {
+    $('[data-dismiss="alert"]').click(function () {
+        $alert = $(this).closest('.alert');
+
+        $alert.removeClass('animated fadeInUp').addClass('animated fadeOutUp');
+
+        setTimeout(function () {
+            $alert.remove();
+        }, 500);
+
+        return false;
+    });
+}
+
+
+/**
+ * When a user logs out, animate it.
+ */
+Streams.Cp.bindLogoutAnimation = function () {
+    $('[data-action="logout"]').click(function () {
+        $('body header, body section, body footer').addClass('animated fadeOut');
     });
 }
 
