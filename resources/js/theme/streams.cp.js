@@ -61,6 +61,8 @@ Streams.Cp.bindMessageDismissal = function () {
 Streams.Cp.bindLogoutAnimation = function () {
     $('[data-action="logout"]').click(function () {
         $('body header, body section, body footer').addClass('animated fadeOut');
+
+        window.location = $(this).attr('href');
     });
 }
 
