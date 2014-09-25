@@ -4,7 +4,9 @@
         <div class="col-lg-12">
             {{ lang.translate "theme::admin.copyright" }}
             <br>
-            <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
+            <a href="#" data-toggle="modal" data-target="#keyboard-shortcuts">
+                <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
+            </a>
             <br>
             <br>
             Streams Platform Version {{ config.get "constants.version" }}
@@ -20,3 +22,4 @@
 </footer>
 
 {{ include "theme::modal-languages" }}
+{{ include "theme::modal-shortcuts" }}

@@ -4,12 +4,15 @@
 Streams.Cp.boot = function () {
 
     // Initialize things.
-    Streams.Cp.markThirdFlag();
+    this.markThirdFlag();
 
     //Bind Cp behaviors.
     this.bindTooltips();
     this.bindModalShown();
     this.bindChooseLanguage();
+
+    // Keyboard shortcuts.
+    this.registerShortcuts()
 }
 
 
@@ -64,5 +67,18 @@ Streams.Cp.markThirdFlag = function () {
     $('#choose-language a.flag-icon').removeClass('third');
     $('#choose-language a.flag-icon:not(.hidden):nth-child(3n)').each(function (k, v) {
         $(this).addClass('third');
+    });
+}
+
+/**
+ * Register keyboard shortcuts.
+ */
+Streams.Cp.registerShortcuts = function () {
+
+    // Ctrl Ctrl = Show keyboard shortcuts
+    Streams.Cp.Shortcuts.registered.push(function () {
+        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.doubleTap('altKey')) {
+            $('#keyboard-shortcuts').modal('show');
+        }
     });
 }

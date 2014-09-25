@@ -5,6 +5,7 @@ Streams.Ui.Table.boot = function () {
 
     // Bind Ui Table behaviors.
     this.bindFilters();
+    this.bindPagination();
 
     // Keyboard shortcuts.
     this.registerShortcuts()
@@ -21,7 +22,19 @@ Streams.Ui.Table.bindFilters = function () {
 
         // Toggle filters display.
         $('[data-toggle="filters"]').toggleClass('active');
-        $('.table-filters').toggleClass('active').find('input:first-child').focus();
+        $('.table-filters').toggleClass('active').find('input:first-child').focus().val('');
+    });
+}
+
+
+/**
+ * Bind pagination navigation so
+ * we can trigger click on it.
+ */
+Streams.Ui.Table.bindPagination = function () {
+    $('ul.pagination li a').on('click', function (e) {
+        e.preventDefault();
+        window.location = $(this).attr('href');
     });
 }
 
@@ -31,17 +44,24 @@ Streams.Ui.Table.bindFilters = function () {
  */
 Streams.Ui.Table.registerShortcuts = function () {
 
-    // Ctrl + F = Toggle filters
+    // Alt + F = Toggle filters
     Streams.Cp.Shortcuts.registered.push(function () {
-        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.ctrlAnd(70)) {
+        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.altAnd(70)) {
             $('[data-toggle="filters"]').trigger('click');
         }
     });
 
-    // Ctrl Ctrl = Boom
+    // Left arrow = previous page
     Streams.Cp.Shortcuts.registered.push(function () {
-        if (Streams.Cp.Shortcuts.inputFocus() == false && Streams.Cp.Shortcuts.doubleTap('ctrlKey') == true) {
-            alert('Boom!');
+        if (Streams.Cp.Shortcuts.inputFocus() == false && Streams.Cp.Shortcuts.event.which == 37) {
+            $('.pagination li.active').prev('li:not(.disabled)').find('a').trigger('click');
+        }
+    });
+
+    // Right arrow = next page
+    Streams.Cp.Shortcuts.registered.push(function () {
+        if (Streams.Cp.Shortcuts.inputFocus() == false && Streams.Cp.Shortcuts.event.which == 39) {
+            $('.pagination li.active').next('li:not(.disabled)').find('a').trigger('click');
         }
     });
 }

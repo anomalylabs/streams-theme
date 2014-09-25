@@ -10,6 +10,10 @@ Streams.Cp.Shortcuts.registered = [];
  */
 Streams.Cp.Shortcuts.boot = function () {
 
+    // Bind shortcuts behaviors.
+    this.bindKeyboardShortcutsSelector();
+
+
     $(document).keydown(function (e) {
 
         Streams.Cp.Shortcuts.event = e;
@@ -30,12 +34,28 @@ Streams.Cp.Shortcuts.boot = function () {
 
 
 /**
- * Return boolean if ctrlKey + key are pressed.
+ * Filter keyboard shortcuts.
+ */
+Streams.Cp.Shortcuts.bindKeyboardShortcutsSelector = function () {
+
+    // Filter on search input change.
+    $('[data-toggle="shortcuts"]').change(function () {
+        $(this).closest('.modal').find('table').addClass('hidden');
+
+        $(this).closest('.modal')
+            .find('table[data-shortcuts="' + $(this).val() + '"]')
+            .removeClass('hidden');
+    });
+}
+
+
+/**
+ * Return boolean if altKey + key are pressed.
  * @param key
  * @returns {boolean}
  */
-Streams.Cp.Shortcuts.ctrlAnd = function (key) {
-    return (Streams.Cp.Shortcuts.keysPressed['ctrlKey'] == true && Streams.Cp.Shortcuts.event.which == key);
+Streams.Cp.Shortcuts.altAnd = function (key) {
+    return (Streams.Cp.Shortcuts.keysPressed['altKey'] == true && Streams.Cp.Shortcuts.event.which == key);
 }
 
 
@@ -71,8 +91,16 @@ Streams.Cp.Shortcuts.doubleTap = function (key) {
  * @returns {*}
  */
 Streams.Cp.Shortcuts.keyIdentifier = function () {
+    if (Streams.Cp.Shortcuts.event.which == 16) {
+        return 'shiftKey';
+    }
+
     if (Streams.Cp.Shortcuts.event.which == 17) {
-        return 'ctrlKey';
+        return 'altKey';
+    }
+
+    if (Streams.Cp.Shortcuts.event.which == 18) {
+        return 'altKey';
     }
 
     return Streams.Cp.Shortcuts.event.which;
@@ -85,8 +113,16 @@ Streams.Cp.Shortcuts.keyIdentifier = function () {
  * @returns {*}
  */
 Streams.Cp.Shortcuts.lastKeyIdentifier = function () {
+    if (Streams.Cp.Shortcuts.lastEvent.which == 16) {
+        return 'shiftKey';
+    }
+
     if (Streams.Cp.Shortcuts.lastEvent.which == 17) {
-        return 'ctrlKey';
+        return 'altKey';
+    }
+
+    if (Streams.Cp.Shortcuts.lastEvent.which == 18) {
+        return 'altKey';
     }
 
     return Streams.Cp.Shortcuts.lastEvent.which;

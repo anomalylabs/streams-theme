@@ -37,9 +37,9 @@ Streams.Ui.Form.bindTranslations = function () {
  */
 Streams.Ui.Form.registerShortcuts = function () {
 
-    // Ctrl + L = Cycle languages
+    // Alt + L = Cycle languages
     Streams.Cp.Shortcuts.registered.push(function () {
-        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.ctrlAnd(76)) {
+        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.altAnd(76)) {
             if ($('[data-locale].active').next('[data-locale]').length != 0) {
                 $('[data-locale].active').next().trigger('click');
             } else {
