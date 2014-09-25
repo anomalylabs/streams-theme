@@ -100,4 +100,11 @@ Streams.Cp.registerShortcuts = function () {
             $('#keyboard-shortcuts').modal('show');
         }
     });
+
+    // Esc to do a few things.
+    Streams.Cp.Shortcuts.registered.push(function () {
+        if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.event.which == 27) {
+            $('[data-dismiss="alert"]').trigger('click');
+        }
+    });
 }
