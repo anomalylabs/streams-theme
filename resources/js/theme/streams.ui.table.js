@@ -22,7 +22,7 @@ Streams.Ui.Table.bindFilters = function () {
 
         // Toggle filters display.
         $('[data-toggle="filters"]').toggleClass('active');
-        $('.table-filters').toggleClass('active').find('input:first-child').focus().val('');
+        $('.table-filters').toggleClass('active').find('input:first-child').focus();
     });
 }
 
@@ -47,6 +47,7 @@ Streams.Ui.Table.registerShortcuts = function () {
     // Alt + F = Toggle filters
     Streams.Cp.Shortcuts.registered.push(function () {
         if (!Streams.Cp.Shortcuts.inputFocus() && Streams.Cp.Shortcuts.altAnd(70)) {
+            Streams.Cp.Shortcuts.event.preventDefault();
             $('[data-toggle="filters"]').trigger('click');
         }
     });
