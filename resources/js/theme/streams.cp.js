@@ -9,7 +9,6 @@ Streams.Cp.boot = function () {
     //Bind Cp behaviors.
     this.bindTooltips();
     this.bindModalShown();
-    this.bindLogoutAnimation();
     this.bindMessageDismissal();
     this.bindChooseLanguage();
 
@@ -51,18 +50,6 @@ Streams.Cp.bindMessageDismissal = function () {
         }, 500);
 
         return false;
-    });
-}
-
-
-/**
- * When a user logs out, animate it.
- */
-Streams.Cp.bindLogoutAnimation = function () {
-    $('[data-action="logout"]').click(function () {
-        $('body header, body section, body footer').addClass('animated fadeOut');
-
-        window.location = $(this).attr('href');
     });
 }
 
