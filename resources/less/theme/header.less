@@ -45,12 +45,17 @@ header.app {
                 a {
                     color: lighten(@gray-dark, 20%);
 
+                    .flag-icon {
+                        width: 34px;
+                        height: 25px;
+                        display: block;
+                        margin-top: -2px;
+                        margin-bottom: -5px;
+                        border-radius: @border-radius-base;
+                    }
+
                     &:hover {
                         color: lighten(@gray, 20%);
-
-                        .fa-language {
-                            color: @brand-info;
-                        }
 
                         .fa-sign-out {
                             color: @brand-danger;
@@ -58,8 +63,7 @@ header.app {
                     }
                 }
 
-                .fa-sign-out,
-                .fa-language {
+                .fa-sign-out {
                     margin-left: 10px;
                 }
             }

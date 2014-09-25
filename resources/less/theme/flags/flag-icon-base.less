@@ -1,0 +1,16 @@
+.flag-icon {
+    position: relative;
+    display: inline-block;
+    width: unit(4 / 3, em);
+    line-height: 1em;
+    background-position: 50%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+
+    &:before {
+        content: "\00a0";
+    }
+    &.flag-icon-squared {
+        width: 1em;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="modal fade" id="choose-language">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Choose Language</h4>
+            </div>
+            <div class="modal-body">
+
+                <input type="search" class="form-control" placeholder="Search...">
+
+                <br>
+
+                <div class="translations">
+                    <a href="{{ url.current }}?locale=en" class="flag-icon flag-icon-us" title="English"></a>
+                    <a href="{{ url.current }}?locale=fr" class="flag-icon flag-icon-fr" title="French"></a>
+                    <a href="{{ url.current }}?locale=de" class="flag-icon flag-icon-de" title="German"></a>
+                    <a href="{{ url.current }}?locale=it" class="flag-icon flag-icon-it" title="Italian"></a>
+                    <a href="{{ url.current }}?locale=ae" class="flag-icon flag-icon-ae" title="Arabic"></a>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

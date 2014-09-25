@@ -6,6 +6,7 @@
 //
 //## Speeds n such
 @animation-speed:       .5s;
+@animation-speed-fast:  .1s;
 
 
 //== Colors
@@ -113,7 +114,7 @@
 
 @border-radius-base:        3px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #ffffff;
@@ -194,7 +195,7 @@
 //** `<input>` border color
 @input-border:                   lighten(@gray-lighter, 15%);
 //** `<input>` border radius
-@input-border-radius:            @border-radius-base;
+@input-border-radius:            @border-radius-small;
 //** Border color for inputs on focus
 @input-border-focus:             @input-border;
 
@@ -837,7 +838,7 @@
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal: 180px;
 //** Text muted color
-@text-muted:                  @gray-lighter;
+@text-muted:                  lighten(@gray-lighter, 10%);
 //** Abbreviations and acronyms border color
 @abbr-border-color:           @gray-light;
 //** Headings small color
