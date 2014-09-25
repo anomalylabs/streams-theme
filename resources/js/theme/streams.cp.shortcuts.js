@@ -96,7 +96,7 @@ Streams.Cp.Shortcuts.keyIdentifier = function () {
     }
 
     if (Streams.Cp.Shortcuts.event.which == 17) {
-        return 'altKey';
+        return 'ctrlKey';
     }
 
     if (Streams.Cp.Shortcuts.event.which == 18) {
@@ -118,7 +118,7 @@ Streams.Cp.Shortcuts.lastKeyIdentifier = function () {
     }
 
     if (Streams.Cp.Shortcuts.lastEvent.which == 17) {
-        return 'altKey';
+        return 'ctrlKey';
     }
 
     if (Streams.Cp.Shortcuts.lastEvent.which == 18) {
