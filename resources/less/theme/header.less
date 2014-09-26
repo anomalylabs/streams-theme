@@ -29,52 +29,32 @@ header.app {
         }
 
         .nav {
-            li {
+            > li {
                 position: relative;
 
-                &.active {
-                    a {
-                        color: #ffffff;
+                &.has-dropdown {
+                    > a {
                         background: none;
-                        font-weight: bold;
 
-                        &:hover {
-                            color: #ffffff;
-                        }
-                    }
-
-                    &.dropdown {
                         &:after {
-                            color: #ffffff;
+                            left: 50%;
+                            bottom: 0;
+                            z-index: 0;
+                            content: "\f141";
+                            margin-left: -7px;
+                            position: absolute;
+                            font-family: "FontAwesome";
                         }
-
-                        &:hover {
-                            &:after {
-                                color: #ffffff;
-                            }
-                        }
-                    }
-                }
-
-                &.dropdown {
-                    &:after {
-                        left: 50%;
-                        bottom: 0;
-                        content: "\f141";
-                        margin-left: -7px;
-                        position: absolute;
-                        font-family: "FontAwesome";
-                        color: lighten(@gray-dark, 20%);
                     }
 
                     &:hover {
-                        &:after {
+                        > a {
                             color: lighten(@gray, 20%);
                         }
                     }
                 }
 
-                a {
+                > a {
                     color: lighten(@gray-dark, 20%);
 
                     .flag-icon {
@@ -95,8 +75,38 @@ header.app {
                     }
                 }
 
+                &.active {
+                    > a {
+                        color: #ffffff;
+                        background: none;
+                        font-weight: bold;
+
+                        &:hover {
+                            color: #ffffff;
+                        }
+                    }
+                }
+
                 .fa-sign-out {
                     margin-left: 10px;
+                }
+
+                ul.dropdown-menu {
+                    margin-top: -5px;
+
+                    li {
+                        a {
+                            color: @gray-darker;
+                        }
+
+                        &.active {
+                            a {
+                                background: none;
+                                font-weight: bold;
+                                color: @gray-darker;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -16,9 +16,22 @@
         <div class="collapse navbar-collapse" id="header-nav">
             <ul class="nav navbar-nav">
                 {{ theme.navigation }}
+                {{ if items }}
+                <li class="{{ class }}">
+                    <a href="#" data-toggle="dropdown">{{ title }}</a>
+                    <ul class="dropdown-menu">
+                        {{ items }}
+                        <li class="{{ class }}">
+                            <a href="{{ url.to "{path}" }} ">{{ title }}</a>
+                        </li>
+                        {{ /items }}
+                    </ul>
+                </li>
+                {{ else }}
                 <li class="{{ class }}">
                     <a href="{{ url.to "{path}" }} ">{{ title }}</a>
                 </li>
+                {{ endif }}
                 {{ /theme.navigation }}
             </ul>
 
@@ -29,7 +42,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="{{ url.to "admin/logout" }}">
+                    <a href="{{ url.to " admin/logout" }}">
                     {{ user.name }}<i class="fa fa-lg fa-sign-out"></i>
                     </a>
                 </li>

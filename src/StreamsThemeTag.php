@@ -14,12 +14,32 @@ class StreamsThemeTag extends ThemeTag
         $navigation = [];
 
         foreach (\Module::all()->enabled() as $module) {
-            $navigation[] = [
+            $item = [
                 'title' => $module->name,
                 'class' => !$module->isActive() ? : 'active',
                 'path'  => 'admin/' . $module->slug,
             ];
+
+            if ($menu = trans($module->getMenu())) {
+                if (!isset($navigation[$menu])) {
+                    $navigation[$menu] = [
+                        'title' => $menu,
+                        'class' => 'has-dropdown',
+                        'items' => [],
+                    ];
+                }
+
+                $navigation[$menu]['items'][] = $item;
+
+                if ($module->isActive()) {
+                    $navigation[$menu]['class'] .= ' active';
+                }
+            } else {
+                $navigation[$module->slug] = $item;
+            }
         }
+
+        sort($navigation);
 
         return $navigation;
     }
