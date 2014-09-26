@@ -5,21 +5,21 @@
         <i class="fa fa-lg fa-chevron-right"></i>
     </a>
 
-    {{ if ui.sections }}
+    {{ if theme.sections }}
     <ul class="sections nav nav-pills">
-        {{ ui.sections }}
+        {{ theme.sections }}
         <li class="{{ class }}">
             <a href="{{ url.to "{path}" }}">{{ title }}</a>
         </li>
-        {{ /ui.sections }}
+        {{ /theme.sections }}
     </ul>
     {{ endif }}
 
-    {{ if ui.actions }}
+    {{ if theme.actions }}
     <div class="actions">
-        {{ ui.actions }}
+        {{ theme.actions }}
         <a href="{{ url.to "{path}" }}" class="btn btn-success">{{ title }}</a>
-        {{ /ui.actions }}
+        {{ /theme.actions }}
     </div>
     {{ endif }}
 

@@ -30,6 +30,8 @@ header.app {
 
         .nav {
             li {
+                position: relative;
+
                 &.active {
                     a {
                         color: #ffffff;
@@ -38,6 +40,36 @@ header.app {
 
                         &:hover {
                             color: #ffffff;
+                        }
+                    }
+
+                    &.dropdown {
+                        &:after {
+                            color: #ffffff;
+                        }
+
+                        &:hover {
+                            &:after {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+
+                &.dropdown {
+                    &:after {
+                        left: 50%;
+                        bottom: 0;
+                        content: "\f141";
+                        margin-left: -7px;
+                        position: absolute;
+                        font-family: "FontAwesome";
+                        color: lighten(@gray-dark, 20%);
+                    }
+
+                    &:hover {
+                        &:after {
+                            color: lighten(@gray, 20%);
                         }
                     }
                 }
