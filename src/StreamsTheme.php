@@ -1,8 +1,8 @@
-<?php namespace Anomaly\Streams\Theme\Streams;
+<?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Platform\Addon\ThemeAbstract;
+use Anomaly\Streams\Platform\Addon\Theme\ThemeAddon;
 
-class StreamsTheme extends ThemeAbstract
+class StreamsTheme extends ThemeAddon
 {
     /**
      * This is an admin theme.
