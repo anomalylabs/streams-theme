@@ -1,6 +1,6 @@
-<?php namespace Streams\Addon\Theme\Streams;
+<?php namespace Anomaly\Streams\Theme\Streams;
 
-use Streams\Platform\Addon\Tag\ThemeTag;
+use Anomaly\Streams\Platform\Addon\Tag\ThemeTag;
 
 class StreamsThemeTag extends ThemeTag
 {

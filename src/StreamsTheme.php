@@ -1,6 +1,6 @@
-<?php namespace Streams\Addon\Theme\Streams;
+<?php namespace Anomaly\Streams\Theme\Streams;
 
-use Streams\Platform\Addon\ThemeAbstract;
+use Anomaly\Streams\Platform\Addon\ThemeAbstract;
 
 class StreamsTheme extends ThemeAbstract
 {

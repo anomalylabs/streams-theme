@@ -1,16 +1,17 @@
 {
-    "name": "anomalylabs/streams-theme",
-    "type": "theme",
-    "description": "Streams theme for Streams Platform",
+    "name": "anomaly/streams-theme",
+    "type": "streams-addon",
+    "description": "Streams theme.",
     "authors": [
         {
             "name": "AnomalyLabs",
-            "email": "projects@aiwebsystems.com"
+            "email": "hello@anomaly.is"
         }
     ],
-    "source" : {
-        "type" : "vcs",
-        "url" : "git@github.com:anomalylabs/streams-theme.git",
-        "reference" : "master"
-    }
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
 }
