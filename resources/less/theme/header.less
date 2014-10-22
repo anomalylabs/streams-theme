@@ -32,6 +32,10 @@ header.app {
             > li {
                 position: relative;
 
+                &:last-child {
+                    margin-right: -@grid-gutter-width / 2 !important;
+                }
+
                 &.has-dropdown {
                     > a {
                         background: none;
@@ -41,7 +45,7 @@ header.app {
                             bottom: 0;
                             z-index: 0;
                             content: "\f141";
-                            margin-left: -7px;
+                            margin-left: -6px;
                             position: absolute;
                             font-family: "FontAwesome";
                         }
@@ -80,8 +84,10 @@ header.app {
                         color: #ffffff;
                         background: none;
                         font-weight: bold;
+                    }
 
-                        &:hover {
+                    &:hover {
+                        > a {
                             color: #ffffff;
                         }
                     }

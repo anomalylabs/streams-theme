@@ -6,15 +6,37 @@ section.app-toolbar {
 
     .title {
         float: left;
-        padding: 10px 0 10px 10px;
-        color: @gray-dark;
-        font-size: @font-size-large;
-        line-height: @line-height-computed;
-        text-decoration: none;
+        display: inline-block;
 
-        i {
-            margin-left: 10px;
-            color: lighten(@gray-lighter, 20%);
+        > a {
+            color: @gray-dark;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 0 10px 10px;
+            font-size: @font-size-large;
+            line-height: @line-height-computed;
+
+            i {
+                margin-left: 10px;
+                color: lighten(@gray-lighter, 20%);
+            }
+        }
+
+        &.dropdown {
+            > a {
+                &:after {
+                    left: 50%;
+                    bottom: 0;
+                    z-index: 0;
+                    font-size: 14px;
+                    content: "\f141";
+                    position: absolute;
+                    margin-left: -16px;
+                    margin-bottom: -6px;
+                    font-family: "FontAwesome";
+                }
+            }
         }
     }
 

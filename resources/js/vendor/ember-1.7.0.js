@@ -2287,14 +2287,14 @@ define("ember-application/system/application",
       rootElement: 'body',
 
       /**
-        The `Ember.EventDispatcher` responsible for delegating events to this
+        The `Ember.Dispatcher` responsible for delegating events to this
         application's views.
 
         The event dispatcher is created by the application at initialization time
         and sets up event listeners on the DOM element described by the
         application's `rootElement` property.
 
-        See the documentation for `Ember.EventDispatcher` for more information.
+        See the documentation for `Ember.Dispatcher` for more information.
 
         @property eventDispatcher
         @type Ember.EventDispatcher
@@ -2305,7 +2305,7 @@ define("ember-application/system/application",
       /**
         The DOM events for which the event dispatcher should listen.
 
-        By default, the application's `Ember.EventDispatcher` listens
+        By default, the application's `Ember.Dispatcher` listens
         for a set of standard DOM events, such as `mousedown` and
         `keyup`, and delegates them to your application's `Ember.View`
         instances.
@@ -18949,8 +18949,8 @@ define("ember-routing-handlebars/helpers/action",
       acceptable DOM event names.
 
       NOTE: Because `{{action}}` depends on Ember's event dispatch system it will
-      only function if an `Ember.EventDispatcher` instance is available. An
-      `Ember.EventDispatcher` instance will be created when a new `Ember.Application`
+      only function if an `Ember.Dispatcher` instance is available. An
+      `Ember.Dispatcher` instance will be created when a new `Ember.Application`
       is created. Having an instance of `Ember.Application` will satisfy this
       requirement.
 
@@ -36959,9 +36959,9 @@ define("ember-views/system/event_dispatcher",
     // find a better way to do Ember.View.views without global state
 
     /**
-      `Ember.EventDispatcher` handles delegating browser events to their
+      `Ember.Dispatcher` handles delegating browser events to their
       corresponding `Ember.Views.` For example, when you click on a view,
-      `Ember.EventDispatcher` ensures that that view's `mouseDown` method gets
+      `Ember.Dispatcher` ensures that that view's `mouseDown` method gets
       called.
 
       @class EventDispatcher
@@ -36973,9 +36973,9 @@ define("ember-views/system/event_dispatcher",
 
       /**
         The set of events names (and associated handler function names) to be setup
-        and dispatched by the `EventDispatcher`. Custom events can added to this list at setup
+        and dispatched by the `Dispatcher`. Custom events can added to this list at setup
         time, generally via the `Ember.Application.customEvents` hash. Only override this
-        default set to prevent the EventDispatcher from listening on some events all together.
+        default set to prevent the Dispatcher from listening on some events all together.
 
         This set will be modified by `setup` to also include any events added at that time.
 
@@ -37034,11 +37034,11 @@ define("ember-views/system/event_dispatcher",
 
         Note that most Ember applications do not use this feature. If your app also
         does not use it, consider setting this property to false to gain some performance
-        improvement by allowing the EventDispatcher to skip the search for the
+        improvement by allowing the Dispatcher to skip the search for the
         `eventManager` on the view tree.
 
         ```javascript
-        var EventDispatcher = Em.EventDispatcher.extend({
+        var Dispatcher = Em.Dispatcher.extend({
           events: {
               click       : 'click',
               focusin     : 'focusIn',
@@ -37047,7 +37047,7 @@ define("ember-views/system/event_dispatcher",
           },
           canDispatchToEventManager: false
         });
-        container.register('event_dispatcher:main', EventDispatcher);
+        container.register('event_dispatcher:main', Dispatcher);
         ```
 
         @property canDispatchToEventManager
@@ -39397,7 +39397,7 @@ define("ember-views/views/states/default",
         return null;
       },
 
-      // Handle events from `Ember.EventDispatcher`
+      // Handle events from `Ember.Dispatcher`
       handleEvent: function() {
         return true; // continue event propagation
       },
@@ -39547,7 +39547,7 @@ define("ember-views/views/states/has_element",
         view.domManager.empty(view);
       },
 
-      // Handle events from `Ember.EventDispatcher`
+      // Handle events from `Ember.Dispatcher`
       handleEvent: function(view, eventName, evt) {
         if (view.has(eventName)) {
           // Handler should be able to re-dispatch events, so we don't
@@ -39688,7 +39688,7 @@ define("ember-views/views/states/in_dom",
         if (!View) { View = requireModule('ember-views/views/view')["default"]; } // ES6TODO: this sucks. Have to avoid cycles...
 
         // Register the view for event handling. This hash is used by
-        // Ember.EventDispatcher to dispatch incoming events.
+        // Ember.Dispatcher to dispatch incoming events.
         if (!view.isVirtual) {
           Ember.assert("Attempted to register a view with an id already in use: "+view.elementId, !View.views[view.elementId]);
           View.views[view.elementId] = view;
@@ -40405,7 +40405,7 @@ define("ember-views/views/view",
 
       All of the event handling approaches described above respond to the same set
       of events. The names of the built-in events are listed below. (The hash of
-      built-in events exists in `Ember.EventDispatcher`.) Additional, custom events
+      built-in events exists in `Ember.Dispatcher`.) Additional, custom events
       can be registered by using `Ember.Application.customEvents`.
 
       Touch events:
@@ -41900,7 +41900,7 @@ define("ember-views/views/view",
       //
 
       /**
-        Handle events from `Ember.EventDispatcher`
+        Handle events from `Ember.Dispatcher`
 
         @method handleEvent
         @param eventName {String}

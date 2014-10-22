@@ -1,9 +1,19 @@
 <section class="app-toolbar container-fluid">
 
-    <a href="{{ url.home }}/admin/{{ modules.active.slug }}" class="title">
-        {{ modules.active.name }}
-        <i class="fa fa-lg fa-chevron-right"></i>
-    </a>
+    <div class="title {{ if theme.menu }}dropdown{{ endif }}">
+        <a href="{{ url.to "admin/{ modules.active.slug }" }}" data-toggle="dropdown">
+            {{ module.name }}
+            <i class="fa fa-lg fa-chevron-right"></i>
+        </a>
+
+        {{ if theme.menu }}
+        <ul class="dropdown-menu">
+            {{ theme.menu }}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+            {{ /theme.menu }}
+        </ul>
+        {{ endif }}
+    </div>
 
     {{ if theme.sections }}
     <ul class="sections nav nav-pills">

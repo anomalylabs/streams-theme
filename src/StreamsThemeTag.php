@@ -1,6 +1,6 @@
-<?php namespace Anomaly\Streams\Theme\Streams;
+<?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Platform\Addon\Tag\ThemeTag;
+use Streams\Addon\Tag\Theme\ThemeTag;
 
 class StreamsThemeTag extends ThemeTag
 {
@@ -13,33 +13,41 @@ class StreamsThemeTag extends ThemeTag
     {
         $navigation = [];
 
-        foreach (\Module::all()->enabled() as $module) {
+        $active = app('streams.module.active');
+
+        foreach (app('streams.modules')->all() as $module) {
             $item = [
                 'title' => $module->name,
-                'class' => !$module->isActive() ? : 'active',
+                'class' => $module->slug != $active->slug ? : 'active',
                 'path'  => 'admin/' . $module->slug,
             ];
 
-            if ($menu = trans($module->getMenu())) {
-                if (!isset($navigation[$menu])) {
-                    $navigation[$menu] = [
-                        'title' => $menu,
+            if ($group = trans($module->getGroup())) {
+                if (!isset($navigation[$group])) {
+                    $navigation[$group] = [
+                        'title' => $group,
                         'class' => 'has-dropdown',
                         'items' => [],
                     ];
                 }
 
-                $navigation[$menu]['items'][] = $item;
+                $navigation[$group]['items'][] = $item;
 
-                if ($module->isActive()) {
-                    $navigation[$menu]['class'] .= ' active';
+                if ($module->slug == $active->slug) {
+                    $navigation[$group]['class'] .= ' active';
                 }
             } else {
                 $navigation[$module->slug] = $item;
             }
         }
 
-        sort($navigation);
+        asort($navigation);
+
+        // Dashboard module is always in front.
+        if (isset($navigation['dashboard']) and $dashboard = $navigation['dashboard']) {
+            array_unshift($navigation, $dashboard);
+            unset($navigation['dashboard']);
+        }
 
         return $navigation;
     }
@@ -51,7 +59,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function sections()
     {
-        $sections = evaluate(\Module::active()->getSections());
+        $sections = evaluate(app('streams.module.active')->getSections());
 
         if ($sections) {
             foreach ($sections as &$section) {
@@ -71,7 +79,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function actions()
     {
-        $actions = evaluate_key(\Module::active()->sections()->active(), 'actions');
+        $actions = [];
 
         if ($actions) {
             foreach ($actions as &$action) {
@@ -80,5 +88,24 @@ class StreamsThemeTag extends ThemeTag
         }
 
         return $actions;
+    }
+
+    /**
+     * Return the menu for the module.
+     *
+     * @return array
+     */
+    public function menu()
+    {
+        $menu = [];
+
+        foreach (app('streams.module.active')->getMenu() as $item) {
+            $menu[] = [
+                'title' => trans($item['title']),
+                'url'   => url($item['url']),
+            ];
+        }
+
+        return $menu;
     }
 }

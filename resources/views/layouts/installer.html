@@ -1,0 +1,97 @@
+<!doctype html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="en"><![endif]-->
+
+<html>
+
+<head>
+    {{ include "theme::partials/metadata" }}
+</head>
+
+<body id="installer">
+
+<header class="app">
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+            <span class="navbar-brand">
+                {{{ image.img image="theme::img/logo.png" }}} Streams Installer
+            </span>
+            </div>
+
+            <ul class="nav navbar-nav pull-right">
+                <li class="active">
+                    <a href="#" data-toggle="modal" data-target="#choose-language">
+                        <i class="flag-icon flag-icon-us"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<section class="app-toolbar">
+    <div class="container">
+
+        <div class="title">
+            <a>
+                Installer
+                <i class="fa fa-lg fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <ul class="sections nav nav-pills">
+            <li>
+                <a href="#">System</a>
+            </li>
+            <li>
+                <a href="#">License</a>
+            </li>
+            <li>
+                <a href="#">Configure</a>
+            </li>
+            <li>
+                <a href="#">Complete</a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+{{ include "theme::partials/messages" }}
+
+<section id="main" class="container">
+    {{ yield "content" }}
+</section>
+
+<footer class="app container">
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-lg-12">
+            &copy; {{ datetime.now "Y" }} - AI Web Systems, Inc.
+            <br>
+            Streams Platform Version {{ config.get "constants.version" }}
+        </div>
+
+        <div class="col-lg-12 text-right">
+            {{ lang.translate "theme::admin.meta" }}
+        </div>
+    </div>
+
+</footer>
+
+{{ include "theme::partials/modals" }}
+
+</body>
+</html>

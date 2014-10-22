@@ -4,6 +4,8 @@ use Anomaly\Streams\Platform\Addon\Theme\ThemeAddon;
 
 class StreamsTheme extends ThemeAddon
 {
+    protected $slug = 'streams';
+
     /**
      * This is an admin theme.
      *

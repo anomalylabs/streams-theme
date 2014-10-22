@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ url.home }}" target="_blank">
-                {{{ image.img image="theme::img/logo.png" }}} Streams
+                {{ image.img image="theme::img/logo.png" }} Streams
             </a>
         </div>
 
@@ -17,16 +17,14 @@
             <ul class="nav navbar-nav">
                 {{ theme.navigation }}
                 {{ if items }}
-                <li class="{{ class }}">
-                    <a href="#" data-toggle="dropdown">{{ title }}</a>
-                    <ul class="dropdown-menu">
-                        {{ items }}
-                        <li class="{{ class }}">
-                            <a href="{{ url.to "{path}" }} ">{{ title }}</a>
-                        </li>
-                        {{ /items }}
-                    </ul>
+                <li>
+                    <h1>{{ title }}</h1>
                 </li>
+                {{ items }}
+                <li class="{{ class }}">
+                    <a href="{{ url.to "{path}" }} ">{{ title }}</a>
+                </li>
+                {{ /items }}
                 {{ else }}
                 <li class="{{ class }}">
                     <a href="{{ url.to "{path}" }} ">{{ title }}</a>

@@ -32,9 +32,8 @@
 {{ asset.add "theme.js" "theme::js/theme/*" }}
 {{ asset.add "theme.js" "theme::js/plugins/*" }}
 
+{{{ asset.style "theme.css" }}}
+{{{ asset.script "theme.js" }}}
 
-{{ asset.style "theme.css" }}
-{{ asset.script "theme.js" }}
-
-{{ asset.style "streams.css" }}
-{{ asset.script "streams.js" }}
+{{{ asset.styles "streams.css" }}}
+{{{ asset.scripts "streams.js" }}}

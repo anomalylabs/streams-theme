@@ -2,10 +2,10 @@
 
     <div class="row-fluid">
         <div class="col-lg-12">
-            {{ lang.translate "theme::admin.copyright" }}
+            &copy; {{ datetime.now "Y" }} - AnomalyLabs, Inc.
             <br>
             <a href="#" data-toggle="modal" data-target="#keyboard-shortcuts">
-                <i class="fa fa-keyboard-o"></i> {{ lang.translate "theme::admin.keyboard_shortcuts" }}
+                <i class="fa fa-keyboard-o"></i> {{ lang.trans "theme::admin.keyboard_shortcuts" }}
             </a>
             <br>
             <br>
@@ -13,13 +13,10 @@
         </div>
 
         <div class="col-lg-12 text-right">
-            {{ lang.translate "theme::admin.results" "from=1|to=5|total=127" }}
+            {{ lang.trans "theme::admin.results" "from=1|to=5|total=127" }}
             <br>
-            {{ lang.translate "theme::admin.meta" }}
+            {{ lang.trans "theme::admin.meta" }}
         </div>
     </div>
 
 </footer>
-
-{{ include "theme::modal-languages" }}
-{{ include "theme::modal-shortcuts" }}
