@@ -20,20 +20,20 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico">
 <link rel="apple-touch-icon" href="../../../favicon.ico"/>
 
-{{ asset.add "theme.css" "theme::less/bootstrap/bootstrap.less" }}
-{{ asset.add "theme.css" "theme::less/font-awesome/font-awesome.less" }}
-{{ asset.add "theme.css" "theme::less/animate/animate.less" }}
-{{ asset.add "theme.css" "theme::less/theme/theme.less" }}
-{{ asset.add "theme.css" "theme::less/plugins/*" }}
+{{ asset.add group="theme.css" file="theme::less/bootstrap/bootstrap.less" }}
+{{ asset.add group="theme.css" file="theme::less/font-awesome/font-awesome.less" }}
+{{ asset.add group="theme.css" file="theme::less/animate/animate.less" }}
+{{ asset.add group="theme.css" file="theme::less/theme/theme.less" }}
+{{ asset.add group="theme.css" file="theme::less/plugins/*" }}
 
-{{ asset.add "theme.js" "theme::js/vendor/jquery-1.11.1.js" }}
-{{ asset.add "theme.js" "theme::js/vendor/modernizr.js" }}
-{{ asset.add "theme.js" "theme::js/bootstrap/*" }}
-{{ asset.add "theme.js" "theme::js/theme/*" }}
-{{ asset.add "theme.js" "theme::js/plugins/*" }}
+{{ asset.add group="theme.css" file="theme::js/vendor/jquery-1.11.1.js" }}
+{{ asset.add group="theme.css" file="theme::js/vendor/modernizr.js" }}
+{{ asset.add group="theme.css" file="theme::js/bootstrap/*" }}
+{{ asset.add group="theme.css" file="theme::js/theme/*" }}
+{{ asset.add group="theme.css" file="theme::js/plugins/*" }}
 
-{{{ asset.style "theme.css" }}}
-{{{ asset.script "theme.js" }}}
+{{{ asset.link group="theme.css" }}}
+{{{ asset.script group="theme.js" }}}
 
-{{{ asset.styles "streams.css" }}}
-{{{ asset.scripts "streams.js" }}}
+{{{ asset.links group="streams.css" }}}
+{{{ asset.scripts group="streams.js" }}}
