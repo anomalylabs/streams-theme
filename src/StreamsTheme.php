@@ -1,8 +1,8 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Platform\Addon\Theme\ThemeAddon;
+use Anomaly\Streams\Platform\Addon\Theme\Theme;
 
-class StreamsTheme extends ThemeAddon
+class StreamsTheme extends Theme
 {
     protected $slug = 'streams';
 
