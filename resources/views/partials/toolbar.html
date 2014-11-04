@@ -2,7 +2,7 @@
 
     <div class="title {{ if theme.menu }}dropdown{{ endif }}">
         <a href="{{ url.to "admin/{ modules.active.slug }" }}" data-toggle="dropdown">
-            {{ module.name }}
+            {{ module.active.name }}
             <i class="fa fa-lg fa-chevron-right"></i>
         </a>
 
