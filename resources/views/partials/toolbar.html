@@ -1,7 +1,7 @@
 <section class="app-toolbar container-fluid">
 
     <div class="title {{ if theme.menu }}dropdown{{ endif }}">
-        <a href="{{ url.to "admin/{ modules.active.slug }" }}" data-toggle="dropdown">
+        <a href="{{ module.active.url }}" data-toggle="dropdown">
             {{ module.active.name }}
             <i class="fa fa-lg fa-chevron-right"></i>
         </a>
@@ -15,20 +15,22 @@
         {{ endif }}
     </div>
 
+
     {{ if theme.sections }}
     <ul class="sections nav nav-pills">
         {{ theme.sections }}
-        <li class="{{ class }}">
-            <a href="{{ url.to "{path}" }}">{{ title }}</a>
+        <li class="{{ active then 'active' }}">
+            <a href="{{ url }}">{{ title }}</a>
         </li>
         {{ /theme.sections }}
     </ul>
     {{ endif }}
 
+
     {{ if theme.actions }}
     <div class="actions">
         {{ theme.actions }}
-        <a href="{{ url.to "{path}" }}" class="btn btn-success">{{ title }}</a>
+        <a href="{{ url }}" class="{{ class }}">{{ title }}</a>
         {{ /theme.actions }}
     </div>
     {{ endif }}

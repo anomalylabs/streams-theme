@@ -1,9 +1,20 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
+use Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleMenuCommand;
+use Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleSectionsCommand;
+use Anomaly\Streams\Addon\Theme\Streams\Command\BuildSectionButtonsCommand;
 use Anomaly\Streams\Addon\Theme\Streams\Command\BuildThemeNavigationCommand;
 use Anomaly\Streams\Platform\Addon\Theme\ThemeTag;
 use Anomaly\Streams\Platform\Traits\CommandableTrait;
 
+/**
+ * Class StreamsThemeTag
+ *
+ * @link          http://anomaly.is/streams-platform
+ * @author        AnomalyLabs, Inc. <hello@anomaly.is>
+ * @author        Ryan Thompson <ryan@anomaly.is>
+ * @package       Anomaly\Streams\Addon\Theme\Streams
+ */
 class StreamsThemeTag extends ThemeTag
 {
 
@@ -26,19 +37,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function sections()
     {
-        $module = app('streams.modules')->active();
-
-        $sections = $module->getSections();
-
-        if ($sections) {
-            foreach ($sections as $key => &$section) {
-                $section['title'] = trans('module.' . $module->getSlug() . '::section.' . $key);
-                $section['class'] = \Request::path() != $section['path'] ? : 'active';
-                $section['path']  = key_value($section, 'path');
-            }
-        }
-
-        return $sections;
+        return $this->execute(new BuildModuleSectionsCommand());
     }
 
     /**
@@ -48,15 +47,9 @@ class StreamsThemeTag extends ThemeTag
      */
     public function actions()
     {
-        $actions = [];
+        $section = $this->getActiveSection();
 
-        if ($actions) {
-            foreach ($actions as &$action) {
-                $action['title'] = trans(evaluate_key($action, 'title', 'misc.untitled'));
-            }
-        }
-
-        return $actions;
+        return $this->execute(new BuildSectionButtonsCommand($section));
     }
 
     /**
@@ -66,17 +59,26 @@ class StreamsThemeTag extends ThemeTag
      */
     public function menu()
     {
-        $menu = [];
+        return $this->execute(new BuildModuleMenuCommand());
+    }
 
-        $module = app('streams.modules')->active();
+    /**
+     * Get the active section slug.
+     *
+     * @return mixed
+     */
+    protected function getActiveSection()
+    {
+        $sections = $this->sections();
 
-        foreach ($module->getMenu() as $item) {
-            $menu[] = [
-                'title' => trans($item['title']),
-                'url'   => url($item['path']),
-            ];
+        foreach ($sections as $section) {
+
+            if ($section['active']) {
+
+                return $section['slug'];
+            }
         }
 
-        return $menu;
+        null;
     }
 }
