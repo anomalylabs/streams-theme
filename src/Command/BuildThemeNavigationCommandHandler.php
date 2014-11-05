@@ -137,7 +137,10 @@ class BuildThemeNavigationCommandHandler
             ];
         }
 
-        $nav[$item['group']]['active'] = $module->isActive();
+        if ($module->isActive()) {
+
+            $nav[$item['group']]['active'] = $module->isActive();
+        }
     }
 
     /**
