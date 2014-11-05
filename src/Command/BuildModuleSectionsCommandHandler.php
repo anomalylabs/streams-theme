@@ -60,7 +60,7 @@ class BuildModuleSectionsCommandHandler
      */
     protected function getTitle(array $section, Module $module)
     {
-        return trans(evaluate_key($section, 'title', $module->lang('section.' . $section['slug'])));
+        return trans(evaluate_key($section, 'title', $module->lang('addon.section.' . $section['slug'])));
     }
 
     /**
