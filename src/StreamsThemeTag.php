@@ -1,58 +1,22 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
+use Anomaly\Streams\Addon\Theme\Streams\Command\BuildThemeNavigationCommand;
 use Anomaly\Streams\Platform\Addon\Theme\ThemeTag;
+use Anomaly\Streams\Platform\Traits\CommandableTrait;
 
 class StreamsThemeTag extends ThemeTag
 {
 
+    use CommandableTrait;
+
     /**
-     * Return nav data for admin UI.
+     * Return navigation.
      *
      * @return array
      */
     public function nav()
     {
-        $nav = [];
-
-        $active = app('streams.modules')->active();
-
-        foreach (app('streams.modules')->all() as $module) {
-
-            $item = [
-                'title' => trans($module->getName()),
-                'class' => $module->getSlug() == $active->getSlug() ? true : false,
-                'path'  => 'admin/' . $module->getSlug(),
-            ];
-
-            if ($group = trans($module->getNav())) {
-
-                if (!isset($nav[$group])) {
-                    $nav[$group] = [
-                        'title' => $group,
-                        'class' => 'has-dropdown',
-                        'items' => [],
-                    ];
-                }
-
-                $nav[$group]['items'][] = $item;
-
-                if ($module->getSlug() == $active->getSlug()) {
-                    $nav[$group]['class'] .= ' active';
-                }
-            } else {
-                $nav[$module->getSlug()] = $item;
-            }
-        }
-
-        asort($nav);
-
-        // Dashboard module is always in front.
-        if (isset($nav['dashboard']) and $dashboard = $nav['dashboard']) {
-            array_unshift($nav, $dashboard);
-            unset($nav['dashboard']);
-        }
-
-        return $nav;
+        return $this->execute(new BuildThemeNavigationCommand());
     }
 
     /**
