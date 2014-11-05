@@ -72,7 +72,15 @@ class BuildModuleSectionsCommandHandler
      */
     protected function getUrl(array $section, Module $module)
     {
-        return url(evaluate_key($section, 'url', 'admin/' . $module->getSlug()));
+        if ($module->getSlug() == $section['slug']) {
+
+            $default = $module->getSlug();
+        } else {
+
+            $default = $module->getSlug() . '/' . $section['slug'];
+        }
+
+        return url(evaluate_key($section, 'url', 'admin/' . $default));
     }
 
     /**
