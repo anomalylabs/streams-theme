@@ -1,55 +1,58 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Streams\Addon\Tag\Theme\ThemeTag;
+use Anomaly\Streams\Platform\Addon\Theme\ThemeTag;
 
 class StreamsThemeTag extends ThemeTag
 {
+
     /**
-     * Return navigation data for UI.
+     * Return nav data for admin UI.
      *
      * @return array
      */
-    public function navigation()
+    public function nav()
     {
-        $navigation = [];
+        $nav = [];
 
-        $active = app('streams.module.active');
+        $active = app('streams.modules')->active();
 
         foreach (app('streams.modules')->all() as $module) {
+
             $item = [
-                'title' => $module->name,
-                'class' => $module->slug != $active->slug ? : 'active',
-                'path'  => 'admin/' . $module->slug,
+                'title' => trans($module->getName()),
+                'class' => $module->getSlug() == $active->getSlug() ? true : false,
+                'path'  => 'admin/' . $module->getSlug(),
             ];
 
-            if ($group = trans($module->getGroup())) {
-                if (!isset($navigation[$group])) {
-                    $navigation[$group] = [
+            if ($group = trans($module->getNav())) {
+
+                if (!isset($nav[$group])) {
+                    $nav[$group] = [
                         'title' => $group,
                         'class' => 'has-dropdown',
                         'items' => [],
                     ];
                 }
 
-                $navigation[$group]['items'][] = $item;
+                $nav[$group]['items'][] = $item;
 
-                if ($module->slug == $active->slug) {
-                    $navigation[$group]['class'] .= ' active';
+                if ($module->getSlug() == $active->getSlug()) {
+                    $nav[$group]['class'] .= ' active';
                 }
             } else {
-                $navigation[$module->slug] = $item;
+                $nav[$module->getSlug()] = $item;
             }
         }
 
-        asort($navigation);
+        asort($nav);
 
         // Dashboard module is always in front.
-        if (isset($navigation['dashboard']) and $dashboard = $navigation['dashboard']) {
-            array_unshift($navigation, $dashboard);
-            unset($navigation['dashboard']);
+        if (isset($nav['dashboard']) and $dashboard = $nav['dashboard']) {
+            array_unshift($nav, $dashboard);
+            unset($nav['dashboard']);
         }
 
-        return $navigation;
+        return $nav;
     }
 
     /**
@@ -59,12 +62,14 @@ class StreamsThemeTag extends ThemeTag
      */
     public function sections()
     {
-        $sections = evaluate(app('streams.module.active')->getSections());
+        $module = app('streams.modules')->active();
+
+        $sections = $module->getSections();
 
         if ($sections) {
-            foreach ($sections as &$section) {
-                $section['title'] = trans(key_value($section, 'title', 'misc.untitled'));
-                $section['class'] = !str_contains(\Request::path(), $section['path']) ? : 'active';
+            foreach ($sections as $key => &$section) {
+                $section['title'] = trans('module.' . $module->getSlug() . '::section.' . $key);
+                $section['class'] = \Request::path() != $section['path'] ? : 'active';
                 $section['path']  = key_value($section, 'path');
             }
         }
@@ -99,10 +104,12 @@ class StreamsThemeTag extends ThemeTag
     {
         $menu = [];
 
-        foreach (app('streams.module.active')->getMenu() as $item) {
+        $module = app('streams.modules')->active();
+
+        foreach ($module->getMenu() as $item) {
             $menu[] = [
                 'title' => trans($item['title']),
-                'url'   => url($item['url']),
+                'url'   => url($item['path']),
             ];
         }
 
