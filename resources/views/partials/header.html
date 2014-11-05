@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav">
                 {{ theme.nav }}
                 {{ if items }}
-                <li class="{{ if active then 'active' }}">
+                <li class="{{ active then 'active' }}">
                     <a href="#" data-toggle="dropdown">{{ title }}</a>
                     <ul class="dropdown-menu">
                         {{ items }}
