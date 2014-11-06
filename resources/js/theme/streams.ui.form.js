@@ -17,7 +17,7 @@ Streams.Ui.Form.boot = function () {
  * @constructor
  */
 Streams.Ui.Form.bindTranslations = function () {
-    $('[data-locale]').on('click', function (e) {
+    /*$('[data-locale]').on('click', function (e) {
 
         e.preventDefault();
 
@@ -28,7 +28,7 @@ Streams.Ui.Form.bindTranslations = function () {
         // Mark active locale
         $(this).closest('.toolbar').find('.flag-icon.active').removeClass('active animated-fast pulse');
         $(this).addClass('active animated-fast pulse');
-    });
+    });*/
 }
 
 
