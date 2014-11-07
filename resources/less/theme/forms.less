@@ -1,3 +1,18 @@
+label.control-label {
+    position: relative;
+}
+
+label.control-label.required::before {
+    background-color: @brand-danger;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 2px;
+    content: '';
+    height: 5px;
+    width: 5px;
+    left: -7px;
+}
+
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
