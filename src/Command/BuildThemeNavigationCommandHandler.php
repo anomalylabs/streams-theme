@@ -132,8 +132,9 @@ class BuildThemeNavigationCommandHandler
         if (!isset($nav[$item['group']])) {
 
             $nav[$item['group']] = [
-                'title' => $item['group'],
-                'items' => [],
+                'title'  => $item['group'],
+                'active' => false,
+                'items'  => [],
             ];
         }
 
@@ -152,7 +153,7 @@ class BuildThemeNavigationCommandHandler
      */
     protected function addItem(array &$nav, array $item, Module $module)
     {
-        $nav[$module->getSlug()] = $item;
+        $nav[$item['title']] = $item;
     }
 
     /**
@@ -163,7 +164,7 @@ class BuildThemeNavigationCommandHandler
      */
     protected function finish(&$nav)
     {
-        asort($nav);
+        ksort($nav);
 
         // Dashboard module is always first.
         if (isset($nav['dashboard']) and $dashboard = $nav['dashboard']) {
