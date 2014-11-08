@@ -44,6 +44,14 @@ class BuildSectionButtonsCommandHandler
                 // Build out required data.
                 $button['slug'] = $slug;
 
+                $button = evaluate($button);
+
+                // Skip if disabled.
+                if (evaluate_key($button, 'enabled', true) == false) {
+
+                    continue;
+                }
+
                 $class = $this->getClass($button);
                 $url   = $this->getUrl($button, $section);
                 $title = $this->getTitle($button, $section, $module);
