@@ -32,6 +32,14 @@ class BuildModuleMenuCommandHandler
 
             $item['slug'] = $slug;
 
+            $item = evaluate($item);
+
+            // Skip if disabled.
+            if (evaluate_key($item, 'enabled', true) == false) {
+
+                continue;
+            }
+
             $active = false;
             $url    = $this->getUrl($item, $module);
             $title  = $this->getTitle($item, $module);
