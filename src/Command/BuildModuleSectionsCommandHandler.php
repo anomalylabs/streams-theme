@@ -36,6 +36,14 @@ class BuildModuleSectionsCommandHandler
             // Build out required data.
             $section['slug'] = $slug;
 
+            $section = evaluate($section);
+
+            // Skip if disabled.
+            if (evaluate_key($section, 'enabled', true) == false) {
+
+                continue;
+            }
+
             $active = false;
             $url    = $this->getUrl($section, $module);
             $title  = $this->getTitle($section, $module);

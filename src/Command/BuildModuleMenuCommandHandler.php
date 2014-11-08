@@ -14,6 +14,8 @@ class BuildModuleMenuCommandHandler
 {
 
     /**
+     * Handle the command.
+     *
      * @param BuildModuleMenuCommand $command
      */
     public function handle(BuildModuleMenuCommand $command)
