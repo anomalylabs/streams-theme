@@ -25,15 +25,16 @@ section.app-toolbar {
 
         &.dropdown {
             > a {
+                padding-left: 28px;
+
                 &:after {
-                    left: 50%;
-                    bottom: 0;
+                    top: 10px;
+                    left: 8px;
                     z-index: 0;
                     font-size: 14px;
-                    content: "\f141";
+                    content: "\f0c9";
                     position: absolute;
-                    margin-left: -16px;
-                    margin-bottom: -6px;
+                    color: lighten(@gray-lighter, 10%);
                     font-family: "FontAwesome";
                 }
             }
