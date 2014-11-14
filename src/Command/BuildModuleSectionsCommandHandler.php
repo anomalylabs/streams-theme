@@ -33,6 +33,12 @@ class BuildModuleSectionsCommandHandler
          */
         foreach ($module->getSections() as $slug => $section) {
 
+            if (is_string($section)) {
+
+                $slug    = $section;
+                $section = [];
+            }
+
             // Build out required data.
             $section['slug'] = $slug;
 
