@@ -40,10 +40,10 @@ class BuildThemeNavigationCommandHandler
             $item = compact('url', 'title', 'group', 'active');
 
             /**
-             * If the module defined a $nav property it
+             * If the module defined a $navigation property it
              * get's put into a dropdown of the same name.
              *
-             * Otherwise just lop it onto the nav array.
+             * Otherwise just lop it onto the navigation array.
              */
             if ($group) {
 
@@ -102,7 +102,7 @@ class BuildThemeNavigationCommandHandler
      */
     protected function getGroup(Module $module)
     {
-        return trans($module->getNav());
+        return trans($module->getNavigation());
     }
 
     /**
@@ -145,7 +145,7 @@ class BuildThemeNavigationCommandHandler
     }
 
     /**
-     * Add an item to the nav.
+     * Add an item to the navigation.
      *
      * @param array  $nav
      * @param array  $item

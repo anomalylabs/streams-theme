@@ -77,7 +77,7 @@ class BuildSectionButtonsCommandHandler
      */
     protected function getTitle(array $button, $section, Module $module)
     {
-        return trans(evaluate_key($button, 'title', 'button.' . $button['slug']));
+        return trans(evaluate_key($button, 'title', 'admin.button.' . $button['slug']));
     }
 
     /**
