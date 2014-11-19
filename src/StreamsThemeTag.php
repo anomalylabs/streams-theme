@@ -81,4 +81,31 @@ class StreamsThemeTag extends ThemeTag
 
         null;
     }
+
+    /**
+     * Return the pagination meta.
+     *
+     * @return string
+     */
+    public function pagination()
+    {
+        $from  = 100;
+        $to    = 200;
+        $total = 1000;
+
+        return trans('theme::admin.pagination', compact('from', 'to', 'total'));
+    }
+
+    /**
+     * Return the footprint string.
+     *
+     * @return string
+     */
+    public function footprint()
+    {
+        $time   = request_time();
+        $memory = memory_usage();
+
+        return trans('theme::admin.footprint', compact('time', 'memory'));
+    }
 }

@@ -5,7 +5,7 @@
             &copy; {{ datetime.now format="Y" }} - AnomalyLabs, Inc.
             <br>
             <a href="#" data-toggle="modal" data-target="#keyboard-shortcuts">
-                <i class="fa fa-keyboard-o"></i> {{ lang.trans string="theme::admin.keyboard_shortcuts" }}
+                <i class="fa fa-keyboard-o"></i> {{ lang.trans string="theme::admin.shortcuts" }}
             </a>
             <br>
             <br>
@@ -13,9 +13,9 @@
         </div>
 
         <div class="col-lg-12 text-right">
-            {{ lang.trans key="theme::admin.results" payload="from=1|to=5|total=127" }}
+            {{ theme.pagination }}
             <br>
-            {{ lang.trans key="theme::admin.meta" }}
+            {{ theme.footprint }}
         </div>
     </div>
 
