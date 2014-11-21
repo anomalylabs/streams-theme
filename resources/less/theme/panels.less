@@ -1,3 +1,18 @@
 .panel {
     border: none;
 }
+
+.panel-group {
+
+    margin-bottom: 0;
+
+    .panel {
+
+        margin-bottom: @line-height-computed;
+
+        + .panel {
+            margin-top: 0;
+            margin-bottom: @line-height-computed;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div class="panel-group">
+
+    {{ tabs }}
+    <section class="{{ .data.class }}">
+
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{ id }}">
+                    {{ title }}
+                </a>
+            </h4>
+        </div>
+
+        <div id="{{ id }}" class="panel-collapse collapse {{ active then 'in' }}">
+            <div class="panel-body">
+                {{{ body }}}
+            </div>
+        </div>
+
+    </section>
+    {{ /tabs }}
+
+</div>

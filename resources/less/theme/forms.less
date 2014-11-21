@@ -1,8 +1,3 @@
-label.checkable {
-    margin-right: 10px;
-    font-weight: normal;
-}
-
 label.control-label {
     position: relative;
 }
@@ -82,41 +77,6 @@ form {
                 &:hover {
                     &:active {
                         background: none;
-                    }
-                }
-            }
-        }
-    }
-
-    .panel {
-
-        &.tabbed-section {
-            .nav.nav-tabs {
-                border-bottom: none;
-
-                li {
-                    margin-right: @padding-large-horizontal;
-
-                    a {
-                        border: 0;
-                        padding: 0;
-                        background: none;
-                        position: relative;
-                        color: @gray-lighter;
-                        text-decoration: none;
-                    }
-
-                    &.active {
-                        a {
-                            color: @gray-dark;
-                            font-weight: bold;
-                        }
-                    }
-
-                    &:not(.active):hover {
-                        a {
-                            color: darken(@gray-lighter, 20%);
-                        }
                     }
                 }
             }
