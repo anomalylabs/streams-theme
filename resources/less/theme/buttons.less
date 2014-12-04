@@ -1,4 +1,22 @@
 .btn {
+
+    &.btn-mute {
+
+        color: @pagination-color;
+        background-color: @pagination-bg;
+
+        &:hover {
+
+            color: @pagination-color;
+            background-color: @pagination-hover-bg;
+        }
+
+        &:disabled {
+
+            color: darken(@pagination-disabled-color, 10%);
+        }
+    }
+
     &.btn-default {
         &:hover {
             color: @gray-darker;

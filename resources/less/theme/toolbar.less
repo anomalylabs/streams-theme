@@ -32,7 +32,7 @@ section.app-toolbar {
                     left: 8px;
                     z-index: 0;
                     font-size: 14px;
-                    content: "\f0c9";
+                    content: "\f085";
                     position: absolute;
                     color: lighten(@gray-lighter, 10%);
                     font-family: "FontAwesome";
@@ -48,6 +48,11 @@ section.app-toolbar {
         li {
             a {
                 color: @gray-lighter;
+
+                &:hover,
+                &:focus {
+                    background: none;
+                }
             }
 
             &.active {
@@ -57,14 +62,16 @@ section.app-toolbar {
                     color: @gray-darker;
                 }
 
-                &:hover {
+                &:hover,
+                &:focus {
                     a {
                         color: @gray-darker;
                     }
                 }
             }
 
-            &:hover {
+            &:hover,
+            &:focus {
                 a {
                     background: none;
                     color: darken(@gray-lighter, 20%);

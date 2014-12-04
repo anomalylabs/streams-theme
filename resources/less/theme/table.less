@@ -65,6 +65,32 @@ a.table-filter-toggle {
     }
 }
 
+.actions {
+    position: relative;
+
+    ul {
+        li {
+            button {
+                width: 100%;
+                border: none;
+                background: none;
+                text-align: left;
+                text-decoration: none;
+
+                clear: both;
+                display: block;
+                padding: 3px 20px;
+                font-weight: normal;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: @dropdown-link-hover-bg;
+                }
+            }
+        }
+    }
+}
+
 .no-results {
     padding-top: 0;
     padding-left: @grid-gutter-width / 2;
