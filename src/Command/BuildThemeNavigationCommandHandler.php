@@ -166,12 +166,16 @@ class BuildThemeNavigationCommandHandler
     {
         ksort($nav);
 
+        $key = trans('module.dashboard::addon.name');
+
         // Dashboard module is always first.
-        if (isset($nav['dashboard']) and $dashboard = $nav['dashboard']) {
+        if (isset($nav[$key]) and $dashboard = $nav[$key]) {
+
+            unset($nav[$key]);
+
+            $nav = array_values($nav);
 
             array_unshift($nav, $dashboard);
-
-            unset($nav['dashboard']);
         }
     }
 }
