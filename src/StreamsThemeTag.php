@@ -89,9 +89,16 @@ class StreamsThemeTag extends ThemeTag
      */
     public function pagination()
     {
-        $from  = 100;
-        $to    = 200;
-        $total = 1000;
+        $pagination = $this->theme->pullMeta('pagination', []);
+
+        if (!$pagination) {
+
+            return null;
+        }
+
+        $from  = array_get($pagination, 'from');
+        $to    = array_get($pagination, 'to');
+        $total = array_get($pagination, 'total');
 
         return trans('theme::admin.pagination', compact('from', 'to', 'total'));
     }

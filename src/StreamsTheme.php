@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Addon\Theme\Theme;
 
 class StreamsTheme extends Theme
 {
+
     protected $slug = 'streams';
 
     /**
