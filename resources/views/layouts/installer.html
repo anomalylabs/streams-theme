@@ -21,55 +21,24 @@
     <div class="container">
 
         <nav class="navbar navbar-default">
+
             <div class="navbar-header">
             <span class="navbar-brand">
                 {{{ image.img file="theme::img/logo.png" }}} Streams Installer
             </span>
             </div>
 
-            <ul class="nav navbar-nav pull-right">
-                <li class="active">
-                    <a href="#" data-toggle="modal" data-target="#choose-language">
-                        <i class="flag-icon flag-icon-us"></i>
-                    </a>
-                </li>
-            </ul>
         </nav>
 
     </div>
 </header>
 
-<section class="app-toolbar">
-    <div class="container">
-
-        <div class="title">
-            <a>
-                Installer
-                <i class="fa fa-lg fa-chevron-right"></i>
-            </a>
-        </div>
-
-        <ul class="sections nav nav-pills">
-            <li>
-                <a href="#">System</a>
-            </li>
-            <li>
-                <a href="#">License</a>
-            </li>
-            <li>
-                <a href="#">Configure</a>
-            </li>
-            <li>
-                <a href="#">Complete</a>
-            </li>
-        </ul>
-
-    </div>
-</section>
-
-{{ include "theme::partials/messages" }}
-
 <section id="main" class="container">
+
+    <div class="row">
+        {{ include "theme::partials/messages" }}
+    </div>
+
     {{ yield "content" }}
 </section>
 
@@ -85,7 +54,7 @@
         </div>
 
         <div class="col-lg-12 text-right">
-            {{ lang.translate "theme::admin.meta" }}
+            {{ theme.footprint }}
         </div>
     </div>
 
