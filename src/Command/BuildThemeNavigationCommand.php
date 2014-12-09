@@ -11,5 +11,8 @@
 class BuildThemeNavigationCommand
 {
 
+    public function __construct()
+    {
+    }
 }
  

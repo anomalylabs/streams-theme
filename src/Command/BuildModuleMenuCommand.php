@@ -11,5 +11,8 @@
 class BuildModuleMenuCommand
 {
 
+    public function __construct()
+    {
+    }
 }
  

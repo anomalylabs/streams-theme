@@ -11,5 +11,8 @@
 class BuildModuleSectionsCommand
 {
 
+    public function __construct()
+    {
+    }
 }
  

@@ -1,11 +1,7 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleMenuCommand;
-use Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleSectionsCommand;
-use Anomaly\Streams\Addon\Theme\Streams\Command\BuildSectionButtonsCommand;
-use Anomaly\Streams\Addon\Theme\Streams\Command\BuildThemeNavigationCommand;
 use Anomaly\Streams\Platform\Addon\Theme\ThemeTag;
-use Anomaly\Streams\Platform\Traits\CommandableTrait;
+use Laracasts\Commander\CommanderTrait;
 
 /**
  * Class StreamsThemeTag
@@ -18,7 +14,7 @@ use Anomaly\Streams\Platform\Traits\CommandableTrait;
 class StreamsThemeTag extends ThemeTag
 {
 
-    use CommandableTrait;
+    use CommanderTrait;
 
     /**
      * Return navigation.
@@ -27,7 +23,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function nav()
     {
-        return $this->execute(new BuildThemeNavigationCommand());
+        return $this->execute('Anomaly\Streams\Addon\Theme\Streams\Command\BuildThemeNavigationCommand');
     }
 
     /**
@@ -37,7 +33,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function sections()
     {
-        return $this->execute(new BuildModuleSectionsCommand());
+        return $this->execute('Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleSectionsCommand');
     }
 
     /**
@@ -49,7 +45,10 @@ class StreamsThemeTag extends ThemeTag
     {
         $section = $this->getActiveSection();
 
-        return $this->execute(new BuildSectionButtonsCommand($section));
+        return $this->execute(
+            'Anomaly\Streams\Addon\Theme\Streams\Command\BuildSectionButtonsCommand',
+            compact('section')
+        );
     }
 
     /**
@@ -59,7 +58,7 @@ class StreamsThemeTag extends ThemeTag
      */
     public function menu()
     {
-        return $this->execute(new BuildModuleMenuCommand());
+        return $this->execute('Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleMenuCommand');
     }
 
     /**
