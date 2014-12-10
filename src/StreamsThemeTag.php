@@ -52,16 +52,6 @@ class StreamsThemeTag extends ThemeTag
     }
 
     /**
-     * Return the menu for the module.
-     *
-     * @return array
-     */
-    public function menu()
-    {
-        return $this->execute('Anomaly\Streams\Addon\Theme\Streams\Command\BuildModuleMenuCommand');
-    }
-
-    /**
      * Get the active section slug.
      *
      * @return mixed
