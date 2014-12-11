@@ -99,9 +99,33 @@ class StreamsThemeTag extends ThemeTag
      */
     public function footprint()
     {
-        $time   = request_time();
-        $memory = memory_usage();
+        $time   = $this->requestTime();
+        $memory = $this->memoryUsage();
 
         return trans('theme::admin.footprint', compact('time', 'memory'));
+    }
+
+    /**
+     * Return the elapsed request time.
+     *
+     * @return string
+     */
+    protected function requestTime()
+    {
+        return number_format(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 2) . ' s';
+    }
+
+    /**
+     * Return the memory usage of the request.
+     *
+     * @return string
+     */
+    protected function memoryUsage()
+    {
+        $unit = array('b', 'kb', 'mb');
+
+        $size = memory_get_usage(true);
+
+        return round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
     }
 }
