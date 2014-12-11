@@ -47,7 +47,7 @@ class BuildModuleSectionsCommandHandler
             $section = evaluate($section);
 
             // Skip if disabled.
-            if (evaluate_key($section, 'enabled', true) == false) {
+            if (array_get($section, 'enabled', true) == false) {
 
                 continue;
             }
@@ -76,7 +76,7 @@ class BuildModuleSectionsCommandHandler
      */
     protected function getTitle(array $section, Module $module)
     {
-        return trans(evaluate_key($section, 'title', $module->lang('addon.section.' . $section['slug'])));
+        return trans(array_get($section, 'title', $module->lang('addon.section.' . $section['slug'])));
     }
 
     /**
@@ -96,7 +96,7 @@ class BuildModuleSectionsCommandHandler
             $default = $module->getSlug() . '/' . $section['slug'];
         }
 
-        return url(evaluate_key($section, 'url', 'admin/' . $default));
+        return url(array_get($section, 'url', 'admin/' . $default));
     }
 
     /**

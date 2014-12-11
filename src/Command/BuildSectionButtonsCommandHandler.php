@@ -49,7 +49,7 @@ class BuildSectionButtonsCommandHandler
                 $button = evaluate($button);
 
                 // Skip if disabled.
-                if (evaluate_key($button, 'enabled', true) == false) {
+                if (array_get($button, 'enabled', true) == false) {
 
                     continue;
                 }
@@ -77,7 +77,7 @@ class BuildSectionButtonsCommandHandler
      */
     protected function getTitle(array $button, $section, Module $module)
     {
-        return trans(evaluate_key($button, 'title', 'button.' . $button['slug']));
+        return trans(array_get($button, 'title', 'button.' . $button['slug']));
     }
 
     /**
@@ -89,7 +89,7 @@ class BuildSectionButtonsCommandHandler
      */
     protected function getUrl(array $button, array $section)
     {
-        $url = evaluate_key($button, 'url');
+        $url = array_get($button, 'url');
 
         if (!$url) {
 
@@ -112,7 +112,7 @@ class BuildSectionButtonsCommandHandler
      */
     protected function getClass(array $button)
     {
-        return evaluate_key($button, 'class', 'btn btn-success');
+        return array_get($button, 'class', 'btn btn-success');
     }
 }
  
