@@ -49,7 +49,7 @@ class BuildSectionButtonsCommandHandler
                 $button = evaluate($button);
 
                 // Skip if disabled.
-                if (evaluate_key($button, 'enabled', true) == false) {
+                if (array_get($button, 'enabled', true) == false) {
 
                     continue;
                 }

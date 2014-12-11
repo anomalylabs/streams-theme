@@ -47,7 +47,7 @@ class BuildModuleSectionsCommandHandler
             $section = evaluate($section);
 
             // Skip if disabled.
-            if (evaluate_key($section, 'enabled', true) == false) {
+            if (array_get($section, 'enabled', true) == false) {
 
                 continue;
             }
