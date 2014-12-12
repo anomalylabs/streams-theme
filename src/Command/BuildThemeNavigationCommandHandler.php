@@ -37,6 +37,15 @@ class BuildThemeNavigationCommandHandler
             $group  = $this->getGroup($module);
             $active = $this->getActive($module);
 
+            /**
+             * If the group is set to false then
+             * skip it - no backend navigation.
+             */
+            if ($group === false) {
+
+                continue;
+            }
+
             $item = compact('url', 'title', 'group', 'active');
 
             /**
