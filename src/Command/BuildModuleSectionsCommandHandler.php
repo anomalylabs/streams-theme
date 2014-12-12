@@ -42,10 +42,6 @@ class BuildModuleSectionsCommandHandler
             // Build out required data.
             $section['slug'] = $slug;
 
-            // Evaluate the entire array.
-            // All closures are gone now.
-            $section = evaluate($section);
-
             // Skip if disabled.
             if (array_get($section, 'enabled', true) == false) {
 

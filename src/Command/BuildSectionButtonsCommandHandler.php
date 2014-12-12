@@ -44,10 +44,6 @@ class BuildSectionButtonsCommandHandler
                 // Build out required data.
                 $button['slug'] = $slug;
 
-                // Evaluate the entire array.
-                // All closures are gone now.
-                $button = evaluate($button);
-
                 // Skip if disabled.
                 if (array_get($button, 'enabled', true) == false) {
 
