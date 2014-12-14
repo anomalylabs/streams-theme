@@ -34,5 +34,5 @@ Streams.boot = function () {
     Streams.Ui.Form.boot();
     Streams.Ui.Table.boot();
 
-    $('select.selectize').selectize();
+    $('.chosen').chosen();
 }
