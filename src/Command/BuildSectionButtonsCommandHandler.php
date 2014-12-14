@@ -73,7 +73,7 @@ class BuildSectionButtonsCommandHandler
      */
     protected function getTitle(array $button, $section, Module $module)
     {
-        return trans(array_get($button, 'title', 'button.' . $button['slug']));
+        return trans(array_get($button, 'title', 'streams::button.' . $button['slug']));
     }
 
     /**
