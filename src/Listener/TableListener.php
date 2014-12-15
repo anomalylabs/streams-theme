@@ -1,12 +1,12 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams\Listener;
 
-use Anomaly\Streams\Platform\Ui\Table\Event\TableDataLoaded;
+use Anomaly\Streams\Platform\Ui\Table\Event\TableDataLoadedEvent;
 use Laracasts\Commander\Events\EventListener;
 
 class TableListener extends EventListener
 {
 
-    public function whenTableDataLoaded(TableDataLoaded $event)
+    public function whenTableDataLoaded(TableDataLoadedEvent $event)
     {
         $table = $event->getTable();
 
