@@ -13,4 +13,11 @@ class StreamsTheme extends Theme
      * @var bool
      */
     protected $admin = true;
+
+    /**
+     * The module's tag.
+     *
+     * @var string
+     */
+    protected $tag = 'Anomaly\Streams\Addon\Theme\Streams\StreamsThemeTag';
 }
