@@ -12,7 +12,7 @@
 <html>
 
 <head>
-    {{ include "theme::partials/metadata" }}
+    {% include "theme::partials/metadata" %}
 </head>
 
 <body id="installer">
@@ -24,7 +24,7 @@
 
             <div class="navbar-header">
             <span class="navbar-brand">
-                {{{ image.img file="theme::img/logo.png" }}} Streams Installer
+                {{ image_url("theme::img/logo.png") }} Streams Installer
             </span>
             </div>
 

@@ -36,6 +36,12 @@ header.app {
                     margin-right: -@grid-gutter-width / 2 !important;
                 }
 
+                &.open {
+                    > a {
+                        color: lighten(@gray, 20%) !important;
+                    }
+                }
+
                 &.has-dropdown {
                     > a {
                         background: none;

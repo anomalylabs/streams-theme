@@ -1,0 +1,44 @@
+<header class="app container-fluid">
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url.home }}" target="_blank">
+                {{ html_image(image_path("theme::img/logo.png")) }} Streams
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="header-nav">
+            <ul class="nav navbar-nav">
+                {% for item in theme_nav() %}
+                    {% if item.items %}
+                        <li class="{{ item.active ? 'active' }} has-dropdown">
+                            <a href="#" data-toggle="dropdown">{{ item.title }}</a>
+                            <ul class="dropdown-menu">
+                                {% for link in item.items %}
+                                <li class="{{ link.active ?: 'active' }}">
+                                    <a href="{{ link.url }}">{{ link.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="{{ item.active ? 'active' }}">
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                <li>
+                    {{ html_link('admin/logout', 'Logout') }}
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>

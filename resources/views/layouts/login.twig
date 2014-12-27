@@ -12,14 +12,14 @@
 <html>
 
 <head>
-    {{ include "theme::partials/metadata" }}
+    {% include "theme::partials/metadata" %}
 </head>
 
 <body id="login">
 
-{{ include "theme::partials/messages" }}
+{% include "theme::partials/messages" %}
 
-{{ yield "content" }}
+{% block content %}
 
 </body>
 </html>

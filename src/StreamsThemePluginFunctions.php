@@ -1,20 +1,36 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Platform\Addon\Theme\ThemePlugin;
 use Laracasts\Commander\CommanderTrait;
 
 /**
- * Class StreamsThemeTag
+ * Class StreamsThemePluginFunctions
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\Streams\Addon\Theme\Streams
  */
-class StreamsThemeTag extends ThemePlugin
+class StreamsThemePluginFunctions
 {
 
     use CommanderTrait;
+
+    /**
+     * The theme object.
+     *
+     * @var StreamsTheme
+     */
+    protected $theme;
+
+    /**
+     * Create a new StreamsThemePluginFunctions instance.
+     *
+     * @param StreamsTheme $theme
+     */
+    public function __construct(StreamsTheme $theme)
+    {
+        $this->theme = $theme;
+    }
 
     /**
      * Return navigation.
@@ -52,26 +68,6 @@ class StreamsThemeTag extends ThemePlugin
     }
 
     /**
-     * Get the active section slug.
-     *
-     * @return mixed
-     */
-    protected function getActiveSection()
-    {
-        $sections = $this->sections();
-
-        foreach ($sections as $section) {
-
-            if ($section['active']) {
-
-                return $section['slug'];
-            }
-        }
-
-        null;
-    }
-
-    /**
      * Return the pagination meta.
      *
      * @return string
@@ -103,6 +99,26 @@ class StreamsThemeTag extends ThemePlugin
         $memory = $this->memoryUsage();
 
         return trans('theme::admin.footprint', compact('time', 'memory'));
+    }
+
+    /**
+     * Get the active section slug.
+     *
+     * @return mixed
+     */
+    protected function getActiveSection()
+    {
+        $sections = $this->sections();
+
+        foreach ($sections as $section) {
+
+            if ($section['active']) {
+
+                return $section['slug'];
+            }
+        }
+
+        null;
     }
 
     /**

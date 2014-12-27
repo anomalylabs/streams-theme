@@ -2,20 +2,20 @@
     <div class="row">
 
         <div class="col-lg-12">
-            &copy; {{ datetime.now format="Y" }} - AnomalyLabs, Inc.
+            &copy; {{ now|date("Y") }} - AnomalyLabs, Inc.
             <br>
             <a href="#" data-toggle="modal" data-target="#keyboard-shortcuts">
-                <i class="fa fa-keyboard-o"></i> {{ lang.trans string="theme::admin.shortcuts" }}
+                <i class="fa fa-keyboard-o"></i> {{ trans("theme::admin.shortcuts") }}
             </a>
             <br>
             <br>
-            Streams Platform Version {{ config.get key="constants.version" }}
+            Streams Platform Version {{ config_get("constants.version") }}
         </div>
 
         <div class="col-lg-12 text-right">
-            {{ theme.footprint }}
+            {{ theme_footprint() }}
             <br>
-            {{ theme.pagination }}
+            {{ theme_pagination() }}
         </div>
 
     </div>

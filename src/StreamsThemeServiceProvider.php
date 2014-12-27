@@ -2,8 +2,24 @@
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class StreamsThemeServiceProvider
+ *
+ * @link          http://anomaly.is/streams-platform
+ * @author        AnomalyLabs, Inc. <hello@anomaly.is>
+ * @author        Ryan Thompson <ryan@anomaly.is>
+ * @package       Anomaly\Streams\Addon\Theme\Streams
+ */
 class StreamsThemeServiceProvider extends ServiceProvider
 {
+
+    /**
+     * Boot the service provider.
+     */
+    public function boot()
+    {
+        app('twig')->addExtension(app('Anomaly\Streams\Addon\Theme\Streams\StreamsThemePlugin'));
+    }
 
     /**
      * Register the service provider.

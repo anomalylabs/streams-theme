@@ -1,0 +1,38 @@
+<section class="app-toolbar container-fluid">
+
+    <div class="title">
+        <a href="#todo" data-toggle="dropdown">
+            MODULE NAME
+            <i class="fa fa-lg fa-chevron-right"></i>
+        </a>
+
+        {#{% if theme_menu() %}
+            <ul class="dropdown-menu">
+                {% for item in theme_menu() %}
+                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}#}
+    </div>
+
+
+    {% if theme_sections() %}
+        <ul class="sections nav nav-pills">
+            {% for item in theme_sections() %}
+                <li class="{{ item.active ? 'active' }}">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    {% if theme_actions() %}
+        <div class="actions">
+            {% for item in theme_actions() %}
+                <a href="{{ item.url }}" class="{{ item.class }}">{{ item.title }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</section>

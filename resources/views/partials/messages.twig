@@ -1,7 +1,7 @@
 <section id="messages" class="container-fluid">
 
     <!-- Success Messages -->
-    {{ if messages.success }}
+    {#{{ if messages.success }}
     <div class="alert alert-success alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span><span class="sr-only">Close</span>
@@ -11,11 +11,11 @@
         {{{ message }}}
         {{ /messages.success }}
     </div>
-    {{ endif }}
+    {{ endif }}#}
 
 
     <!-- Informational Messages -->
-    {{ if messages.info }}
+    {#{{ if messages.info }}
     <div class="alert alert-info alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span><span class="sr-only">Close</span>
@@ -25,11 +25,11 @@
         {{{ message }}}
         {{ /messages.info }}
     </div>
-    {{ endif }}
+    {{ endif }}#}
 
 
     <!-- Warning Messages -->
-    {{ if messages.warning }}
+    {#{{ if messages.warning }}
     <div class="alert alert-warning alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span><span class="sr-only">Close</span>
@@ -39,11 +39,11 @@
         {{{ message }}}
         {{ /messages.warning }}
     </div>
-    {{ endif }}
+    {{ endif }}#}
 
 
     <!-- Error Messages -->
-    {{ if messages.error }}
+    {#{{ if messages.error }}
     <div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span><span class="sr-only">Close</span>
@@ -53,6 +53,6 @@
         {{{ message }}}
         {{ /messages.error }}
     </div>
-    {{ endif }}
+    {{ endif }}#}
 
 </section>
