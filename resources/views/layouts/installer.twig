@@ -24,7 +24,7 @@
 
             <div class="navbar-header">
             <span class="navbar-brand">
-                {{ image_url("theme::img/logo.png") }} Streams Installer
+                {{ html_image(image_path("theme::img/logo.png")) }} Streams Installer
             </span>
             </div>
 
@@ -36,31 +36,14 @@
 <section id="main" class="container">
 
     <div class="row">
-        {{ include "theme::partials/messages" }}
+        {% include "theme::partials/messages" %}
     </div>
 
-    {{ yield "content" }}
+    {% block content %}{% endblock %}
 </section>
 
-<footer class="app container">
-
-    <br><br>
-
-    <div class="row">
-        <div class="col-lg-12">
-            &copy; {{ datetime.now "Y" }} - AnomalyLabs, Inc.
-            <br>
-            Streams Platform Version {{ config.get "constants.version" }}
-        </div>
-
-        <div class="col-lg-12 text-right">
-            {{ theme.footprint }}
-        </div>
-    </div>
-
-</footer>
-
-{{ include "theme::partials/modals" }}
+{% include "theme::partials/footer" %}
+{% include "theme::partials/modals" %}
 
 </body>
 </html>
