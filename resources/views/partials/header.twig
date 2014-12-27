@@ -21,7 +21,7 @@
                             <a href="#" data-toggle="dropdown">{{ item.title }}</a>
                             <ul class="dropdown-menu">
                                 {% for link in item.items %}
-                                <li class="{{ link.active ?: 'active' }}">
+                                <li class="{{ link.active ? 'active' }}">
                                     <a href="{{ link.url }}">{{ link.title }}</a>
                                 </li>
                                 {% endfor %}
