@@ -1,6 +1,6 @@
 <?php namespace Anomaly\Streams\Addon\Theme\Streams;
 
-use Anomaly\Streams\Platform\Addon\Theme\ThemeTag;
+use Anomaly\Streams\Platform\Addon\Theme\ThemePlugin;
 use Laracasts\Commander\CommanderTrait;
 
 /**
@@ -11,7 +11,7 @@ use Laracasts\Commander\CommanderTrait;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\Streams\Addon\Theme\Streams
  */
-class StreamsThemeTag extends ThemeTag
+class StreamsThemeTag extends ThemePlugin
 {
 
     use CommanderTrait;
