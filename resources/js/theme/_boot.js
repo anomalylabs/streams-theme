@@ -33,6 +33,4 @@ Streams.boot = function () {
     // Boot Ui
     Streams.Ui.Form.boot();
     Streams.Ui.Table.boot();
-
-    $('.chosen').chosen();
 }
