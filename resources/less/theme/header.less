@@ -19,12 +19,11 @@ header.app {
         }
 
         .navbar-toggle {
+            border: none;
+            background: none;
+
             .icon-bar {
                 background-color: #ffffff !important;
-            }
-
-            &:hover {
-                background-color: @brand-primary !important;
             }
         }
 
@@ -77,10 +76,12 @@ header.app {
 
                     &:hover {
                         color: lighten(@gray, 20%);
+                    }
+                }
 
-                        .fa-sign-out {
-                            color: @brand-danger;
-                        }
+                &.logout {
+                    > a:hover {
+                        color: @brand-danger;
                     }
                 }
 
@@ -96,10 +97,6 @@ header.app {
                             color: #ffffff;
                         }
                     }
-                }
-
-                .fa-sign-out {
-                    margin-left: 10px;
                 }
 
                 ul.dropdown-menu {

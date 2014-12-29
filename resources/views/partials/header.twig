@@ -21,9 +21,9 @@
                             <a href="#" data-toggle="dropdown">{{ item.title }}</a>
                             <ul class="dropdown-menu">
                                 {% for link in item.items %}
-                                <li class="{{ link.active ? 'active' }}">
-                                    <a href="{{ link.url }}">{{ link.title }}</a>
-                                </li>
+                                    <li class="{{ link.active ? 'active' }}">
+                                        <a href="{{ link.url }}">{{ link.title }}</a>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -34,8 +34,11 @@
                     {% endif %}
                 {% endfor %}
 
-                <li>
-                    {{ html_link('admin/logout', 'Logout') }}
+                <li class="logout">
+                    <a href="{{ url_to('admin/logout') }}">
+                        <icon class="fa fa-sign-out"></icon>
+                        <span class="visible-xs-inline-block">{{ trans('streams::misc.logout') }}</span>
+                    </a>
                 </li>
             </ul>
         </div>
