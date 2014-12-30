@@ -27,10 +27,10 @@ $(function () {
 Streams.boot = function () {
 
     // Boot Cp
-    Streams.Cp.boot();
-    Streams.Cp.Shortcuts.boot();
+    /*Streams.Cp.boot();
+    Streams.Cp.Shortcuts.boot();*/
 
     // Boot Ui
-    Streams.Ui.Form.boot();
-    Streams.Ui.Table.boot();
+    /*Streams.Ui.Form.boot();
+    Streams.Ui.Table.boot();*/
 }
