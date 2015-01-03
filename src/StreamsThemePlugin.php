@@ -1,4 +1,4 @@
-<?php namespace Anomaly\Streams\Addon\Theme\Streams;
+<?php namespace Anomaly\StreamsTheme;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Laracasts\Commander\CommanderTrait;
@@ -9,7 +9,7 @@ use Laracasts\Commander\CommanderTrait;
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\Streams\Addon\Theme\Streams
+ * @package       Anomaly\StreamsTheme
  */
 class StreamsThemePlugin extends Plugin
 {

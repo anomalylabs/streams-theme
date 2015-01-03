@@ -1,4 +1,4 @@
-<?php namespace Anomaly\Streams\Addon\Theme\Streams;
+<?php namespace Anomaly\StreamsTheme;
 
 use Anomaly\Streams\Platform\Addon\Theme\Theme;
 
@@ -19,5 +19,5 @@ class StreamsTheme extends Theme
      *
      * @var string
      */
-    protected $tag = 'Anomaly\Streams\Addon\Theme\Streams\StreamsThemeTag';
+    protected $tag = 'Anomaly\StreamsTheme\StreamsThemeTag';
 }

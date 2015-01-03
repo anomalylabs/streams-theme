@@ -1,6 +1,7 @@
-<?php namespace Anomaly\Streams\Addon\Theme\Streams\Command;
+<?php namespace Anomaly\StreamsTheme\Command;
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
+use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
 
 /**
  * Class BuildThemeNavigationCommandHandler
@@ -8,10 +9,27 @@ use Anomaly\Streams\Platform\Addon\Module\Module;
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\Streams\Addon\Theme\Streams\Command
+ * @package       Anomaly\StreamsTheme\Command
  */
 class BuildThemeNavigationCommandHandler
 {
+
+    /**
+     * The loaded modules.
+     *
+     * @var \Anomaly\Streams\Platform\Addon\Module\ModuleCollection
+     */
+    protected $modules;
+
+    /**
+     * Create a new BuildThemeNavigationCommandHandler instance.
+     *
+     * @param ModuleCollection $modules
+     */
+    public function __construct(ModuleCollection $modules)
+    {
+        $this->modules = $modules;
+    }
 
     /**
      * Handle the command.
@@ -29,7 +47,7 @@ class BuildThemeNavigationCommandHandler
          *
          * Keep it generic but helpful.
          */
-        foreach (app('streams.modules')->all() as $module) {
+        foreach ($this->modules->all() as $module) {
 
             // Build the required data.
             $url    = $this->getUrl($module);

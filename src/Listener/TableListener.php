@@ -1,4 +1,4 @@
-<?php namespace Anomaly\Streams\Addon\Theme\Streams\Listener;
+<?php namespace Anomaly\StreamsTheme\Listener;
 
 use Anomaly\Streams\Platform\Ui\Table\Event\TableDataLoadedEvent;
 use Laracasts\Commander\Events\EventListener;

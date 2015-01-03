@@ -1,6 +1,7 @@
-<?php namespace Anomaly\Streams\Addon\Theme\Streams\Command;
+<?php namespace Anomaly\StreamsTheme\Command;
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
+use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
 
 /**
  * Class BuildSectionButtonsCommandHandler
@@ -8,10 +9,27 @@ use Anomaly\Streams\Platform\Addon\Module\Module;
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\Streams\Addon\Theme\Streams\Command
+ * @package       Anomaly\StreamsTheme\Command
  */
 class BuildSectionButtonsCommandHandler
 {
+
+    /**
+     * The loaded modules.
+     *
+     * @var \Anomaly\Streams\Platform\Addon\Module\ModuleCollection
+     */
+    protected $modules;
+
+    /**
+     * Create a new BuildThemeNavigationCommandHandler instance.
+     *
+     * @param ModuleCollection $modules
+     */
+    public function __construct(ModuleCollection $modules)
+    {
+        $this->modules = $modules;
+    }
 
     /**
      * Handle the command.
@@ -23,7 +41,7 @@ class BuildSectionButtonsCommandHandler
     {
         $buttons = [];
 
-        $module = app('streams.modules')->active();
+        $module = $this->modules->active();
 
         $section = $command->getSection();
 
