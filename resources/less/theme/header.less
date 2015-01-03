@@ -6,16 +6,21 @@ header.app {
         border: none;
         background: none;
 
+        #logo {
+            float: left;
+            width: 80px;
+            height: 50px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: 100% !important;
+            background-position: center center !important;
+            background: url('../../../{{ image_path("theme::img/logo.png") }}');
+        }
+
         .navbar-brand {
             color: #ffffff;
-            padding-left: 0;
-            margin-top: -5px;
+            margin-top: -1px;
             font-family: @headings-font-family;
-
-            img {
-                width: 30px;
-                margin-right: 5px;
-            }
         }
 
         .navbar-toggle {
