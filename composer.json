@@ -1,13 +1,21 @@
 {
     "name": "anomaly/streams-theme",
     "type": "streams-addon",
-    "description": "Streams theme.",
+    "description": "The the official admin theme for Streams.",
+    "keywords": ["theme", "pyrocms", "laravel"],
+    "homepage": "http://anomaly.is/",
+    "license": "MIT",
     "authors": [
         {
-            "name": "AnomalyLabs",
-            "email": "hello@anomaly.is"
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
         }
     ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
     "autoload": {
         "psr-4": {
             "Anomaly\\StreamsTheme\\": "src/"
