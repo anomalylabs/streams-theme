@@ -1,18 +1,10 @@
 <section class="app-toolbar container-fluid">
 
     <div class="title">
-        <a href="#todo" data-toggle="dropdown">
+        <a href="{{ url('admin/' ~ get_module().getSlug()) }}" data-toggle="dropdown">
             {{ get_module().name() }}
             <i class="fa fa-lg fa-angle-double-right"></i>
         </a>
-
-        {#{% if theme_menu() %}
-            <ul class="dropdown-menu">
-                {% for item in theme_menu() %}
-                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}#}
     </div>
 
 
