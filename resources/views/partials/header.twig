@@ -35,7 +35,8 @@
 
                 <li>
                     <a href="{{ url_to('admin/logout') }}">
-                        <icon class="fa fa-sign-out"></icon>
+                        {{ trans('streams::misc.logout') }}
+                        {{ icon('sign-out')|raw }}
                     </a>
                 </li>
             </ul>
