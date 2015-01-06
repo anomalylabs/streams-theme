@@ -1,8 +1,8 @@
 <section class="app-toolbar container-fluid">
 
     <div class="title">
-        <a href="{{ url('admin/' ~ get_module().getSlug()) }}" data-toggle="dropdown">
-            {{ get_module().name() }}
+        <a href="{{ url('admin/' ~ module().getSlug()) }}" data-toggle="dropdown">
+            {{ trans(module().name()) }}
             <i class="fa fa-lg fa-angle-double-right"></i>
         </a>
     </div>
