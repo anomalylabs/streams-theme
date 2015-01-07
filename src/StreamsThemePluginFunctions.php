@@ -114,11 +114,11 @@ class StreamsThemePluginFunctions
 
             if ($section['active']) {
 
-                return $section['slug'];
+                return array_get($section, 'slug', null);
             }
         }
 
-        null;
+        return null;
     }
 
     /**
