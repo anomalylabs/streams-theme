@@ -41,7 +41,11 @@ class BuildModuleSectionsCommandHandler
     {
         $module = $this->modules->active();
 
-        $sections = [];
+        $sections = $module->getSections();
+
+        if (!$sections) {
+            return null;
+        }
 
         /**
          * Get the generic module section data from the active

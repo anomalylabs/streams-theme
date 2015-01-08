@@ -3,7 +3,9 @@
     <div class="title">
         <a href="{{ url('admin/' ~ module().getSlug()) }}" data-toggle="dropdown">
             {{ trans(module().name()) }}
-            <i class="fa fa-lg fa-angle-double-right"></i>
+            {% if theme_sections() %}
+                <i class="fa fa-lg fa-angle-double-right"></i>
+            {% endif %}
         </a>
     </div>
 

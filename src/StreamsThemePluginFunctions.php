@@ -110,6 +110,10 @@ class StreamsThemePluginFunctions
     {
         $sections = $this->sections();
 
+        if (!$sections) {
+            return null;
+        }
+
         foreach ($sections as $section) {
 
             if ($section['active']) {
