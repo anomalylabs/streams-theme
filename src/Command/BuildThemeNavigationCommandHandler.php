@@ -193,7 +193,7 @@ class BuildThemeNavigationCommandHandler
     {
         ksort($nav);
 
-        $key = trans('module.dashboard::addon.name');
+        $key = trans('anomaly.module.dashboard::addon.name');
 
         // Dashboard module is always first.
         if (isset($nav[$key]) and $dashboard = $nav[$key]) {
