@@ -129,7 +129,7 @@ class BuildThemeNavigationCommandHandler
      */
     protected function getGroup(Module $module)
     {
-        return trans($module->getNavigation());
+        return trans((string)$module->getNavigation());
     }
 
     /**
