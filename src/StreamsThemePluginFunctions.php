@@ -1,6 +1,9 @@
 <?php namespace Anomaly\StreamsTheme;
 
-use Laracasts\Commander\CommanderTrait;
+use Anomaly\StreamsTheme\Command\BuildModuleSectionsCommand;
+use Anomaly\StreamsTheme\Command\BuildSectionButtonsCommand;
+use Anomaly\StreamsTheme\Command\BuildThemeNavigationCommand;
+use Illuminate\Foundation\Bus\DispatchesCommands;
 
 /**
  * Class StreamsThemePluginFunctions
@@ -13,7 +16,7 @@ use Laracasts\Commander\CommanderTrait;
 class StreamsThemePluginFunctions
 {
 
-    use CommanderTrait;
+    use DispatchesCommands;
 
     /**
      * The theme object.
@@ -39,7 +42,7 @@ class StreamsThemePluginFunctions
      */
     public function nav()
     {
-        return $this->execute('Anomaly\StreamsTheme\Command\BuildThemeNavigationCommand');
+        return $this->dispatch(new BuildThemeNavigationCommand());
     }
 
     /**
@@ -49,7 +52,7 @@ class StreamsThemePluginFunctions
      */
     public function sections()
     {
-        return $this->execute('Anomaly\StreamsTheme\Command\BuildModuleSectionsCommand');
+        return $this->dispatch(new BuildModuleSectionsCommand());
     }
 
     /**
@@ -61,10 +64,7 @@ class StreamsThemePluginFunctions
     {
         $section = $this->getActiveSection();
 
-        return $this->execute(
-            'Anomaly\StreamsTheme\Command\BuildSectionButtonsCommand',
-            compact('section')
-        );
+        return $this->dispatch(new BuildSectionButtonsCommand($section));
     }
 
     /**

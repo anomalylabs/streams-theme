@@ -1,7 +1,6 @@
 <?php namespace Anomaly\StreamsTheme;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
-use Laracasts\Commander\CommanderTrait;
 
 /**
  * Class StreamsThemePlugin
