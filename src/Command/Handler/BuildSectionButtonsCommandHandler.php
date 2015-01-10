@@ -1,4 +1,4 @@
-<?php namespace Anomaly\StreamsTheme\Command;
+<?php namespace Anomaly\StreamsTheme\Command\Handler;
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
