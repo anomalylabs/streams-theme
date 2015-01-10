@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
+use Anomaly\StreamsTheme\Command\BuildSectionButtonsCommand;
 
 /**
  * Class BuildSectionButtonsCommandHandler
