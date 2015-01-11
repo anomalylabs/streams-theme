@@ -2,17 +2,17 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
-use Anomaly\StreamsTheme\Command\BuildThemeNavigationCommand;
+use Anomaly\StreamsTheme\Command\BuildThemeNavigation;
 
 /**
- * Class BuildThemeNavigationCommandHandler
+ * Class BuildThemeNavigationHandler
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StreamsTheme\Command
  */
-class BuildThemeNavigationCommandHandler
+class BuildThemeNavigationHandler
 {
 
     /**
@@ -23,7 +23,7 @@ class BuildThemeNavigationCommandHandler
     protected $modules;
 
     /**
-     * Create a new BuildThemeNavigationCommandHandler instance.
+     * Create a new BuildThemeNavigationHandler instance.
      *
      * @param ModuleCollection $modules
      */
@@ -35,10 +35,10 @@ class BuildThemeNavigationCommandHandler
     /**
      * Handle the command.
      *
-     * @param BuildThemeNavigationCommand $command
+     * @param BuildThemeNavigation $command
      * @return array
      */
-    public function handle(BuildThemeNavigationCommand $command)
+    public function handle(BuildThemeNavigation $command)
     {
         $nav = [];
 

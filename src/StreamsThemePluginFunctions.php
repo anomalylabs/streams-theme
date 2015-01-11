@@ -1,8 +1,8 @@
 <?php namespace Anomaly\StreamsTheme;
 
-use Anomaly\StreamsTheme\Command\BuildModuleSectionsCommand;
-use Anomaly\StreamsTheme\Command\BuildSectionButtonsCommand;
-use Anomaly\StreamsTheme\Command\BuildThemeNavigationCommand;
+use Anomaly\StreamsTheme\Command\BuildModuleSections;
+use Anomaly\StreamsTheme\Command\BuildSectionButtons;
+use Anomaly\StreamsTheme\Command\BuildThemeNavigation;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 
 /**
@@ -42,7 +42,7 @@ class StreamsThemePluginFunctions
      */
     public function nav()
     {
-        return $this->dispatch(new BuildThemeNavigationCommand());
+        return $this->dispatch(new BuildThemeNavigation());
     }
 
     /**
@@ -52,7 +52,7 @@ class StreamsThemePluginFunctions
      */
     public function sections()
     {
-        return $this->dispatch(new BuildModuleSectionsCommand());
+        return $this->dispatch(new BuildModuleSections());
     }
 
     /**
@@ -64,7 +64,7 @@ class StreamsThemePluginFunctions
     {
         $section = $this->getActiveSection();
 
-        return $this->dispatch(new BuildSectionButtonsCommand($section));
+        return $this->dispatch(new BuildSectionButtons($section));
     }
 
     /**

@@ -1,14 +1,14 @@
 <?php namespace Anomaly\StreamsTheme\Command;
 
 /**
- * Class BuildSectionButtonsCommand
+ * Class BuildSectionButtons
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StreamsTheme\Command
  */
-class BuildSectionButtonsCommand
+class BuildSectionButtons
 {
 
     /**
@@ -19,7 +19,7 @@ class BuildSectionButtonsCommand
     protected $section;
 
     /**
-     * Create a new BuildSectionButtonsCommand instance.
+     * Create a new BuildSectionButtons instance.
      *
      * @param $section
      */

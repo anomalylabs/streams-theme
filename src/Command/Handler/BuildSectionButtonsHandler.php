@@ -2,17 +2,17 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
-use Anomaly\StreamsTheme\Command\BuildSectionButtonsCommand;
+use Anomaly\StreamsTheme\Command\BuildSectionButtons;
 
 /**
- * Class BuildSectionButtonsCommandHandler
+ * Class BuildSectionButtonsHandler
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StreamsTheme\Command
  */
-class BuildSectionButtonsCommandHandler
+class BuildSectionButtonsHandler
 {
 
     /**
@@ -23,7 +23,7 @@ class BuildSectionButtonsCommandHandler
     protected $modules;
 
     /**
-     * Create a new BuildThemeNavigationCommandHandler instance.
+     * Create a new BuildThemeNavigationHandler instance.
      *
      * @param ModuleCollection $modules
      */
@@ -35,10 +35,10 @@ class BuildSectionButtonsCommandHandler
     /**
      * Handle the command.
      *
-     * @param BuildSectionButtonsCommand $command
+     * @param BuildSectionButtons $command
      * @return array
      */
-    public function handle(BuildSectionButtonsCommand $command)
+    public function handle(BuildSectionButtons $command)
     {
         $buttons = [];
 

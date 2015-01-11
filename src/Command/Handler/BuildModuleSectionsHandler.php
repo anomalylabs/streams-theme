@@ -2,17 +2,17 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
-use Anomaly\StreamsTheme\Command\BuildModuleSectionsCommand;
+use Anomaly\StreamsTheme\Command\BuildModuleSections;
 
 /**
- * Class BuildModuleSectionsCommandHandler
+ * Class BuildModuleSectionsHandler
  *
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StreamsTheme\Command
  */
-class BuildModuleSectionsCommandHandler
+class BuildModuleSectionsHandler
 {
 
     /**
@@ -23,7 +23,7 @@ class BuildModuleSectionsCommandHandler
     protected $modules;
 
     /**
-     * Create a new BuildThemeNavigationCommandHandler instance.
+     * Create a new BuildThemeNavigationHandler instance.
      *
      * @param ModuleCollection $modules
      */
@@ -35,10 +35,10 @@ class BuildModuleSectionsCommandHandler
     /**
      * Handle the command.
      *
-     * @param BuildModuleSectionsCommand $command
+     * @param BuildModuleSections $command
      * @return array
      */
-    public function handle(BuildModuleSectionsCommand $command)
+    public function handle(BuildModuleSections $command)
     {
         $module = $this->modules->active();
 
