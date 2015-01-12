@@ -95,7 +95,7 @@ class BuildModuleSectionsHandler
      */
     protected function getTitle(array $section, Module $module)
     {
-        return trans(array_get($section, 'title', $module->getKey('addon.section.' . $section['slug'])));
+        return trans(array_get($section, 'title', $module->getNamespace('addon.section.' . $section['slug'])));
     }
 
     /**
