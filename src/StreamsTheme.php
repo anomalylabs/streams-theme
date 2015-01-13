@@ -11,4 +11,5 @@ class StreamsTheme extends Theme
      * @var bool
      */
     protected $admin = true;
+
 }
