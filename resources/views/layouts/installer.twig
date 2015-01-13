@@ -41,9 +41,11 @@
     </div>
 
     {% block content %}{% endblock %}
-</section>
 
-{% include "theme::partials/footer" %}
+    <div class="row">
+        {% include "theme::partials/footer" %}
+    </div>
+</section>
 
 </body>
 </html>
