@@ -4,6 +4,7 @@
     "description": "The the official admin theme for Streams.",
     "keywords": ["theme", "pyrocms", "laravel"],
     "homepage": "http://anomaly.is/",
+    "version": "1.0.0-alpha",
     "license": "MIT",
     "authors": [
         {
