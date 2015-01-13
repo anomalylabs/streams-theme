@@ -36,10 +36,10 @@
 {{ html_style(asset_path("theme.css")) }}
 {{ html_script(asset_path("theme.js")) }}
 
-{% for path in asset_paths("streams.css") %}
+{% for path in asset_paths("styles.css") %}
     {{ html_style(path) }}
 {% endfor %}
 
-{% for path in asset_paths("streams.js") %}
+{% for path in asset_paths("scripts.js") %}
     {{ html_script(path) }}
 {% endfor %}
