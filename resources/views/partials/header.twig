@@ -32,11 +32,21 @@
                         </li>
                     {% endif %}
                 {% endfor %}
+            </ul>
 
+            <ul class="nav navbar-nav navbar-right" style="margin-right: -10px;">
                 <li>
-                    <a href="{{ url_to('admin/logout') }}">
-                        {{ icon('sign-out')|raw }}
+                    <a href="#" data-toggle="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
+                        <img src="https://gravatar.com/avatar/{{ helper_md5(auth_user().email) }}" height="30"
+                             class="img-rounded">
                     </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ url_to('admin/logout') }}">
+                                {{ icon('sign-out')|raw }} Logout
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
