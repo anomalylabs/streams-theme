@@ -1,7 +1,10 @@
 <?php namespace Anomaly\StreamsTheme\Toolbar;
 
 use Anomaly\StreamsTheme\Toolbar\Command\BuildToolbar;
+use Anomaly\StreamsTheme\Toolbar\Command\LoadToolbar;
 use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 /**
  * Class ToolbarBuilder
@@ -48,7 +51,7 @@ class ToolbarBuilder
     }
 
     /**
-     * Build the table.
+     * Build the toolbar.
      */
     public function build()
     {
@@ -56,35 +59,26 @@ class ToolbarBuilder
     }
 
     /**
-     * Make the table response.
+     * Make the toolbar.
      */
     public function make()
     {
-        $this->build();
-
-        $this->table->setContent(
-            view($options->get('table_view', 'streams::ui/table/index'), $data)
-        );
+        $this->dispatch(new LoadToolbar($this->toolbar));
     }
 
     /**
-     * Render the table.
+     * Render the toolbar.
      *
      * @return View|Response
      */
     public function render()
     {
+        $this->build();
         $this->make();
 
-        if ($this->table->getResponse() === null) {
+        $data = $this->toolbar->getData();
 
-            $options = $this->table->getOptions();
-            $content = $this->table->getContent();
-
-            return view($options->get('wrapper_view', 'streams::blank'), compact('content'));
-        }
-
-        return $this->table->getResponse();
+        return view('theme::partials/toolbar', $data);
     }
 
     /**
@@ -95,5 +89,43 @@ class ToolbarBuilder
     public function getToolbar()
     {
         return $this->toolbar;
+    }
+
+    /**
+     * Get the section buttons.
+     *
+     * @return array
+     */
+    public function getButtons()
+    {
+        return $this->buttons;
+    }
+
+    /**
+     * Set the section buttons.
+     *
+     * @param array $buttons
+     */
+    public function setButtons($buttons)
+    {
+        $this->buttons = $buttons;
+    }
+
+    /**
+     * Get the module sections.
+     *
+     * @return array
+     */
+    public function getSections()
+    {
+        return $this->sections;
+    }
+
+    /**
+     * @param array $sections
+     */
+    public function setSections($sections)
+    {
+        $this->sections = $sections;
     }
 }

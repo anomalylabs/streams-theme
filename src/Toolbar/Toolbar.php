@@ -1,5 +1,6 @@
 <?php namespace Anomaly\StreamsTheme\Toolbar;
 
+use Anomaly\StreamsTheme\Toolbar\Component\Section\SectionCollection;
 use Illuminate\Support\Collection;
 
 /**
@@ -14,6 +15,20 @@ class Toolbar
 {
 
     /**
+     * The toolbar content.
+     *
+     * @var null|string
+     */
+    protected $content = null;
+
+    /**
+     * The view data.
+     *
+     * @var Collection
+     */
+    protected $data;
+
+    /**
      * The section buttons.
      *
      * @var Collection
@@ -23,20 +38,32 @@ class Toolbar
     /**
      * The module sections.
      *
-     * @var Collection
+     * @var SectionCollection
      */
     protected $sections;
 
     /**
      * Create a new Toolbar instance.
      *
-     * @param Collection $buttons
-     * @param Collection $sections
+     * @param Collection        $data
+     * @param Collection        $buttons
+     * @param SectionCollection $sections
      */
-    function __construct(Collection $buttons, Collection $sections)
+    function __construct(Collection $data, Collection $buttons, SectionCollection $sections)
     {
+        $this->data     = $data;
         $this->buttons  = $buttons;
         $this->sections = $sections;
+    }
+
+    /**
+     * Get the view data.
+     *
+     * @return Collection
+     */
+    public function getData()
+    {
+        return $this->data;
     }
 
     /**
@@ -52,10 +79,20 @@ class Toolbar
     /**
      * Get the module sections.
      *
-     * @return Collection
+     * @return SectionCollection
      */
     public function getSections()
     {
         return $this->sections;
+    }
+
+    /**
+     * Set the toolbar content.
+     *
+     * @param null|string $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
     }
 }

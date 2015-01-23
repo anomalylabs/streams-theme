@@ -40,6 +40,7 @@ class StreamsThemePlugin extends Plugin
     {
         return [
             new \Twig_SimpleFunction('theme_nav', [$this->functions, 'nav']),
+            new \Twig_SimpleFunction('theme_toolbar', [$this->functions, 'toolbar']),
             new \Twig_SimpleFunction('theme_actions', [$this->functions, 'actions']),
             new \Twig_SimpleFunction('theme_sections', [$this->functions, 'sections']),
             new \Twig_SimpleFunction('theme_footprint', [$this->functions, 'footprint']),

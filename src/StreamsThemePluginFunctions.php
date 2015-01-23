@@ -3,6 +3,7 @@
 use Anomaly\StreamsTheme\Command\BuildModuleSections;
 use Anomaly\StreamsTheme\Command\BuildSectionButtons;
 use Anomaly\StreamsTheme\Command\BuildThemeNavigation;
+use Anomaly\StreamsTheme\Command\RenderToolbar;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 
 /**
@@ -33,6 +34,16 @@ class StreamsThemePluginFunctions
     public function __construct(StreamsTheme $theme)
     {
         $this->theme = $theme;
+    }
+
+    /**
+     * Render the toolbar partial.
+     *
+     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function toolbar()
+    {
+        return $this->dispatch(new RenderToolbar());
     }
 
     /**

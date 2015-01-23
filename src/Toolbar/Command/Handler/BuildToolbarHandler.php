@@ -1,7 +1,9 @@
 <?php namespace Anomaly\StreamsTheme\Toolbar\Command\Handler;
 
 use Anomaly\StreamsTheme\Toolbar\Command\BuildToolbar;
+use Anomaly\StreamsTheme\Toolbar\Component\Button\Command\BuildButtons;
 use Anomaly\StreamsTheme\Toolbar\Component\Section\Command\BuildSections;
+use Anomaly\StreamsTheme\Toolbar\Component\Section\Command\SetActiveSection;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 
 /**
@@ -24,10 +26,9 @@ class BuildToolbarHandler
     {
         $builder = $command->getBuilder();
 
-        /*
-         * Build table views and mark active.
-         */
         $this->dispatch(new BuildSections($builder));
-        //$this->dispatch(new SetActiveView($builder));
+        $this->dispatch(new SetActiveSection($builder));
+
+        $this->dispatch(new BuildButtons($builder));
     }
 }

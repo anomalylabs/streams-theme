@@ -10,5 +10,60 @@
  */
 interface SectionInterface
 {
-    
+
+    /**
+     * Get the text.
+     *
+     * @return string
+     */
+    public function getText();
+
+    /**
+     * Set the text.
+     *
+     * @param string $text
+     */
+    public function setText($text);
+
+    /**
+     * Get the active flag.
+     *
+     * @return boolean
+     */
+    public function isActive();
+
+    /**
+     * Set the active flag.
+     *
+     * @param boolean $active
+     */
+    public function setActive($active);
+
+    /**
+     * Get the buttons.
+     *
+     * @return array|string
+     */
+    public function getButtons();
+
+    /**
+     * Set the buttons.
+     *
+     * @param array|string $buttons
+     */
+    public function setButtons($buttons);
+
+    /**
+     * Get the attributes.
+     *
+     * @return array
+     */
+    public function getAttributes();
+
+    /**
+     * Set the attributes.
+     *
+     * @param array $attributes
+     */
+    public function setAttributes(array $attributes);
 }

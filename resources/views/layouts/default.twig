@@ -18,7 +18,9 @@
 <body>
 
 {% include "theme::partials/header" %}
-{% include "theme::partials/toolbar" %}
+
+{{ theme_toolbar()|raw }}
+
 {% include "theme::partials/messages" %}
 
 <section id="main" class="container-fluid">
