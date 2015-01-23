@@ -1,7 +1,6 @@
 <?php namespace Anomaly\StreamsTheme\Toolbar\Component\Section;
 
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
-use Illuminate\Http\Request;
 
 /**
  * Class SectionNormalizer
@@ -80,7 +79,11 @@ class SectionNormalizer
             /**
              * Make sure the HREF is absolute.
              */
-            if (isset($section['attributes']['href']) && !starts_with($section['attributes']['href'], 'http')) {
+            if (
+                isset($section['attributes']['href']) &&
+                is_string($section['attributes']['href']) &&
+                !starts_with($section['attributes']['href'], 'http')
+            ) {
                 $section['attributes']['href'] = url($section['attributes']['href']);
             }
         }
