@@ -68,6 +68,10 @@ class HrefGuesser
      */
     protected function guessCreateHref()
     {
-        return $this->url->to($this->request->path() . '/create');
+        $segments = explode('/', $this->request->path());
+
+        $segments[] = 'create';
+
+        return $this->url->to(implode('/', array_unique($segments)));
     }
 }
