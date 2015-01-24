@@ -1,6 +1,7 @@
 <?php namespace Anomaly\StreamsTheme\Toolbar\Component\Section\Command\Handler;
 
 use Anomaly\StreamsTheme\Toolbar\Component\Section\Command\SetActiveSection;
+use Anomaly\StreamsTheme\Toolbar\Component\Section\Contract\SectionInterface;
 
 /**
  * Class SetActiveSectionHandler
@@ -24,6 +25,10 @@ class SetActiveSectionHandler
         $toolbar  = $builder->getToolbar();
         $sections = $toolbar->getSections();
 
-        $sections->first()->setActive(true);
+        $section = $sections->first();
+
+        if ($section instanceof SectionInterface) {
+            $section->setActive(true);
+        }
     }
 }

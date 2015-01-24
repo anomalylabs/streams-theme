@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Support\Resolver;
 use Anomaly\Streams\Platform\Ui\Button\ButtonNormalizer;
+use Anomaly\StreamsTheme\Toolbar\Component\Section\Contract\SectionInterface;
 use Anomaly\StreamsTheme\Toolbar\ToolbarBuilder;
 use Illuminate\Support\Collection;
 
@@ -72,11 +73,17 @@ class ButtonInput
      */
     protected function setInput(ToolbarBuilder $builder)
     {
+        $buttons = [];
+
         $toolbar  = $builder->getToolbar();
         $sections = $toolbar->getSections();
         $section  = $sections->active();
 
-        $builder->setButtons($section->getButtons());
+        if ($section instanceof SectionInterface) {
+            $buttons = $section->getButtons();
+        }
+
+        $builder->setButtons($buttons);
     }
 
     /**
