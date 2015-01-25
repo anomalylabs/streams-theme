@@ -1,9 +1,6 @@
 <?php namespace Anomaly\StreamsTheme;
 
-use Anomaly\StreamsTheme\Command\BuildModuleSections;
-use Anomaly\StreamsTheme\Command\BuildSectionButtons;
 use Anomaly\StreamsTheme\Command\BuildThemeNavigation;
-use Anomaly\StreamsTheme\Command\RenderToolbar;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 
 /**
@@ -37,16 +34,6 @@ class StreamsThemePluginFunctions
     }
 
     /**
-     * Render the toolbar partial.
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
-     */
-    public function toolbar()
-    {
-        return $this->dispatch(new RenderToolbar());
-    }
-
-    /**
      * Return navigation.
      *
      * @return array
@@ -54,28 +41,6 @@ class StreamsThemePluginFunctions
     public function nav()
     {
         return $this->dispatch(new BuildThemeNavigation());
-    }
-
-    /**
-     * Return sections for the theme.
-     *
-     * @return mixed
-     */
-    public function sections()
-    {
-        return $this->dispatch(new BuildModuleSections());
-    }
-
-    /**
-     * Return the actions for the active section.
-     *
-     * @return null
-     */
-    public function actions()
-    {
-        $section = $this->getActiveSection();
-
-        return $this->dispatch(new BuildSectionButtons($section));
     }
 
     /**

@@ -3,16 +3,16 @@
     <div class="title">
         <a href="{{ url('admin/' ~ module().getSlug()) }}" data-toggle="dropdown">
             {{ trans(module().name()) }}
-            {% if sections %}
+            {% if cp_sections() %}
                 <i class="fa fa-lg fa-angle-double-right"></i>
             {% endif %}
         </a>
     </div>
 
 
-    {% if sections %}
+    {% if cp_sections() %}
         <ul class="sections nav nav-pills">
-            {% for section in sections %}
+            {% for section in cp_sections() %}
                 <li class="{{ section.active ? 'active' }}">
                     <a {{ html_attributes(section.attributes) }}>
                         {{ trans(section.text) }}
@@ -23,7 +23,7 @@
     {% endif %}
 
     <div class="buttons">
-        {{ buttons(buttons)|raw }}
+        {{ buttons(cp_buttons())|raw }}
     </div>
 
 </section>
