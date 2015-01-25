@@ -22,7 +22,7 @@
 {% include "theme::partials/messages" %}
 
 <section id="main" class="container-fluid">
-    {% block content %}{% endblock %}
+    {{ block('content') }}
 </section>
 
 {% include "theme::partials/footer" %}
