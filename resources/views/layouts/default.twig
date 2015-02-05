@@ -12,20 +12,20 @@
 <html>
 
 <head>
-    {% include "theme::partials/metadata" %}
+    {% include "anomaly.theme.streams::partials/metadata" %}
 </head>
 
 <body>
 
-{% include "theme::partials/header" %}
-{% include "theme::partials/toolbar" %}
-{% include "theme::partials/messages" %}
+{% include "anomaly.theme.streams::partials/header" %}
+{% include "anomaly.theme.streams::partials/toolbar" %}
+{% include "anomaly.theme.streams::partials/messages" %}
 
 <section id="main" class="container-fluid">
     {{ block('content') }}
 </section>
 
-{% include "theme::partials/footer" %}
+{% include "anomaly.theme.streams::partials/footer" %}
 
 </body>
 </html>

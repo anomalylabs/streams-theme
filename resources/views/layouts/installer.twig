@@ -12,7 +12,7 @@
 <html>
 
 <head>
-    {% include "theme::partials/metadata" %}
+    {% include "anomaly.theme.streams::partials/metadata" %}
 </head>
 
 <body id="installer">
@@ -37,13 +37,13 @@
 <section id="main" class="container">
 
     <div class="row">
-        {% include "theme::partials/messages" %}
+        {% include "anomaly.theme.streams::partials/messages" %}
     </div>
 
     {% block content %}{% endblock %}
 
     <div class="row">
-        {% include "theme::partials/footer" %}
+        {% include "anomaly.theme.streams::partials/footer" %}
     </div>
 
 </section>
