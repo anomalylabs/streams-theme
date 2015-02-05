@@ -16,22 +16,22 @@
 <title>Streams</title>
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ image_url('anomaly.theme.streams::img/favicon.png') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ image_url('anomaly.theme.streams::img/favicon.png') }}">
-<link rel="apple-touch-icon" href="{{ image_url('anomaly.theme.streams::img/favicon.png') }}"/>
+<link rel="icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ image_url('theme::img/favicon.png') }}"/>
 
-{{ asset_add("theme.css", "anomaly.theme.streams::less/bootstrap/bootstrap.less") }}
-{{ asset_add("theme.css", "anomaly.theme.streams::less/font-awesome/font-awesome.less") }}
-{{ asset_add("theme.css", "anomaly.theme.streams::less/animate/animate.less") }}
-{{ asset_add("theme.css", "anomaly.theme.streams::less/theme/theme.less") }}
-{{ asset_add("theme.css", "anomaly.theme.streams::less/plugins/select2.less") }} {# Separate for Twig processing #}
-{{ asset_add("theme.css", "anomaly.theme.streams::less/plugins/*") }}
+{{ asset_add("theme.css", "theme::less/bootstrap/bootstrap.less") }}
+{{ asset_add("theme.css", "theme::less/font-awesome/font-awesome.less") }}
+{{ asset_add("theme.css", "theme::less/animate/animate.less") }}
+{{ asset_add("theme.css", "theme::less/theme/theme.less") }}
+{{ asset_add("theme.css", "theme::less/plugins/select2.less") }} {# Separate for Twig processing #}
+{{ asset_add("theme.css", "theme::less/plugins/*") }}
 
-{{ asset_add("theme.js", "anomaly.theme.streams::js/vendor/jquery-1.11.1.js") }}
-{{ asset_add("theme.js", "anomaly.theme.streams::js/vendor/modernizr.js") }}
-{{ asset_add("theme.js", "anomaly.theme.streams::js/bootstrap/*") }}
-{{ asset_add("theme.js", "anomaly.theme.streams::js/theme/*") }}
-{{ asset_add("theme.js", "anomaly.theme.streams::js/plugins/*") }}
+{{ asset_add("theme.js", "theme::js/vendor/jquery-1.11.1.js") }}
+{{ asset_add("theme.js", "theme::js/vendor/modernizr.js") }}
+{{ asset_add("theme.js", "theme::js/bootstrap/*") }}
+{{ asset_add("theme.js", "theme::js/theme/*") }}
+{{ asset_add("theme.js", "theme::js/plugins/*") }}
 
 {{ html_style(asset_path("theme.css")) }}
 {{ html_script(asset_path("theme.js")) }}

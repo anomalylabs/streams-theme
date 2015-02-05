@@ -61,7 +61,7 @@ class StreamsThemePluginFunctions
         $to    = array_get($pagination, 'to');
         $total = array_get($pagination, 'total');
 
-        return trans('anomaly.theme.streams::admin.pagination', compact('from', 'to', 'total'));
+        return trans('theme::admin.pagination', compact('from', 'to', 'total'));
     }
 
     /**
@@ -74,7 +74,7 @@ class StreamsThemePluginFunctions
         $time   = $this->requestTime();
         $memory = $this->memoryUsage();
 
-        return trans('anomaly.theme.streams::admin.footprint', compact('time', 'memory'));
+        return trans('theme::admin.footprint', compact('time', 'memory'));
     }
 
     /**
