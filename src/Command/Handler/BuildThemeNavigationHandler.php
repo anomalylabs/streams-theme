@@ -48,7 +48,7 @@ class BuildThemeNavigationHandler
          *
          * Keep it generic but helpful.
          */
-        foreach ($this->modules->all() as $module) {
+        foreach ($this->modules->enabled() as $module) {
 
             // Build the required data.
             $url    = $this->getUrl($module);
