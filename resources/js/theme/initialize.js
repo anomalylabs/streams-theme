@@ -22,4 +22,9 @@ $(function () {
             return false;
         }
     });
+
+    // When hiding modals destroy them.
+    $('.modal').on('hidden.bs.modal', function () {
+        $(this).removeData('bs.modal');
+    });
 });
