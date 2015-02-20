@@ -38,7 +38,7 @@
                 <li class="active">
                     <a href="#" data-toggle="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
                         <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" height="30">
-                        &nbsp;&nbsp;{{ auth_user().username }}
+                        &nbsp;&nbsp;{{ auth_user().display_name ?: auth_user().username }}
                         {{ icon('caret-down')|raw }}
                     </a>
                     <ul class="dropdown-menu">
