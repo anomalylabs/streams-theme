@@ -50,20 +50,19 @@ class BuildThemeNavigationHandler
          */
         foreach ($this->modules->enabled() as $module) {
 
+            /**
+             * If the group is set to false then
+             * skip it - no backend navigation.
+             */
+            if ($module instanceof Module && $module->getNavigation() === false) {
+                continue;
+            }
+            
             // Build the required data.
             $url    = $this->getUrl($module);
             $title  = $this->getTitle($module);
             $group  = $this->getGroup($module);
             $active = $this->getActive($module);
-
-            /**
-             * If the group is set to false then
-             * skip it - no backend navigation.
-             */
-            if ($group === false) {
-
-                continue;
-            }
 
             $item = compact('url', 'title', 'group', 'active');
 
