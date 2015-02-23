@@ -57,7 +57,7 @@ class BuildThemeNavigationHandler
             if ($module instanceof Module && $module->getNavigation() === false) {
                 continue;
             }
-            
+
             // Build the required data.
             $url    = $this->getUrl($module);
             $title  = $this->getTitle($module);
