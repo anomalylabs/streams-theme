@@ -1,26 +1,29 @@
 $(function () {
 
     // Initialize popups.
-    $('.popup').popup();
+    $('.ui.popup').popup();
 
     // Initialize dropdown.
-    $('.dropdown').dropdown({
+    $('.ui.dropdown').dropdown({
         transition: 'drop'
     });
+
+    // Initialize checkboxes.
+    $('.ui.checkbox').checkbox();
+
+    // Initialize tabs.
+    $('.ui.attached.tabular.menu .item').tab();
 
     // Toggle navigation.
     $('a.launch').click(function (e) {
 
         e.preventDefault();
 
-        $('.sidebar.navigation').toggleClass('visible');
+        $('.sidebar.navigation').sidebar('toggle');
     });
 
-    // Close navigation if clicked in pusher.
-    $('.pusher').click(function (e) {
-
-        e.preventDefault();
-
-        $('.sidebar.navigation').removeClass('visible');
+    // Close sidebars on outside click.
+    $('.pusher').click(function () {
+        $('.sidebar').sidebar('hide');
     });
 });

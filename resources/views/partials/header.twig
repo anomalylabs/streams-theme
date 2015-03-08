@@ -1,53 +1,31 @@
-<header class="ui fixed inverted header menu">
-    <div class="container">
+<div class="ui segment basic header">
 
-        <div class="ui user dropdown item">
-            <a class="logo">
-                {{ image('theme::img/icon-white.png').width(20)|raw }}
-            </a>
+    <h2 class="ui header">
+        {{ trans(module().name()) }}
+        <br>
+        <span class="sub header">This is the description</span>
+    </h2>
 
-            <div class="menu fluid">
-                <a href="{{ url('https://pyrocms.com/about') }}" target="_blank" class="item">About PyroCMS</a>
-                <a href="{{ url('https://pyrocms.com/') }}" target="_blank" class="item">PyroCMS.com</a>
-                <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Documentation</a>
-                <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Support</a>
-                <a href="{{ url('https://pyrocms.com/contact') }}" target="_blank" class="item">Feedback</a>
-            </div>
-        </div>
-
-        <a href="#" class="launch item">
-            <i class="content icon"></i> Menu
-        </a>
-
-        <a href="{{ url('/') }}" target="_blank" class="title item">
-            <i class="icon home"></i> My Site
-        </a>
-
-        <a href="#search" class="title item">
-            <i class="icon search"></i> Search
-        </a>
-
-        <div class="right menu">
-            <div class="ui user dropdown item">
-
-                {{ auth_user().display_name ?: auth_user().username }}
-
-                <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" height="24">
-
-                <div class="menu fluid">
-                    <div class="item">
-                        <i class="icon user"></i>
-                        Edit Profile
-                    </div>
-
-                    <a href="{{ url('admin/logout') }}" class="item">
-                        <i class="icon sign out"></i>
-                        Logout
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
+    <div class="buttons">
+        {{ buttons(cp_buttons())|raw }}
     </div>
-</header>
+
+    {% if cp_sections() %}
+        <div class="ui vertical menu large" style="width: auto;">
+            {% for section in cp_sections() %}
+                <a class="{{ section.active ? 'active' }} item" {{ html_attributes(section.attributes) }}>
+                    {{ trans(section.text) }}
+                </a>
+            {% endfor %}
+        </div>
+
+        <div class="ui primary menu">
+            {% for section in cp_sections() %}
+                <a class="{{ section.active ? 'active' }} item" {{ html_attributes(section.attributes) }}>
+                    {{ trans(section.text) }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</div>

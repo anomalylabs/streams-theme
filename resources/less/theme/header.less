@@ -1,59 +1,39 @@
-.ui.header.menu .item {
-    color: #999999;
+.ui.segment.header {
+    margin-bottom: 0;
 }
 
-.ui.header.menu .logo > img:only-child {
-    float: left;
-    margin-top: -4px;
-    margin-bottom: -4px;
+.ui.segment.header .buttons {
+    margin-bottom: 2rem;
 }
 
-.ui.header.menu .item.user > img {
-    display: inline;
-    margin: -6px 0 -6px 5px;
+.ui.segment.header {
+    .menu.vertical {
+        .item:first-child {
+            margin-left: 0;
+        }
+    }
 }
 
-.ui.header.menu .right.menu .menu .item {
-    min-width: 100px;
+@media (min-width: 768px) {
+    .ui.segment.header {
+        .menu.vertical {
+            display: none;
+        }
+    }
 }
 
+@media (max-width: 768px) {
+    .ui.segment.header {
+        .menu.primary {
+            display: none;
+        }
 
-.fixed.launch.button {
-    position: fixed;
-    top: 63px;
-    left: -1px;
-    width: 55px;
-    height: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-transition: 0.3s width ease, 0.5s transform ease;
-    -moz-transition: 0.3s width ease, 0.5s transform ease;
-    -o-transition: 0.3s width ease, 0.5s transform ease;
-    -ms-transition: 0.3s width ease, 0.5s transform ease;
-    transition: 0.3s width ease, 0.5s transform ease;
-}
-
-.launch.button .icon {
-    margin-left: 0px;
-}
-
-.fixed.launch.button .text {
-    position: absolute;
-    white-space: nowrap;
-    top: auto;
-    left: 54px;
-    opacity: 0;
-    -webkit-transition: 0.3s opacity 0.3s;
-    -moz-transition: 0.3s opacity 0.3s;
-    -o-transition: 0.3s opacity 0.3s;
-    -ms-transition: 0.3s opacity 0.3s;
-    transition: 0.3s opacity 0.3s;
-}
-
-.fixed.launch.button:hover {
-    width: 130px;
-}
-
-.fixed.launch.button:hover .text {
-    opacity: 1;
+        .buttons {
+            .button {
+                width: 100%;
+                display: block;
+                margin: 0 0 .5em 0;
+            }
+        }
+    }
 }

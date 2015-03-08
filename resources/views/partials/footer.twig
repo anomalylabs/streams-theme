@@ -1,18 +1,14 @@
-<footer class="container-fluid" id="footer">
-    <div class="row">
+<footer class="ui segment basic footer">
 
-        <div class="col-lg-12">
-            &copy; {{ now|date("Y") }} - AnomalyLabs, Inc.
-            <br>
-            <br>
-            Streams Platform Version {{ config_get("constants.version") }}
-        </div>
+    <small>
+        &copy; {{ now|date("Y") }} - AnomalyLabs, Inc.
+        <br>
+        <br>
+        Streams Platform Version {{ config_get("constants.version") }}
+        <br>
+        {{ theme_footprint() }}
+        <br>
+        {{ theme_pagination() }}
+    </small>
 
-        <div class="col-lg-12 text-right">
-            {{ theme_footprint() }}
-            <br>
-            {{ theme_pagination() }}
-        </div>
-
-    </div>
 </footer>
