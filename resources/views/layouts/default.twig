@@ -15,18 +15,24 @@
     {% include "theme::partials/metadata" %}
 </head>
 
-<body>
+<body class="custom pushable dimmable">
 
+{% include "theme::partials/navigation" %}
 {% include "theme::partials/header" %}
-{% include "theme::partials/toolbar" %}
-{% include "theme::partials/messages" %}
 
-<section id="main" class="container-fluid">
-    {{ block('content') }}
-</section>
+<div class="pusher">
+    <div class="full height">
+        {% include "theme::partials/toolbar" %}
+        {% include "theme::partials/messages" %}
 
-{% include "theme::partials/modals" %}
-{% include "theme::partials/footer" %}
+        <section id="main" class="container-fluid">
+            {{ block('content') }}
+        </section>
+
+        {% include "theme::partials/modals" %}
+        {% include "theme::partials/footer" %}
+    </div>
+</div>
 
 </body>
 </html>

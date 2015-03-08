@@ -1,125 +1,59 @@
-#header {
-    background-color: lighten(@gray-darker, 20%);
+.ui.header.menu .item {
+    color: #999999;
+}
 
-    .navbar {
-        margin: 0;
-        border: none;
-        background: none;
+.ui.header.menu .logo > img:only-child {
+    float: left;
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
 
-        #logo {
-            float: left;
-            width: 80px;
-            height: 50px;
-            display: inline-block;
-            background-repeat: no-repeat;
-            background-size: 100% !important;
-            background-position: center center !important;
-            background: url('../../../{{ image_path("theme::img/logo.png") }}');
-        }
+.ui.header.menu .item.user > img {
+    display: inline;
+    margin: -6px 0 -6px 5px;
+}
 
-        .navbar-brand {
-            color: #ffffff;
-            font-weight: bold;
-            font-family: @headings-font-family;
-        }
+.ui.header.menu .right.menu .menu .item {
+    min-width: 100px;
+}
 
-        .navbar-toggle {
-            border: none;
-            background: none;
 
-            .icon-bar {
-                background-color: #ffffff !important;
-            }
-        }
+.fixed.launch.button {
+    position: fixed;
+    top: 63px;
+    left: -1px;
+    width: 55px;
+    height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-transition: 0.3s width ease, 0.5s transform ease;
+    -moz-transition: 0.3s width ease, 0.5s transform ease;
+    -o-transition: 0.3s width ease, 0.5s transform ease;
+    -ms-transition: 0.3s width ease, 0.5s transform ease;
+    transition: 0.3s width ease, 0.5s transform ease;
+}
 
-        .nav {
-            > li {
-                position: relative;
+.launch.button .icon {
+    margin-left: 0px;
+}
 
-                &:last-child {
-                    margin-right: -@grid-gutter-width / 2 !important;
-                }
+.fixed.launch.button .text {
+    position: absolute;
+    white-space: nowrap;
+    top: auto;
+    left: 54px;
+    opacity: 0;
+    -webkit-transition: 0.3s opacity 0.3s;
+    -moz-transition: 0.3s opacity 0.3s;
+    -o-transition: 0.3s opacity 0.3s;
+    -ms-transition: 0.3s opacity 0.3s;
+    transition: 0.3s opacity 0.3s;
+}
 
-                &.open {
-                    > a {
-                        color: lighten(@gray, 20%) !important;
-                    }
-                }
+.fixed.launch.button:hover {
+    width: 130px;
+}
 
-                &.has-dropdown {
-                    > a {
-                        background: none;
-                        padding-right: 20px;
-
-                        &:after {
-                            z-index: 0;
-                            right: 6px;
-                            content: "\f0d7";
-                            position: absolute;
-                            font-family: "FontAwesome";
-                        }
-                    }
-
-                    &:hover {
-                        > a {
-                            color: lighten(@gray, 20%);
-                        }
-                    }
-                }
-
-                > a {
-                    color: lighten(@gray-dark, 20%);
-
-                    .flag-icon {
-                        width: 34px;
-                        height: 25px;
-                        display: block;
-                        margin-top: -2px;
-                        margin-bottom: -5px;
-                        border-radius: @border-radius-base;
-                    }
-
-                    &:hover {
-                        color: lighten(@gray, 20%);
-                    }
-                }
-
-                &.active {
-                    > a {
-                        color: #ffffff;
-                        background: none;
-                        font-weight: bold;
-                    }
-
-                    &:hover {
-                        > a {
-                            color: #ffffff;
-                        }
-                    }
-                }
-
-                ul.dropdown-menu {
-                    margin-top: -5px;
-
-                    li {
-                        a {
-                            color: @gray-darker;
-                        }
-
-                        &.active {
-                            a {
-                                background: none;
-                                font-weight: bold;
-                                color: @gray-darker;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .navbar-collapse {
-            border-top: none;
-        }
-    }
+.fixed.launch.button:hover .text {
+    opacity: 1;
 }

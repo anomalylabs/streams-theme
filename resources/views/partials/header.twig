@@ -1,56 +1,49 @@
-<header class="container-fluid" id="header">
+<header class="ui fixed inverted header menu">
+    <div class="container">
 
-    <nav class="navbar navbar-default">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span id="logo"></span>
-            <a class="navbar-brand" href="{{ url('/') }}" target="_blank">Streams</a>
+        <div class="ui user dropdown item">
+            <a class="logo">
+                {{ image('theme::img/icon-white.png').width(20)|raw }}
+            </a>
+
+            <div class="menu fluid">
+                <a href="{{ url('https://pyrocms.com/about') }}" target="_blank" class="item">About PyroCMS</a>
+                <a href="{{ url('https://pyrocms.com/') }}" target="_blank" class="item">PyroCMS.com</a>
+                <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Documentation</a>
+                <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Support</a>
+                <a href="{{ url('https://pyrocms.com/contact') }}" target="_blank" class="item">Feedback</a>
+            </div>
         </div>
 
-        <div class="collapse navbar-collapse" id="header-nav">
-            <ul class="nav navbar-nav">
-                {% for item in theme_nav() %}
-                    {% if item.items %}
-                        <li class="{{ item.active ? 'active' }} has-dropdown">
-                            <a href="#" data-toggle="dropdown">{{ item.title }}</a>
-                            <ul class="dropdown-menu">
-                                {% for link in item.items %}
-                                    <li class="{{ link.active ? 'active' }}">
-                                        <a href="{{ link.url }}">{{ link.title }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li class="{{ item.active ? 'active' }}">
-                            <a href="{{ item.url }}">{{ item.title }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+        <a href="#" class="launch item">
+            <i class="content icon"></i> Menu
+        </a>
 
-            <ul class="nav navbar-nav navbar-right" style="margin-right: -10px;">
-                <li class="active">
-                    <a href="#" data-toggle="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
-                        <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" height="30">
-                        &nbsp;&nbsp;{{ auth_user().display_name ?: auth_user().username }}
-                        {{ icon('caret-down')|raw }}
+        <a href="{{ url('/') }}" target="_blank" class="title item">
+            <i class="icon home"></i> My Site
+        </a>
+
+        <div class="right menu">
+            <div class="ui user dropdown item">
+
+                {{ auth_user().display_name ?: auth_user().username }}
+
+                <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" height="24">
+
+                <div class="menu fluid">
+                    <div class="item">
+                        <i class="icon user"></i>
+                        Edit Profile
+                    </div>
+
+                    <a href="{{ url('admin/logout') }}" class="item">
+                        <i class="icon sign out"></i>
+                        Logout
                     </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="{{ url_to('admin/logout') }}">
-                                {{ icon('sign-out')|raw }} Logout
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                </div>
 
+            </div>
+        </div>
+
+    </div>
 </header>

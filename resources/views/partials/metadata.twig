@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;">
 <meta name="author" content="AI Web Systems, Inc. - Ryan Thompson"/>
 <meta name="generator" content="v3"/>
 
@@ -13,25 +13,25 @@
 <meta property="og:site_name" content=""/>
 <meta property="og:type" content="website"/>
 
-<title>{{ trans('module::addon.name') }}</title>
+<title>{{ trans(template.title) }}</title>
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
 <link rel="shortcut icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
 <link rel="apple-touch-icon" href="{{ image_url('theme::img/favicon.png') }}"/>
 
-{{ asset_add("theme.css", "theme::less/bootstrap/bootstrap.less") }}
 {{ asset_add("theme.css", "theme::less/font-awesome/font-awesome.less") }}
 {{ asset_add("theme.css", "theme::less/animate/animate.less") }}
-{{ asset_add("theme.css", "theme::less/theme/theme.less") }}
 {{ asset_add("theme.css", "theme::less/plugins/select2.less") }} {# Separate for Twig processing #}
+{{ asset_add("theme.css", "theme::less/components/*") }}
 {{ asset_add("theme.css", "theme::less/plugins/*") }}
+{{ asset_add("theme.css", "theme::less/theme/*") }}
 
 {{ asset_add("theme.js", "theme::js/vendor/jquery-1.11.1.js") }}
 {{ asset_add("theme.js", "theme::js/vendor/modernizr.js") }}
-{{ asset_add("theme.js", "theme::js/bootstrap/*") }}
-{{ asset_add("theme.js", "theme::js/theme/*") }}
+{{ asset_add("theme.js", "theme::js/components/*") }}
 {{ asset_add("theme.js", "theme::js/plugins/*") }}
+{{ asset_add("theme.js", "theme::js/theme/*") }}
 
 {{ html_style(asset_path("theme.css")) }}
 {{ html_script(asset_path("theme.js")) }}

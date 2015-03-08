@@ -1,0 +1,24 @@
+.pusher {
+    display: flex;
+    overflow: visible;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.pusher > .full.height {
+    background-color: #f7f7f7;
+}
+
+.ui.visible.left.sidebar ~ .fixed,
+.ui.visible.left.sidebar ~ .pusher {
+    transform: translate3d(260px, 0, 0);
+}
+
+.pushable > .pusher {
+    z-index: 2;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: inherit;
+    transition: transform 500ms ease;
+}
