@@ -1,17 +1,17 @@
 <header class="ui fixed inverted menu">
 
     <a href="#" class="launch item">
-        <i class="content icon"></i> Menu
+        <i class="content icon"></i> <span>Menu</span>
     </a>
 
     <a href="{{ url('/') }}" target="_blank" class="title item">
-        <i class="icon home"></i> My Site
+        <i class="icon home"></i> <span>My Site</span>
     </a>
 
     <div class="right menu">
         <div class="ui user dropdown item">
 
-            {{ auth_user().display_name ?: auth_user().username }}
+            <span>{{ auth_user().display_name ?: auth_user().username }}</span>
 
             <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" height="24">
 

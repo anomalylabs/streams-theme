@@ -1,29 +1,35 @@
 .ui.segment.header {
     margin-bottom: 0;
-}
 
-.ui.segment.header .buttons {
-    margin-bottom: 2rem;
-}
+    .buttons {
+        margin-bottom: 2rem;
+    }
 
-.ui.segment.header {
     .menu.vertical {
+        display: none;
+
         .item:first-child {
             margin-left: 0;
         }
     }
-}
 
-@media (min-width: 768px) {
-    .ui.segment.header {
-        .menu.vertical {
-            display: none;
-        }
+    .menu.primary {
+        display: block;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .ui.segment.header {
+        .ui.header {
+            span {
+                display: block;
+            }
+        }
+
+        .menu.vertical {
+            display: block;
+        }
+
         .menu.primary {
             display: none;
         }
