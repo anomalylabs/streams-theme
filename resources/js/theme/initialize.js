@@ -17,6 +17,16 @@ $(function () {
     // Clear loading.
     $('.ui.active.dimmer').removeClass('active');
 
+    // Loading buttons.
+    $('.button[data-toggle="loading"]').click(function () {
+        $(this).addClass('loading');
+    });
+
+    // Dimmer buttons.
+    $('.button[data-toggle="dimmer"]').click(function () {
+        $($(this).data('target')).dimmer('show');
+    });
+
     // Toggle navigation.
     $('a.launch').click(function (e) {
 

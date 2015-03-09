@@ -17,36 +17,25 @@
 
 <body id="installer">
 
-<header id="header">
-    <div class="container">
 
-        <nav class="navbar navbar-default">
+<div class="ui inverted installer dimmer">
+    <div class="ui text loader">Installing...</div>
+</div>
 
-            <div class="navbar-header">
-                <span id="logo"></span>
-                <span class="navbar-brand">
-                    Streams Installer
-                </span>
-            </div>
+<div class="ui page grid">
+    <div class="column">
 
-        </nav>
+        <h1 class="ui header logo center aligned">
+            {{ image("theme::img/icon-dark.png").width(64)|raw }}
+            <br>
+            {{ trans(distribution().getName()) }}
+        </h1>
 
-    </div>
-</header>
-
-<section id="main" class="container">
-
-    <div class="row">
         {% include "theme::partials/messages" %}
-    </div>
-
-    {% block content %}{% endblock %}
-
-    <div class="row">
+        {% block content %}{% endblock %}
         {% include "theme::partials/footer" %}
     </div>
-
-</section>
+</div>
 
 </body>
 </html>
