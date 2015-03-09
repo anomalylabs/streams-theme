@@ -1,18 +1,21 @@
 $(function () {
 
     // Initialize popups.
-    $('.ui.popup').popup();
+    $('.popup').popup();
 
     // Initialize dropdown.
-    $('.ui.dropdown').dropdown({
+    $('.dropdown').dropdown({
         transition: 'drop'
     });
 
     // Initialize checkboxes.
-    $('.ui.checkbox').checkbox();
+    $('.checkbox').checkbox();
 
     // Initialize tabs.
     $('.ui.attached.tabular.menu .item').tab();
+
+    // Clear loading.
+    $('.ui.active.dimmer').removeClass('active');
 
     // Toggle navigation.
     $('a.launch').click(function (e) {

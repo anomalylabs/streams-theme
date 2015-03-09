@@ -1,15 +1,40 @@
 <div class="ui vertical inverted sidebar menu left navigation">
+
+    <div class="item">
+        <a class="ui logo icon image" href="/">
+            {{ image("theme::img/icon-white.png").width(32)|raw }}
+        </a>
+        <a href="http://anomaly.is/streams" target="_blank"><b>Streams</b></a>
+    </div>
+
     {% for item in theme_nav() %}
         {% if item.items %}
-            {% for link in item.items %}
-                <a class="item {{ link.active ? 'active' }}" href="{{ link.url }}">
-                    <b>{{ link.title }}</b>
-                </a>
-            {% endfor %}
+            <div class="item">
+                <div class="ui small inverted header">{{ item.title }}</div>
+                <div class="menu">
+                    {% for link in item.items %}
+                        <a class="item {{ link.active ? 'active' }}" href="{{ link.url }}">
+                            <b>{{ link.title }}</b>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
         {% else %}
             <a class="item {{ item.active ? 'active' }}" href="{{ item.url }}">
                 <b>{{ item.title }}</b>
             </a>
         {% endif %}
     {% endfor %}
+
+    <div class="item">
+        <div class="ui small inverted header">Learn More</div>
+        <div class="menu">
+            <a href="{{ url('https://pyrocms.com/about') }}" target="_blank" class="item">About PyroCMS</a>
+            <a href="{{ url('https://pyrocms.com/') }}" target="_blank" class="item">PyroCMS.com</a>
+            <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Documentation</a>
+            <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Support</a>
+            <a href="{{ url('https://pyrocms.com/contact') }}" target="_blank" class="item">Feedback</a>
+        </div>
+    </div>
+
 </div>
