@@ -28,7 +28,12 @@
         {{ block('content') }}
 
         {% include "theme::partials/footer" %}
+        {% include "theme::partials/modals" %}
     </div>
+</div>
+
+<div class="ui dimmer">
+    <div class="ui text loader">Loading...</div>
 </div>
 
 </body>

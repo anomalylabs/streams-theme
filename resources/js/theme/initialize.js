@@ -39,4 +39,20 @@ $(function () {
     $('.pusher').click(function () {
         $('.sidebar').sidebar('hide');
     });
+
+    // Toggle modals.
+    $('[data-modal]').click(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            url: $(e.target).attr('href'),
+            success: function (html) {
+                $('.ui.' + $(e.target).data('modal') + '.modal').html(html).modal('show');
+            },
+            error: function () {
+                alert('There was an error loading the modal content [' + $(e.target).attr('href') + ']');
+            }
+        });
+    });
 });
