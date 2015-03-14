@@ -1,6 +1,6 @@
 <?php namespace Anomaly\StreamsTheme;
 
-use Illuminate\Support\ServiceProvider;
+use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 
 /**
  * Class StreamsThemeServiceProvider
@@ -10,28 +10,16 @@ use Illuminate\Support\ServiceProvider;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StreamsTheme
  */
-class StreamsThemeServiceProvider extends ServiceProvider
+class StreamsThemeServiceProvider extends AddonServiceProvider
 {
 
     /**
-     * Boot the service provider.
-     */
-    public function boot()
-    {
-        app('twig')->addExtension(app('Anomaly\StreamsTheme\StreamsThemePlugin'));
-    }
-
-    /**
-     * Register the service provider.
+     * The addon plugins.
      *
-     * @return void
+     * @var array
      */
-    public function register()
-    {
-        app('events')->listen(
-            'Anomaly.Streams.Platform.Ui.Table.Event.*',
-            'Anomaly\StreamsTheme\Listener\TableListener'
-        );
-    }
+    protected $plugins = [
+        'Anomaly\StreamsTheme\StreamsThemePlugin'
+    ];
 }
  
