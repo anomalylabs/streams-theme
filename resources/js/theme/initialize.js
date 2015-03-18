@@ -11,6 +11,9 @@ $(function () {
     // Initialize checkboxes.
     $('.checkbox').checkbox();
 
+    // Initialize progress.
+    $('.progress').progress();
+
     // Initialize tabs.
     $('.ui.attached.tabular.menu .item').tab();
 
