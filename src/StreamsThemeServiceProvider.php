@@ -21,5 +21,6 @@ class StreamsThemeServiceProvider extends AddonServiceProvider
     protected $plugins = [
         'Anomaly\StreamsTheme\StreamsThemePlugin'
     ];
+
 }
  
