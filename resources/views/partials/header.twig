@@ -10,7 +10,7 @@
     </div>
 
     {% if cp_sections() %}
-        <div class="ui vertical menu large" style="width: auto;">
+        <div class="ui vertical menu large">
             {% for section in cp_sections() %}
                 <a class="{{ section.active ? 'active' }} item" {{ html_attributes(section.attributes) }}>
                     {{ trans(section.text) }}
