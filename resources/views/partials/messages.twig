@@ -2,45 +2,45 @@
 
     <!-- Success Messages -->
     {% if message_exists('success') %}
-        <div class="ui error success">
-            <ul class="list">
+        <div class="ui green inverted segment">
+            <div class="ui list">
                 {% for message in message_get('success') %}
-                    <li>{{ trans(message)|markdown }}</li>
+                    <div class="item">{{ trans(message)|markdown }}</div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     {% endif %}
 
     <!-- Informational Messages -->
     {% if message_exists('info') %}
-        <div class="ui error blue">
-            <ul class="list">
+        <div class="ui blue inverted segment">
+            <div class="ui list">
                 {% for message in message_get('info') %}
-                    <li>{{ trans(message)|markdown }}</li>
+                    <div class="item">{{ trans(message)|markdown }}</div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     {% endif %}
 
     <!-- Warning Messages -->
     {% if message_exists('warning') %}
-        <div class="ui error yellow">
-            <ul class="list">
+        <div class="ui yellow inverted segment">
+            <div class="ui list">
                 {% for message in message_get('warning') %}
-                    <li>{{ trans(message)|markdown }}</li>
+                    <div class="item">{{ trans(message)|markdown }}</div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     {% endif %}
 
     <!-- Error Messages -->
     {% if message_exists('error') %}
-        <div class="ui error message">
-            <ul class="list">
+        <div class="ui red inverted segment">
+            <div class="ui list">
                 {% for message in message_get('error') %}
-                    <li>{{ trans(message)|markdown }}</li>
+                    <div class="item">{{ trans(message)|markdown }}</div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     {% endif %}
 
