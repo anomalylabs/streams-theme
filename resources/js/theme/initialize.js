@@ -59,14 +59,14 @@ $(function () {
         });
     });
 
-    // Confirm
+    // Confirmation buttons.
     $('[data-confirm]').click(function () {
         if (!confirm($(this).data('confirm'))) {
             return false;
         }
     });
 
-    // Prompt
+    // Prompt for matching input before continuing.
     $('[data-prompt]').click(function () {
 
         var input = prompt($(this).data('prompt'));
