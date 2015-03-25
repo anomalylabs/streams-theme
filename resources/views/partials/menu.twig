@@ -8,6 +8,10 @@
         <i class="icon home"></i> <span>My Site</span>
     </a>
 
+    <a href="#" class="search item">
+        <i class="icon search"></i> <span>Search</span>
+    </a>
+
     <div class="right menu">
         <div class="ui user dropdown item">
 
@@ -18,7 +22,8 @@
             <div class="menu wide">
 
                 <div class="header">
-                    <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}" class="ui medium circular image">
+                    <img src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}"
+                         class="ui medium circular image">
                     <br>
                     <b>{{ auth_user().email }}</b>
                 </div>

@@ -38,6 +38,14 @@ $(function () {
         $('.sidebar.navigation').sidebar('toggle');
     });
 
+    // Toggle search.
+    $('a.search').click(function (e) {
+
+        e.preventDefault();
+
+        $('.sidebar.search').sidebar('toggle');
+    });
+
     // Close sidebars on outside click.
     $('.pusher').click(function () {
         $('.sidebar').sidebar('hide');
