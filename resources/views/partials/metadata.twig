@@ -22,19 +22,16 @@
 
 {{ asset_add("theme.css", "theme::less/font-awesome/font-awesome.less") }}
 {{ asset_add("theme.css", "theme::less/animate/animate.less") }}
-{{ asset_add("theme.css", "theme::less/plugins/select2.less") }} {# Separate for Twig processing #}
 {{ asset_add("theme.css", "theme::less/components/*") }}
-{{ asset_add("theme.css", "theme::less/plugins/*") }}
 {{ asset_add("theme.css", "theme::less/theme/*", ["less"]) }}
 
 {{ asset_add("theme.js", "theme::js/vendor/jquery-1.11.1.js") }}
-{{ asset_add("theme.js", "theme::js/vendor/modernizr.js") }}
 {{ asset_add("theme.js", "theme::js/components/*") }}
 {{ asset_add("theme.js", "theme::js/plugins/*") }}
 {{ asset_add("theme.js", "theme::js/theme/*") }}
 
-{{ html_style(asset_path("theme.css")) }}
-{{ html_script(asset_path("theme.js")) }}
+{{ html_style(asset_path("theme.css", ["min"])) }}
+{{ html_script(asset_path("theme.js", ["min"])) }}
 
 {% for path in asset_paths("styles.css") %}
     {{ html_style(path) }}
