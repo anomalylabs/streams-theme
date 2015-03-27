@@ -2,7 +2,9 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 use Anomaly\Streams\Platform\Addon\Module\ModuleCollection;
-use Anomaly\StreamsTheme\Command\BuildThemeNavigation;
+use Anomaly\UsersModule\User\Contract\UserInterface;
+use Illuminate\Auth\Guard;
+use Illuminate\Config\Repository;
 
 /**
  * Class BuildThemeNavigationHandler
@@ -16,31 +18,51 @@ class BuildThemeNavigationHandler
 {
 
     /**
+     * The guard utility.
+     *
+     * @var Guard
+     */
+    protected $guard;
+
+    /**
+     * The config repository.
+     *
+     * @var Repository
+     */
+    protected $config;
+
+    /**
      * The loaded modules.
      *
-     * @var \Anomaly\Streams\Platform\Addon\Module\ModuleCollection
+     * @var ModuleCollection
      */
     protected $modules;
 
     /**
      * Create a new BuildThemeNavigationHandler instance.
      *
+     * @param Guard            $guard
+     * @param Repository       $config
      * @param ModuleCollection $modules
      */
-    public function __construct(ModuleCollection $modules)
+    public function __construct(Guard $guard, Repository $config, ModuleCollection $modules)
     {
+        $this->guard   = $guard;
+        $this->config  = $config;
         $this->modules = $modules;
     }
 
     /**
      * Handle the command.
      *
-     * @param BuildThemeNavigation $command
      * @return array
      */
-    public function handle(BuildThemeNavigation $command)
+    public function handle()
     {
         $nav = [];
+
+        /* @var UserInterface $user */
+        $user = $this->guard->user();
 
         /**
          * Loop through the modules and build a navigation
@@ -57,6 +79,17 @@ class BuildThemeNavigationHandler
             if ($module instanceof Module && $module->getNavigation() === false) {
                 continue;
             }
+
+            /**
+             * If the user does not have access to anything
+             * in the addon then don't add it to the navigation.
+             */
+            if ($this->config->get($module->getNamespace('permissions')) &&
+                !$user->hasPermission($module->getNamespace('*'))
+            ) {
+                continue;
+            }
+
 
             // Build the required data.
             $url    = $this->getUrl($module);
