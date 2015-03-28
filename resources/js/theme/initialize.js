@@ -1,7 +1,7 @@
 $(function () {
 
     // Initialize popups.
-    $('.popup').popup();
+    $('.tooltip').popup();
 
     // Initialize dropdown.
     $('.dropdown').dropdown({
