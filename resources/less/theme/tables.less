@@ -7,6 +7,15 @@
     vertical-align: top;
 }
 
+.ui.table tr.dragging td,
+.ui.table tr td.dragging,
+.ui.table tr.dragging:hover td,
+.ui.table tr:hover td.dragging {
+    pointer-events: none;
+    background-color: #fafafa;
+    color: rgba(40, 40, 40, 0.3);
+}
+
 @media (max-width: 768px) {
     .ui.table .button {
         width: 100%;
