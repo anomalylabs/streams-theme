@@ -1,3 +1,7 @@
+body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
 .segment.table {
     margin-top: 0;
     padding-top: 0;
@@ -7,10 +11,10 @@
     vertical-align: top;
 }
 
-.ui.table tr.dragging td,
-.ui.table tr td.dragging,
-.ui.table tr.dragging:hover td,
-.ui.table tr:hover td.dragging {
+.ui.table tr.dragged td,
+.ui.table tr td.dragged,
+.ui.table tr.dragged:hover td,
+.ui.table tr:hover td.dragged {
     pointer-events: none;
     background-color: #fafafa;
     color: rgba(40, 40, 40, 0.3);
