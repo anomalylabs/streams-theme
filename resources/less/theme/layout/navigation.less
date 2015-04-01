@@ -1,0 +1,77 @@
+#navigation {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 102;
+    position: fixed;
+    background: @iconbar-background;
+    transition: all @animationDefault @easeInSine;
+
+    ul {
+        padding: 0;
+        list-style: none;
+
+        > li {
+            width: 100%;
+
+            a {
+                height: 100%;
+                display: block;
+                font-size: 20px;
+                padding: 0 10px;
+                margin: 8px 10px;
+                line-height: 39px;
+                position: relative;
+                border-radius: @border-radius-base;
+
+                span {
+                    top: 3px;
+                    left: 90px;
+                    opacity: 0;
+                    z-index: 100;
+                    color: @inverse;
+                    font-size: 16px;
+                    padding: 0 14px;
+                    visibility: hidden;
+                    border-radius: 5px;
+                    line-height: 32px;
+                    position: absolute;
+                    white-space: nowrap;
+                    background: @iconbar-background;
+                    transition: all @animationDefault ease;
+
+                    &::after {
+                        top: 11px;
+                        left: -5px;
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        position: absolute;
+                        transform: rotate(45deg);
+                        border-radius: 0 0 0 3px;
+                        -ms-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        background: @iconbar-background;
+                    }
+                }
+
+                &:hover {
+                    span {
+                        opacity: 1;
+                        left: 60px;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &.active {
+                a {
+                    color: @iconbar-hover-color;
+                    background: lighten(@iconbar-background, 10%);
+                }
+            }
+        }
+    }
+}

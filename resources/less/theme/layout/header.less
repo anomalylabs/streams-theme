@@ -1,0 +1,31 @@
+#header {
+    top: 0;
+    right: 0;
+    left: 60px;
+    z-index: 101;
+    position: fixed;
+    background-color: #f2364b;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+    .nav {
+        li {
+            a {
+                color: rgba(0, 0, 0, 0.18);
+            }
+
+            &.active {
+                a {
+                    color: @inverse;
+                }
+            }
+        }
+    }
+
+    .btn {
+        background-color: rgba(0, 0, 0, 0.07) !important;
+
+        &:hover {
+            box-shadow: 0 0 0 1px @inverse;
+        }
+    }
+}

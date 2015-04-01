@@ -15,27 +15,20 @@
     {% include "theme::partials/metadata" %}
 </head>
 
-<body class="pushable dimmable">
+<body>
 
-{% include "theme::partials/search" %}
-{% include "theme::partials/navigation" %}
-{% include "theme::partials/menu" %}
+{% include "theme::partials/header" %}
 
-<div class="pusher">
-    <div class="full height">
-        {% include "theme::partials/header" %}
-        {% include "theme::partials/messages" %}
+<section id="content">
+    {% include "theme::partials/navigation" %}
+    {% include "theme::partials/messages" %}
 
-        {{ block('content') }}
+    {{ block('content') }}
 
-        {% include "theme::partials/footer" %}
-        {% include "theme::partials/modals" %}
-    </div>
-</div>
+    {% include "theme::partials/footer" %}
+</section>
 
-<div class="ui dimmer">
-    <div class="ui text loader">Loading...</div>
-</div>
+{% include "theme::partials/modals" %}
 
 </body>
 </html>

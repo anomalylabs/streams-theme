@@ -1,13 +1,14 @@
-<div class="ui vertical inverted sidebar menu left navigation">
+<nav id="navigation" class="animated">
 
-    <div class="item">
-        <a class="ui logo icon image" href="/">
-            {{ image("theme::img/icon-white.png").width(32)|raw }}
-        </a>
-        <a href="http://anomaly.is/streams" target="_blank"><b>Streams</b></a>
-    </div>
+    <ul>
+        <li><a href="#fakelink" class="fa fa-bars"></a></li>
+        <li class="active"><a href="#fakelink" class="fa fa-dashboard"><span>Dashboard</span></a></li>
+        <li><a href="#fakelink" class="fa fa-laptop"><span>Content</span></a></li>
+        <li><a href="#fakelink" class="fa fa-pencil-square"><span>Blog</span></a></li>
+        <li><a href="#fakelink" class="fa fa-cloud-upload"><span>Files</span></a></li>
+    </ul>
 
-    {% for item in theme_nav() %}
+    {#{% for item in theme_nav() %}
         {% if item.items %}
             <div class="item">
                 <div class="ui small inverted header">{{ item.title }}</div>
@@ -35,6 +36,6 @@
             <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Support</a>
             <a href="{{ url('https://pyrocms.com/contact') }}" target="_blank" class="item">Feedback</a>
         </div>
-    </div>
+    </div>#}
 
-</div>
+</nav>

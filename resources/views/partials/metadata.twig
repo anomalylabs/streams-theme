@@ -20,13 +20,12 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ image_url('theme::img/favicon.png') }}">
 <link rel="apple-touch-icon" href="{{ image_url('theme::img/favicon.png') }}"/>
 
-{{ asset_add("theme.css", "theme::less/font-awesome/font-awesome.less") }}
-{{ asset_add("theme.css", "theme::less/animate/animate.less") }}
-{{ asset_add("theme.css", "theme::less/components/*") }}
-{{ asset_add("theme.css", "theme::less/theme/*", ["less"]) }}
+{{ asset_add("theme.css", "theme::less/bootstrap/bootstrap.less") }}
+{{ asset_add("theme.css", "theme::less/framework/framework.less") }}
+{{ asset_add("theme.css", "theme::less/theme/theme.less", ["debug"]) }}
 
-{{ asset_add("theme.js", "theme::js/vendor/jquery-1.11.1.js") }}
-{{ asset_add("theme.js", "theme::js/components/*") }}
+{{ asset_add("theme.js", "theme::js/vendor/jquery.min.js") }}
+{{ asset_add("theme.js", "theme::js/vendor/respond.min.js") }}
 {{ asset_add("theme.js", "theme::js/plugins/*") }}
 {{ asset_add("theme.js", "theme::js/theme/*") }}
 
