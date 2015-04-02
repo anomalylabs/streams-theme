@@ -2,40 +2,36 @@
 
     <!-- Success Messages -->
     {% if message_exists('success') %}
-        <div class="card style-success">
+        <div class="alert alert-success">
             {% for message in message_get('success') %}
-                <p>{{ trans(message)|markdown }}</p>
+                {{ trans(message)|markdown }}
             {% endfor %}
         </div>
     {% endif %}
 
     <!-- Informational Messages -->
     {% if message_exists('info') %}
-        <div class="ui blue inverted segment">
-            <div class="ui list">
-                {% for message in message_get('info') %}
-                    <div class="item">{{ trans(message)|markdown }}</div>
-                {% endfor %}
-            </div>
+        <div class="alert alert-info">
+            {% for message in message_get('info') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
         </div>
     {% endif %}
 
     <!-- Warning Messages -->
     {% if message_exists('warning') %}
-        <div class="ui yellow inverted segment">
-            <div class="ui list">
-                {% for message in message_get('warning') %}
-                    <div class="item">{{ trans(message)|markdown }}</div>
-                {% endfor %}
-            </div>
+        <div class="alert alert-warning">
+            {% for message in message_get('info') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
         </div>
     {% endif %}
 
     <!-- Error Messages -->
     {% if message_exists('error') %}
-        <div class="card style-danger">
+        <div class="alert alert-danger">
             {% for message in message_get('error') %}
-                <p>{{ trans(message)|markdown }}</p>
+                {{ trans(message)|markdown }}
             {% endfor %}
         </div>
     {% endif %}

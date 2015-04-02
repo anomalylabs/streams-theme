@@ -67,7 +67,7 @@
 //
 //## Settings for some of the most global styles.
 
-@body-bg:                   #ffffff;
+@body-bg:                   #f7f7f7;
 @text-color:                @wet-asphalt;
 
 //** Global textual link color.
@@ -485,6 +485,8 @@
 @navbar-height-base:         50px;
 @navbar-height-large:        76px;
 @navbar-input-line-height:   1.4; // ~21px
+@navbar-padding-horizontal:  @grid-gutter-width / 2;
+@navbar-padding-vertical:    ((@navbar-height-base - @line-height-computed) / 2);
 @navbar-margin-bottom:       @line-height-computed;
 @navbar-border-radius:       @border-radius-large;
 
@@ -682,19 +684,32 @@
 //
 //##
 
-@alert-bg:                   mix(@brand-primary, white, 3%);
-@alert-border:               mix(@brand-primary, white, 10%);
-@alert-success-bg:           mix(@brand-success, @alert-bg, 5%);
-@alert-success-border:       mix(@brand-success, @alert-border, 5%);
+@alert-padding:               15px;
+@alert-border-radius:         @border-radius-base;
+@alert-link-font-weight:      bold;
+
+@alert-bg:                   @brand-primary;
+@alert-border:               @alert-bg;
+@alert-text:                 @inverse;
+
+@alert-success-bg:           @brand-success;
+@alert-success-border:       @alert-success-bg;
+@alert-success-text:         @alert-text;
 @alert-success-link-color:   @link-color;
-@alert-info-bg:              mix(@brand-info, @alert-bg, 1%);
-@alert-info-border:          mix(@brand-info, @alert-border, 1%);
+
+@alert-info-bg:              @brand-info;
+@alert-info-border:          @alert-info-bg;
+@alert-info-text:            @alert-text;
 @alert-info-link-color:      @brand-info;
-@alert-warning-bg:           mix(@brand-warning, @alert-bg, 3%);
-@alert-warning-border:       mix(@brand-warning, @alert-border, 3%);
+
+@alert-warning-bg:           @brand-warning;
+@alert-warning-border:       @alert-warning-bg;
+@alert-warning-text:         @alert-text;
 @alert-warning-link-color:   @brand-warning;
-@alert-danger-bg:            mix(@brand-danger, @alert-bg, 2.5%);
-@alert-danger-border:        mix(@brand-danger, @alert-border, 2.5%);
+
+@alert-danger-bg:            @brand-danger;
+@alert-danger-border:        @alert-danger-bg;
+@alert-danger-text:          @alert-text;
 @alert-danger-link-color:    @brand-danger;
 
 

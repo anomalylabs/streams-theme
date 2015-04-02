@@ -1,41 +1,24 @@
 <nav id="navigation" class="animated">
 
+    <div class="background"></div>
+
     <ul>
         <li><a href="#fakelink" class="fa fa-bars"></a></li>
         <li class="active"><a href="#fakelink" class="fa fa-dashboard"><span>Dashboard</span></a></li>
-        <li><a href="#fakelink" class="fa fa-laptop"><span>Content</span></a></li>
+        <li><a href="#fakelink" class="fa fa-laptop"><span>Pages</span></a></li>
         <li><a href="#fakelink" class="fa fa-pencil-square"><span>Blog</span></a></li>
-        <li><a href="#fakelink" class="fa fa-cloud-upload"><span>Files</span></a></li>
+        <li><a href="#fakelink" class="fa fa-paperclip"><span>Files</span></a></li>
+        <li><a href="#fakelink" class="fa fa-comment"><span>Comments</span></a></li>
+        <li><a href="#fakelink" class="fa fa-sitemap"><span>Navigation</span></a></li>
+        <li><a href="#fakelink" class="fa fa-expand"><span>Redirects</span></a></li>
+        <li><a href="#fakelink" class="fa fa-copy"><span>Template</span></a></li>
+        <li><a href="#fakelink" class="fa fa-puzzle-piece"><span>Addons</span></a></li>
+        <li><a href="#fakelink" class="fa fa-cogs"><span>Settings</span></a></li>
+        <li><a href="#fakelink" class="fa fa-cog"><span>Preferences</span></a></li>
+        <li><a href="#fakelink" class="fa fa-users"><span>Users</span></a></li>
+        <li><a href="#fakelink" class="fa fa-language"><span>Localization</span></a></li>
+        <li><a href="#fakelink" class="fa fa-search"><span>Search</span></a></li>
+        <li><a href="#fakelink" class="fa fa-database"><span>System</span></a></li>
     </ul>
-
-    {#{% for item in theme_nav() %}
-        {% if item.items %}
-            <div class="item">
-                <div class="ui small inverted header">{{ item.title }}</div>
-                <div class="menu">
-                    {% for link in item.items %}
-                        <a class="item {{ link.active ? 'active' }}" href="{{ link.url }}">
-                            <b>{{ link.title }}</b>
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-        {% else %}
-            <a class="item {{ item.active ? 'active' }}" href="{{ item.url }}">
-                <b>{{ item.title }}</b>
-            </a>
-        {% endif %}
-    {% endfor %}
-
-    <div class="item">
-        <div class="ui small inverted header">Learn More</div>
-        <div class="menu">
-            <a href="{{ url('https://pyrocms.com/about') }}" target="_blank" class="item">About PyroCMS</a>
-            <a href="{{ url('https://pyrocms.com/') }}" target="_blank" class="item">PyroCMS.com</a>
-            <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Documentation</a>
-            <a href="{{ url('https://docs.pyrocms.com/') }}" target="_blank" class="item">Support</a>
-            <a href="{{ url('https://pyrocms.com/contact') }}" target="_blank" class="item">Feedback</a>
-        </div>
-    </div>#}
 
 </nav>

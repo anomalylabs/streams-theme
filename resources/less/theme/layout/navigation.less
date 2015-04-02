@@ -1,14 +1,24 @@
 #navigation {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    z-index: 102;
-    position: fixed;
-    background: @iconbar-background;
-    transition: all @animationDefault @easeInSine;
+
+    .background {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        z-index: 102;
+        position: fixed;
+        background: @iconbar-background;
+        transition: all @animationDefault @easeInSine;
+    }
 
     ul {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        z-index: 103;
+        position: absolute;
+
         padding: 0;
         list-style: none;
 
@@ -23,6 +33,7 @@
                 margin: 8px 10px;
                 line-height: 39px;
                 position: relative;
+                text-align: center;
                 border-radius: @border-radius-base;
 
                 span {
