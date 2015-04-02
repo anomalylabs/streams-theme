@@ -1,31 +1,24 @@
 #navigation {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 102;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+    background: @iconbar-background;
+    transition: all @animationDefault @easeInSine;
 
-    .background {
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 60px;
-        z-index: 102;
-        position: fixed;
-        background: @iconbar-background;
-        transition: all @animationDefault @easeInSine;
-    }
-
-    ul {
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 60px;
-        z-index: 103;
-        position: absolute;
-
+    > ul {
         padding: 0;
         list-style: none;
 
         > li {
             width: 100%;
 
-            a {
+            > a {
                 height: 100%;
                 display: block;
                 font-size: 20px;
@@ -33,54 +26,82 @@
                 margin: 8px 10px;
                 line-height: 39px;
                 position: relative;
-                text-align: center;
+                color: @iconbar-color;
                 border-radius: @border-radius-base;
 
                 span {
-                    top: 3px;
-                    left: 90px;
-                    opacity: 0;
-                    z-index: 100;
-                    color: @inverse;
-                    font-size: 16px;
-                    padding: 0 14px;
+                    font-weight: 200;
+                    margin-left: 20px;
                     visibility: hidden;
-                    border-radius: 5px;
-                    line-height: 32px;
-                    position: absolute;
-                    white-space: nowrap;
-                    background: @iconbar-background;
-                    transition: all @animationDefault ease;
-
-                    &::after {
-                        top: 11px;
-                        left: -5px;
-                        content: "";
-                        width: 10px;
-                        height: 10px;
-                        position: absolute;
-                        transform: rotate(45deg);
-                        border-radius: 0 0 0 3px;
-                        -ms-transform: rotate(45deg);
-                        -moz-transform: rotate(45deg);
-                        -webkit-transform: rotate(45deg);
-                        background: @iconbar-background;
-                    }
                 }
 
                 &:hover {
-                    span {
-                        opacity: 1;
-                        left: 60px;
-                        visibility: visible;
+                    color: @iconbar-hover-color;
+                }
+            }
+
+            &.user {
+                padding: 0 5px;
+                margin: 6px 8px 10px 8px;
+                color: @iconbar-hover-color;
+
+                img {
+                    width: 37px;
+                }
+
+                .media-body {
+                    display: none;
+                    font-size: 14px;
+                    line-height: 1.3em;
+
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        white-space: nowrap;
+
+                        li {
+                            padding-left: 0;
+
+                            a {
+                                margin: 0;
+                                padding: 0;
+                                font-size: 11px;
+                                line-height: 1em;
+                            }
+                        }
                     }
                 }
             }
 
-            &.active {
+            > &.active {
                 a {
                     color: @iconbar-hover-color;
                     background: lighten(@iconbar-background, 10%);
+                }
+            }
+
+            > &:hover {
+                a {
+                    background: lighten(@iconbar-background, 3%);
+                }
+            }
+        }
+    }
+
+    &.open,
+    &:hover {
+        width: 260px;
+
+        ul {
+            li {
+                a {
+                    span {
+                        visibility: visible;
+                    }
+                }
+
+                .media-body {
+                    display: table-cell;
                 }
             }
         }

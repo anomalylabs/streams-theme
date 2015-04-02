@@ -1,9 +1,26 @@
-<nav id="navigation" class="animated">
-
-    <div class="background"></div>
+<nav id="navigation">
 
     <ul>
-        <li><a href="#fakelink" class="fa fa-bars"></a></li>
+        <li class="user">
+            <div class="media">
+                <div class="media-left">
+                    <img class="img-circle" src="https://avatars1.githubusercontent.com/u/1099967">
+                </div>
+                <div class="media-body">
+                    <strong>
+                        {{ auth_user().email }}
+                    </strong>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ url_to('admin/logout') }}"><i class="fa fa-power-off"></i> Logout</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_to('admin/logout') }}"><i class="fa fa-power-off"></i> Edit Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
         <li class="active"><a href="#fakelink" class="fa fa-dashboard"><span>Dashboard</span></a></li>
         <li><a href="#fakelink" class="fa fa-laptop"><span>Pages</span></a></li>
         <li><a href="#fakelink" class="fa fa-pencil-square"><span>Blog</span></a></li>
