@@ -4,11 +4,11 @@
         <li class="user">
             <div class="media">
                 <div class="media-left">
-                    <img class="img-circle" src="https://avatars1.githubusercontent.com/u/1099967">
+                    <img class="img-circle" src="https://gravatar.com/avatar/{{ md5(auth_user().email) }}">
                 </div>
                 <div class="media-body">
                     <strong>
-                        {{ auth_user().email }}
+                        {{ auth_user().getDisplayName() ?: auth_user().username }}
                     </strong>
                     <ul class="list-inline">
                         <li>
@@ -30,8 +30,8 @@
         <li><a href="#fakelink" class="fa fa-expand"><span>Redirects</span></a></li>
         <li><a href="#fakelink" class="fa fa-copy"><span>Template</span></a></li>
         <li><a href="#fakelink" class="fa fa-puzzle-piece"><span>Addons</span></a></li>
-        <li><a href="#fakelink" class="fa fa-cogs"><span>Settings</span></a></li>
-        <li><a href="#fakelink" class="fa fa-cog"><span>Preferences</span></a></li>
+        <li><a href="#fakelink" class="fa fa-cog"><span>Settings</span></a></li>
+        <li><a href="#fakelink" class="fa fa-sliders"><span>Preferences</span></a></li>
         <li><a href="#fakelink" class="fa fa-users"><span>Users</span></a></li>
         <li><a href="#fakelink" class="fa fa-language"><span>Localization</span></a></li>
         <li><a href="#fakelink" class="fa fa-search"><span>Search</span></a></li>

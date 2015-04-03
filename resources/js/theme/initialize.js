@@ -1,5 +1,6 @@
 $(function () {
 
-    // Checkbox styling.
+    // Checkboxes and Radio buttons
     $(':checkbox').radiocheck();
+    $(':radio').radiocheck();
 });
