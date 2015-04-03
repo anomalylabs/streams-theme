@@ -91,6 +91,13 @@
         }
     }
 
+    > .more {
+        display: none;
+        margin-top: 1em;
+        padding-top: 1em;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
     &.open,
     &:hover {
         width: 260px;
@@ -107,6 +114,10 @@
                     display: table-cell;
                 }
             }
+        }
+
+        > .more {
+            display: inherit;
         }
     }
 }
