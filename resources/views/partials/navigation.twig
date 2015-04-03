@@ -15,27 +15,21 @@
                             <a href="{{ url_to('admin/logout') }}"><i class="fa fa-power-off"></i> Logout</a>
                         </li>
                         <li>
-                            <a href="{{ url_to('admin/logout') }}"><i class="fa fa-power-off"></i> Edit Profile</a>
+                            <a href="{{ url_to('admin/logout') }}"><i class="fa fa-user"></i> Edit Profile</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </li>
-        <li class="active"><a href="#fakelink" class="fa fa-dashboard"><span>Dashboard</span></a></li>
-        <li><a href="#fakelink" class="fa fa-laptop"><span>Pages</span></a></li>
-        <li><a href="#fakelink" class="fa fa-pencil-square"><span>Blog</span></a></li>
-        <li><a href="#fakelink" class="fa fa-paperclip"><span>Files</span></a></li>
-        <li><a href="#fakelink" class="fa fa-comment"><span>Comments</span></a></li>
-        <li><a href="#fakelink" class="fa fa-sitemap"><span>Navigation</span></a></li>
-        <li><a href="#fakelink" class="fa fa-expand"><span>Redirects</span></a></li>
-        <li><a href="#fakelink" class="fa fa-copy"><span>Template</span></a></li>
-        <li><a href="#fakelink" class="fa fa-puzzle-piece"><span>Addons</span></a></li>
-        <li><a href="#fakelink" class="fa fa-cog"><span>Settings</span></a></li>
-        <li><a href="#fakelink" class="fa fa-sliders"><span>Preferences</span></a></li>
-        <li><a href="#fakelink" class="fa fa-users"><span>Users</span></a></li>
-        <li><a href="#fakelink" class="fa fa-language"><span>Localization</span></a></li>
-        <li><a href="#fakelink" class="fa fa-search"><span>Search</span></a></li>
-        <li><a href="#fakelink" class="fa fa-database"><span>System</span></a></li>
+
+        {% for module in modules() %}
+            <li class="{{ module.active ? 'active' }}">
+                <a href="{{ url_to('admin/' ~ module.slug) }}">
+                    {{ icon(module.icon) }}
+                    <span>{{ trans(module.name) }}</span>
+                </a>
+            </li>
+        {% endfor %}
     </ul>
 
 </nav>
