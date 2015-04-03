@@ -4,12 +4,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-lg-offset-8">
-                {{ form_open({'method': 'post', 'class': 'ui form'}) }}
-
-                <h1 class="ui header">
-                    {{ image("theme::img/icon-dark.png").width(64)|raw }}
-                </h1>
+            <div class="col-lg-6 col-lg-offset-9">
+                {{ form_open({'method': 'post', 'class': 'form'}) }}
 
                 <div class="form-group">
                     {{ form_email("email", null, {'class': 'form-control', 'placeholder': 'Email'}) }}
@@ -20,12 +16,14 @@
                 </div>
 
                 <div class="form-group">
-                    {{ form_checkbox("remember", null, false, {'id': 'remember'}) }}
-                    <label>{{ trans('anomaly.module.users::admin.remember_me') }}</label>
+                    <label>
+                        {{ form_checkbox("remember", null, false, {'id': 'remember'}) }}
+                        {{ trans('anomaly.module.users::admin.remember_me') }}
+                    </label>
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" value="Login" class="btn btn-primary btn-lg btn-block" onclick="$('.ui.dimmer').addClass('active');">
+                    <button type="submit" value="Login" class="btn btn-primary btn-lg btn-block">
                         {{ trans('anomaly.module.users::button.login') }}
                     </button>
                 </div>

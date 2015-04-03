@@ -1,5 +1,3 @@
-<!doctype html>
-
 <!--[if lt IE 7]>
 <html class="nojs ms lt_ie7" lang="en"><![endif]-->
 <!--[if IE 7]>
@@ -17,9 +15,14 @@
 
 <body id="login">
 
-{% include "theme::partials/messages" %}
+<header id="header">
+    {{ image(config_get('streams.app.logo')) }} {{ config_get('streams.app.name') }}
+</header>
 
-{% block content %}{% endblock %}
+<div id="content" class="container">
+    {% include "theme::partials/messages" %}
+    {% block content %}{% endblock %}
+</div>
 
 </body>
 </html>
