@@ -20,7 +20,7 @@
             </div>
         </li>
 
-        {% for module in modules() %}
+        {% for module in modules().enabled() %}
             <li class="{{ module.active ? 'active' }}">
                 <a href="{{ url_to('admin/' ~ module.slug) }}">
                     {{ icon(module.icon) }}
