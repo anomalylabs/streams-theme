@@ -5,9 +5,17 @@
     > tbody,
     > tfoot {
         > tr {
+            &.dragged {
+                opacity: 0.2;
+            }
+
             > th,
             > td {
                 vertical-align: middle;
+
+                .handle:hover {
+                    cursor: pointer;
+                }
             }
         }
     }
