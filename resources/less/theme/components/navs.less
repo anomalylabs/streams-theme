@@ -1,7 +1,21 @@
+// Navbar
+.navbar {
+    margin-bottom: @line-height-computed/2;
+}
+
 // Tabs
 .nav-tabs {
-    @media (min-width: @screen-sm-min) {
-        margin-bottom: 0;
+    margin-bottom: -5px;
+
+    > li {
+        &.active {
+            > a,
+            > a:hover,
+            > a:focus {
+                padding: 7px 21px 12px;
+                background: @inverse;
+            }
+        }
     }
 }
 
