@@ -1,14 +1,24 @@
 $(function () {
 
-    // Radios and checkboxes
-    $(':checkbox').radiocheck();
-    $(':radio').radiocheck();
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-    // Tabs
-    $('[data-toggle="tab"]').click(function (e) {
+        // Radios and checkboxes
+        $(':checkbox').radiocheck();
+        $(':radio').radiocheck();
 
-        e.preventDefault();
+        // Tabs
+        $('[data-toggle="tab"]').click(function (e) {
 
-        $(this).tab('show');
+            e.preventDefault();
+
+            $(this).tab('show');
+        });
+
     });
+
 });
