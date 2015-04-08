@@ -1,0 +1,40 @@
+.pagination {
+    margin: 0;
+
+    li {
+        &.previous,
+        &.next {
+            > a,
+            > span {
+                background-color: transparent;
+            }
+        }
+        &.disabled {
+            > a,
+            > span {
+                color: @pagination-color;
+                background-color: fade(@pagination-bg, 50%);
+                border-right-color: mix(@pagination-bg, white, 80%);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: fade(@pagination-bg, 40%);
+                }
+            }
+        }
+        > a,
+        > span {
+            background: @pagination-bg;
+        }
+    }
+
+    > .active > a,
+    > .active > span {
+        &,
+        &:hover,
+        &:focus {
+            background-color: @pagination-active-bg !important;
+        }
+    }
+}
