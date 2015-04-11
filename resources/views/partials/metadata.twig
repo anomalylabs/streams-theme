@@ -22,12 +22,7 @@
 {{ asset_add("theme.js", "theme::js/theme/*") }}
 
 {{ html_style(asset_path("theme.css", ["min"])) }}
-{{ html_script(asset_path("theme.js", ["min"])) }}
 
 {% for path in asset_paths("styles.css") %}
     {{ html_style(path) }}
-{% endfor %}
-
-{% for path in asset_paths("scripts.js") %}
-    {{ html_script(path) }}
 {% endfor %}
