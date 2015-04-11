@@ -18,4 +18,7 @@ $(function () {
 
         $(this).tab('show');
     });
+
+    // Nano sliders
+    $('.nano').nanoScroller();
 });
