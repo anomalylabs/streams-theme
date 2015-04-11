@@ -12,7 +12,7 @@
         </div>
 
         <ul class="nav navbar-nav">
-            {% for section in cp_sections() %}
+            {% for section in template.cp.sections %}
                 <li class="{{ section.active ? 'active' }}">
                     <a {{ html_attributes(section.attributes) }}>
                         {{ trans(section.text) }}
@@ -21,7 +21,7 @@
             {% endfor %}
         </ul>
         <div class="pull-right navbar-btn">
-            {{ buttons(cp_buttons()) }}
+            {{ buttons(template.cp.buttons) }}
         </div>
 
     </div>
