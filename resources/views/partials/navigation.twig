@@ -12,8 +12,16 @@
                     </strong>
                     <ul class="list-inline">
                         <li>
-                            <a href="{{ url_to('admin/logout') }}"><i
-                                        class="fa fa-power-off"></i> {{ trans('anomaly.module.users::button.logout') }}</a>
+                            <a href="{{ url_to('admin/logout') }}">
+                                {{ icon('power-off') }}
+                                {{ trans('theme::link.logout') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url() }}" target="_blank">
+                                {{ icon('external-link') }}
+                                {{ trans('theme::link.view_site') }}
+                            </a>
                         </li>
                     </ul>
                 </div>
