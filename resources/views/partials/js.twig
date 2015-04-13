@@ -1,5 +1,3 @@
-{{ html_script(asset_path("theme.js", ["min"])) }}
-
 {% for path in asset_paths("scripts.js") %}
     {{ html_script(path) }}
 {% endfor %}

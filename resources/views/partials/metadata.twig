@@ -27,6 +27,8 @@
     {{ html_style(path) }}
 {% endfor %}
 
+{{ html_script(asset_path("theme.js", ["min"])) }}
+
 <script type="text/javascript">
 
     var APPLICATION_URL = "{{ url() }}";
