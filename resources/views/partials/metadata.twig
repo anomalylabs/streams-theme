@@ -21,13 +21,13 @@
 {{ asset_add("theme.js", "theme::js/libraries/*") }}
 {{ asset_add("theme.js", "theme::js/theme/*") }}
 
-{{ html_style(asset_path("theme.css", ["min"])) }}
+{{ html_style(asset_path("theme.css")) }}
 
 {% for path in asset_paths("styles.css") %}
     {{ html_style(path) }}
 {% endfor %}
 
-{{ html_script(asset_path("theme.js", ["min"])) }}
+{{ html_script(asset_path("theme.js")) }}
 
 <script type="text/javascript">
 

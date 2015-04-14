@@ -1,8 +1,8 @@
 {% if template.breadcrumbs %}
     <div id="breadcrumbs">
         <ul class="breadcrumb">
-            {% for breadcrumb in template.breadcrumbs %}
-                <li class="{{ loop.last ? 'active' }}"><a href="{{ href }}">Home</a></li>
+            {% for breadcrumb, href in template.breadcrumbs %}
+                <li class="{{ loop.last ? 'active' }}"><a href="{{ href }}">{{ trans(breadcrumb) }}</a></li>
             {% endfor %}
         </ul>
     </div>
