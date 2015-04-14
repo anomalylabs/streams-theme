@@ -1,0 +1,9 @@
+{% if template.breadcrumbs %}
+    <div id="breadcrumbs">
+        <ul class="breadcrumb">
+            {% for breadcrumb in template.breadcrumbs %}
+                <li class="{{ loop.last ? 'active' }}"><a href="{{ href }}">Home</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
